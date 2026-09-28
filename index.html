@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Роман Воробьёв — ИИ для селлеров маркетплейсов</title>
+<meta name="description" content="Внедряю ИИ в кабинеты селлеров Ozon и Wildberries и учу этому владельцев бизнеса. Решения под задачу и экспресс-курс за неделю.">
+<meta property="og:title" content="ИИ для селлеров маркетплейсов">
+<meta property="og:description" content="ИИ, который отвечает про ваши числа, а не пересказывает интернет.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aiseller.space/">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root{
+  --text:#1a1a1a; --text2:#666; --bg:#fff; --bg2:#f5f5f5;
+  --line:#e5e7eb; --accent:#6c5ce7; --accent2:#e85a8f; --green:#22c55e;
+  --wrap:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:'Onest',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:18px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wrap); margin:0 auto; padding:0 24px}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── шапка ── */
+header{border-bottom:1px solid var(--line); position:sticky; top:0; background:rgba(255,255,255,.92);
+  backdrop-filter:blur(8px); z-index:10}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0}
+.logo{font-weight:700; letter-spacing:-.02em; font-size:19px; color:var(--text)}
+.logo span{color:var(--accent)}
+.nav ul{display:flex; gap:26px; list-style:none; margin:0; padding:0; font-size:16px}
+.nav ul a{color:var(--text2)}
+.nav ul a:hover{color:var(--text); text-decoration:none}
+@media(max-width:720px){ .nav ul{display:none} }
+
+/* ── первый экран ── */
+.hero{padding:88px 0 72px}
+.hero h1{
+  margin:0 0 20px; font-weight:700; letter-spacing:-.035em; line-height:1.03;
+  font-size:clamp(36px,6.4vw,68px); text-wrap:balance;
+}
+.hero .lead{font-size:clamp(19px,2.3vw,23px); color:var(--text2); max-width:660px; margin:0 0 34px}
+.hero .lead b{color:var(--text); font-weight:600}
+.cta{display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#fff;
+  padding:15px 30px; border-radius:12px; font-weight:600; font-size:17px}
+.cta:hover{background:#5b4ddb; text-decoration:none}
+.cta-note{display:block; margin-top:14px; font-size:15px; color:var(--text2)}
+
+/* ── что делаю ── */
+.section{padding:64px 0; border-top:1px solid var(--line)}
+.section h2{font-size:clamp(26px,3.6vw,38px); font-weight:700; letter-spacing:-.03em; margin:0 0 12px}
+.section .sub{color:var(--text2); margin:0 0 36px; max-width:620px}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:22px}
+.card{border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--bg)}
+.card h3{margin:0 0 10px; font-size:21px; font-weight:650; letter-spacing:-.02em}
+.card p{margin:0 0 14px; color:var(--text2); font-size:17px}
+.card ul{margin:0; padding-left:20px; color:var(--text2); font-size:16px}
+.card li{margin-bottom:7px}
+.tag{display:inline-block; font-size:13px; font-weight:600; letter-spacing:.02em;
+  padding:5px 11px; border-radius:99px; margin-bottom:14px}
+.tag-1{background:#efedfe; color:var(--accent)}
+.tag-2{background:#fdeef4; color:var(--accent2)}
+.tag-3{background:#eafaf0; color:#15803d}
+
+/* ── клуб ── */
+.club{background:var(--bg2); border-radius:20px; padding:40px; margin-top:8px}
+.club h3{margin:0 0 12px; font-size:24px; letter-spacing:-.02em}
+.club p{margin:0 0 16px; color:var(--text2)}
+.club .row{display:flex; flex-wrap:wrap; gap:26px; margin:22px 0 4px}
+.club .row div{font-size:16px; color:var(--text2)}
+.club .row b{display:block; font-size:22px; color:var(--text); font-weight:700; letter-spacing:-.02em}
+
+/* ── подвал ── */
+footer{border-top:1px solid var(--line); padding:44px 0 56px; color:var(--text2); font-size:16px}
+footer .links{display:flex; flex-wrap:wrap; gap:22px; margin-bottom:18px}
+footer small{font-size:14px; color:#999}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">ai<span>seller</span></div>
+    <ul>
+      <li><a href="#chto">Что делаю</a></li>
+      <li><a href="#kurs">Курс</a></li>
+      <li><a href="#klub">Клуб</a></li>
+      <li><a href="#kontakt">Связаться</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<section class="wrap hero">
+  <h1>ИИ, который отвечает про ваши числа, а не пересказывает интернет</h1>
+  <p class="lead">
+    Меня зовут Роман Воробьёв. Я подключаю искусственный интеллект к кабинетам
+    селлеров на маркетплейсах — и учу владельцев бизнеса делать это самим.
+    <b>Не теория, а работающая связка с вашими данными.</b>
+  </p>
+  <a class="cta" href="#kontakt">Обсудить задачу</a>
+  <span class="cta-note">Отвечаю сам, без менеджеров.</span>
+</section>
+
+<section class="wrap section" id="chto">
+  <h2>Два способа работать со мной</h2>
+  <p class="sub">
+    Можно отдать задачу мне, а можно научиться закрывать такие задачи самому.
+    Второе дешевле и остаётся с вами навсегда.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <span class="tag tag-1">Решения</span>
+      <h3>Внедряю ИИ под конкретную задачу</h3>
+      <p>Собираю агентов, которые работают с вашим кабинетом через API, а не с абстрактными примерами.</p>
+      <ul>
+        <li>Подключение к кабинету Ozon и Wildberries</li>
+        <li>Разбор своих цифр: продажи, возвраты, реклама</li>
+        <li>Работа с отзывами и карточками</li>
+        <li>Споры с площадками по их же отчётам</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-2">Обучение</span>
+      <h3>Экспресс-курс для селлеров</h3>
+      <p>Пять живых эфиров за неделю. К концу у вас работает настроенный ИИ, подключённый к вашему кабинету.</p>
+      <ul>
+        <li>Живые эфиры, не записи</li>
+        <li>Настраиваем на ваших данных</li>
+        <li>Постоянное сообщество после курса</li>
+        <li>Партнёрская программа для тех, кто приводит своих</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-3">Сообщество</span>
+      <h3>Клуб предпринимателей</h3>
+      <p>Для тех, кто внедряет ИИ в свой бизнес и хочет видеть, как это делают другие.</p>
+      <ul>
+        <li>Владельцы бизнеса, а не наблюдатели</li>
+        <li>Разборы внедрений и живые кейсы</li>
+        <li>Встречи и сильные связи</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section" id="kurs">
+  <h2>Курс «ИИ для селлеров»</h2>
+  <p class="sub">
+    Неделя, после которой вы перестаёте спрашивать у нейросети общие вопросы
+    и начинаете спрашивать про свой товар, свою рекламу и свои возвраты.
+  </p>
+  <div class="cards">
+    <div class="card">
+      <h3>Чем заканчивается</h3>
+      <p>Не сертификатом, а рабочей связкой: ИИ видит ваш кабинет и отвечает на вопросы про ваши числа.</p>
+    </div>
+    <div class="card">
+      <h3>Для кого</h3>
+      <p>Для селлеров, у которых уже есть продажи и накопились вопросы, на которые таблицы отвечают слишком медленно.</p>
+    </div>
+    <div class="card">
+      <h3>Как проходит</h3>
+      <p>Пять эфиров за неделю. Между ними — практика на своём кабинете и разбор того, что не получилось.</p>
+    </div>
+  </div>
+  <p style="margin-top:28px">
+    <a class="cta" href="#kontakt">Узнать о ближайшем потоке</a>
+  </p>
+</section>
+
+<section class="wrap section" id="klub">
+  <h2>СИИстема — сообщество</h2>
+  <div class="club">
+    <h3>Предприниматели, которые внедряют ИИ</h3>
+    <p>
+      Сообщество владельцев бизнеса, которые не обсуждают искусственный интеллект,
+      а встраивают его в работу. Здесь показывают, что получилось и что нет,
+      а разборы идут по настоящим кабинетам и настоящим числам.
+    </p>
+    <p>
+      Набор идёт волнами. Попасть можно, написав мне — расскажу, что внутри
+      и подходит ли вам сейчас.
+    </p>
+    <div class="row">
+      <div><b>Разборы</b>живых внедрений</div>
+      <div><b>Встречи</b>офлайн и онлайн</div>
+      <div><b>Связи</b>с теми, кто уже сделал</div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section" id="kontakt">
+  <h2>Написать мне</h2>
+  <p class="sub">
+    Расскажите, чем торгуете и что хотите поручить ИИ. Отвечу, реально ли это
+    и с чего дешевле начать — даже если окажется, что я вам не нужен.
+  </p>
+  <a class="cta" href="https://t.me/ozonsel">Написать в Telegram</a>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="https://t.me/FirstonOzon">Канал «Системный гуманИИст»</a>
+      <a href="https://t.me/sellersmafia">Мафклуб предпринимателей</a>
+      <a href="https://moderator.top/siistema/">Сообщество СИИстема</a>
+    </div>
+    <small>Роман Воробьёв · ИИ для селлеров маркетплейсов</small>
+  </div>
+</footer>
+
+</body>
+</html>
