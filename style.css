@@ -1,0 +1,164 @@
+/* ─────────────────────────────────────────────────────────────
+   aiseller.space — общая дизайн-система.
+   Токены и компоненты повторяют лендинг сообщества (/siistema/),
+   но вынесены в файл: там стили инлайновые, здесь переиспользуемые.
+   Использует главная страница и страница курса.
+   ───────────────────────────────────────────────────────────── */
+
+:root{
+  --ac:#C9F14A;          /* акцент */
+  --ac-hover:#DDFF74;
+  --bg:#0A0B0C;
+  --fg:#F4F5F6;          /* основной текст */
+  --fg2:#9DA1A6;         /* вторичный */
+  --fg3:#6F7378;         /* подписи, надзаголовки */
+  --line:rgba(255,255,255,.08);
+  --line2:rgba(255,255,255,.14);
+  --line3:rgba(255,255,255,.18);
+  --plate:rgba(255,255,255,.022);
+  --wrap:1140px;
+  --pad:clamp(18px,5vw,40px);
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+a{color:var(--ac); text-decoration:none}
+::selection{background:var(--ac); color:var(--bg)}
+img,video{display:block; max-width:100%}
+@keyframes blip{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* сетка на фоне — как на лендинге сообщества */
+.grid-bg{
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:72px 72px;
+}
+.layer{position:relative; z-index:1}
+
+/* ── шапка ── */
+.hdr{
+  position:sticky; top:0; z-index:50;
+  background:rgba(10,11,12,.78);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.hdr-in{
+  max-width:var(--wrap); margin:0 auto; padding:14px var(--pad);
+  display:flex; align-items:center; gap:24px; justify-content:space-between;
+}
+.logo{
+  color:var(--fg); font-weight:700; font-size:17px; letter-spacing:-.01em;
+  display:flex; align-items:center; gap:9px;
+}
+.logo .dot{width:7px; height:7px; background:var(--ac); display:block; animation:blip 2.4s ease-in-out infinite}
+.logo b{font-weight:700}
+.logo .hl{color:var(--ac)}
+.nav{display:flex; align-items:center; gap:clamp(14px,2vw,28px); flex-wrap:wrap; justify-content:flex-end}
+.nav-links{display:flex; align-items:center; gap:clamp(14px,2vw,28px)}
+.nav-links a{color:var(--fg2); font-size:14px; font-weight:500}
+.nav-links a:hover{color:var(--fg)}
+.only-wide{display:contents}
+@media (max-width:860px){.only-wide{display:none}}
+
+/* ── кнопки ── */
+.btn{
+  display:inline-block; background:var(--ac); color:var(--bg);
+  font-weight:700; font-size:16px; padding:17px 28px; border-radius:2px;
+  border:0; cursor:pointer; font-family:inherit; text-align:center;
+}
+.btn:hover{background:var(--ac-hover)}
+.btn-sm{font-size:14px; padding:11px 18px}
+.btn-2{
+  display:inline-block; border:1px solid var(--line3); color:var(--fg);
+  font-weight:600; font-size:16px; padding:16px 24px; border-radius:2px;
+}
+.btn-2:hover{border-color:rgba(255,255,255,.4)}
+.btns{display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+
+/* ── секции ── */
+.sec{padding:clamp(48px,8vw,104px) var(--pad)}
+.sec--line{border-top:1px solid rgba(255,255,255,.07)}
+.sec--plate{background:var(--plate); border-top:1px solid rgba(255,255,255,.07)}
+.in{max-width:var(--wrap); margin:0 auto}
+
+/* надзаголовок секции: моно, капс, с чёрточкой */
+.eyebrow{
+  font-family:var(--mono); font-size:11px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--fg3);
+  display:flex; align-items:center; gap:10px; margin-bottom:22px;
+}
+.eyebrow::before{content:''; width:26px; height:1px; background:var(--ac); display:block; flex:0 0 auto}
+
+h1,h2,h3{margin:0; letter-spacing:-.03em; font-weight:700; text-wrap:balance}
+h1{font-size:clamp(38px,7vw,76px); line-height:1.02; letter-spacing:-.035em}
+h2{font-size:clamp(26px,3.6vw,44px); line-height:1.08}
+h3{font-size:clamp(18px,2.1vw,22px); line-height:1.3; letter-spacing:-.02em}
+.lead{
+  margin:22px 0 30px; font-size:clamp(16px,1.7vw,19px); line-height:1.6;
+  color:var(--fg2); max-width:34em; text-wrap:pretty;
+}
+.sub{margin:14px 0 40px; font-size:clamp(15px,1.6vw,17px); line-height:1.65; color:var(--fg2); max-width:36em}
+.note{
+  margin:20px 0 0; font-family:var(--mono); font-size:12px;
+  line-height:1.7; color:var(--fg3); max-width:34em;
+}
+
+/* ── карточки ── */
+.cards{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.cards-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.card{border:1px solid var(--line2); padding:clamp(22px,2.6vw,30px); background:rgba(255,255,255,.012)}
+.card:hover{border-color:rgba(255,255,255,.22)}
+.card h3{margin-bottom:12px}
+.card p{margin:0 0 14px; color:var(--fg2); font-size:16px; line-height:1.6}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:0; padding-left:18px; color:var(--fg2); font-size:15px; line-height:1.65}
+.card li{margin-bottom:8px}
+.card li:last-child{margin-bottom:0}
+.tag{
+  display:inline-block; font-family:var(--mono); font-size:10px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ac); border:1px solid rgba(201,241,74,.34);
+  padding:5px 9px; margin-bottom:16px;
+}
+
+/* ── цифры/факты в строку ── */
+.facts{display:flex; flex-wrap:wrap; gap:clamp(26px,4vw,56px); margin-top:8px}
+.fact b{display:block; font-size:clamp(26px,3.4vw,38px); font-weight:700; letter-spacing:-.03em; line-height:1.1}
+.fact span{display:block; margin-top:6px; font-size:14px; color:var(--fg2); max-width:16em}
+
+/* ── нумерованные шаги ── */
+.steps{display:grid; gap:2px; margin-top:8px}
+.step{display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2.4vw,28px);
+      padding:clamp(20px,2.4vw,26px) 0; border-top:1px solid rgba(255,255,255,.07)}
+.step:last-child{border-bottom:1px solid rgba(255,255,255,.07)}
+.step .n{font-family:var(--mono); font-size:12px; color:var(--ac); padding-top:5px; min-width:2.2em}
+.step h3{margin-bottom:8px}
+.step p{margin:0; color:var(--fg2); font-size:16px; line-height:1.6; max-width:44em}
+
+/* ── подвал ── */
+.ftr{border-top:1px solid var(--line); padding:44px var(--pad) 56px}
+.ftr-in{max-width:var(--wrap); margin:0 auto}
+.ftr-links{display:flex; flex-wrap:wrap; gap:22px; margin-bottom:18px; font-size:15px}
+.ftr-links a{color:var(--fg2)}
+.ftr-links a:hover{color:var(--ac)}
+.ftr small{font-family:var(--mono); font-size:12px; color:var(--fg3)}
+
+/* цитата участника внутри карточки */
+.quote{color:var(--fg)!important; font-style:italic}
+/* выделение внутри карточек и «кому рано» */
+.card b{color:var(--fg); font-weight:600}
+/* ссылка «подробнее» под шагом */
+.more{margin:12px 0 0!important}
+.more a{font-weight:600}
+.more a:hover{color:var(--ac-hover)}
+/* врезка с правилом про числа */
+.callout{margin-top:34px; border-left:2px solid var(--ac); padding:4px 0 4px 22px; max-width:48em}
+.callout p{margin:0; color:var(--fg2); font-size:16px; line-height:1.65}
+.callout b{color:var(--fg)}
