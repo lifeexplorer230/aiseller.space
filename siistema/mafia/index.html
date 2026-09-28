@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>ИИ и маркетплейсы — куда движется мир</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --ink:#14100E; --ink-2:#1E1815; --ink-3:#271F1A;
+    --paper:#F3EAE0; --muted:#A99C8D; --faint:#6E635A;
+    --accent:#FF6A1A; --accent-soft:#F26419;
+    --gold:#E7B23E; --wine:#9A2233;
+    --line:rgba(243,234,224,.12); --line-2:rgba(243,234,224,.06);
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-snap-type:y mandatory;scroll-behavior:smooth;height:100%}
+  body{
+    background:var(--ink);color:var(--paper);font-family:var(--sans);
+    line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  .deck{width:100%}
+  .slide{
+    min-height:100svh;scroll-snap-align:start;scroll-snap-stop:always;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:clamp(1.5rem,5vw,6rem);position:relative;
+    border-bottom:1px solid var(--line-2);
+  }
+  .wrap{width:100%;max-width:1080px;margin:0 auto}
+  .eyebrow{
+    font-family:var(--mono);font-size:clamp(.7rem,1.4vw,.86rem);
+    letter-spacing:.28em;text-transform:uppercase;color:var(--accent);
+    display:flex;align-items:center;gap:.9rem;margin-bottom:1.6rem;
+  }
+  .eyebrow::before{content:"";width:2.2rem;height:1px;background:var(--accent)}
+  .num{color:var(--faint)}
+  h1{
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(2.4rem,7vw,5.6rem);line-height:1.02;
+    letter-spacing:-.015em;text-wrap:balance;
+  }
+  h2{
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(1.9rem,5vw,3.6rem);line-height:1.08;
+    letter-spacing:-.01em;text-wrap:balance;
+  }
+  .lead{
+    font-size:clamp(1.05rem,2.3vw,1.5rem);color:var(--muted);
+    max-width:36ch;margin-top:1.4rem;line-height:1.55;
+  }
+  .accent{color:var(--accent)}
+  .gold{color:var(--gold)}
+  em{color:var(--paper);font-style:italic}
+  .kicker{
+    font-family:var(--mono);font-size:.82rem;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--faint);
+  }
+
+  /* Титул */
+  .cover{background:
+    radial-gradient(120% 90% at 80% 10%,rgba(255,106,26,.14),transparent 55%),
+    radial-gradient(90% 80% at 10% 100%,rgba(154,34,51,.20),transparent 60%),
+    var(--ink);
+    justify-content:space-between;
+  }
+  .cover-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+  .brand{font-family:var(--mono);font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .brand b{color:var(--accent);font-weight:600}
+  .cover h1{font-size:clamp(2.7rem,8.5vw,6.4rem)}
+  .cover .lead{max-width:42ch;font-size:clamp(1.1rem,2.6vw,1.7rem)}
+  .cover-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
+  .cover-foot b{color:var(--paper)}
+
+  /* Разминка — вопросы рукой */
+  .hands{display:grid;gap:.85rem;margin-top:2.2rem}
+  .hand{
+    display:flex;align-items:baseline;gap:1.4rem;
+    padding:1.15rem 1.5rem;background:var(--ink-2);
+    border:1px solid var(--line);border-left:3px solid var(--accent);
+  }
+  .hand .n{font-family:var(--mono);color:var(--accent);font-size:1.35rem;font-weight:700}
+  .hand p{font-size:clamp(1rem,2.2vw,1.4rem)}
+  .hand .lv{margin-left:auto;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);white-space:nowrap;align-self:center}
+
+  /* Про меня — что сделал */
+  .did{display:grid;grid-template-columns:1fr;gap:clamp(1.6rem,4vw,3rem);margin-top:2rem;align-items:start}
+  @media(min-width:820px){.did{grid-template-columns:1fr 1fr}}
+  .did-groups{display:grid;gap:1.3rem}
+  .grp .gh{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+  .tags{display:flex;flex-wrap:wrap;gap:.5rem}
+  .tags span{padding:.5rem .85rem;background:var(--ink-2);border:1px solid var(--line);font-size:.92rem;color:var(--paper)}
+  .badge{
+    align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:.6rem;
+    padding:clamp(1.6rem,3vw,2.4rem);border:1px solid var(--accent);
+    background:linear-gradient(160deg,rgba(255,106,26,.14),transparent);
+  }
+  .badge .rank{font-family:var(--mono);font-size:clamp(3.4rem,10vw,5.6rem);line-height:.9;color:var(--accent);font-weight:700;letter-spacing:-.03em}
+  .badge .rank small{font-size:.35em;color:var(--muted);font-weight:400}
+  .badge .desc{font-size:clamp(1rem,2.2vw,1.28rem);color:var(--paper);line-height:1.35}
+  .badge .sub{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+
+  /* Крупная цитата-тезис */
+  .thesis blockquote{
+    font-family:var(--serif);font-size:clamp(1.8rem,5.2vw,3.4rem);
+    line-height:1.16;letter-spacing:-.01em;max-width:20ch;
+  }
+  .thesis .src{margin-top:2rem;color:var(--faint);font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+  .thesis .pre{color:var(--muted);font-size:clamp(1rem,2.2vw,1.35rem);margin-bottom:1.6rem;max-width:34ch}
+
+  /* Двухколоночный слайд */
+  .split{display:grid;grid-template-columns:1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  @media(min-width:820px){.split{grid-template-columns:1.05fr .95fr}}
+
+  /* Сервис за вечер — таймлайн */
+  .steps{display:flex;flex-direction:column;gap:0;margin-top:.5rem}
+  .step{display:flex;gap:1.1rem;align-items:flex-start;padding:.55rem 0}
+  .step .bullet{width:11px;height:11px;border-radius:50%;background:var(--accent);margin-top:.45rem;flex-shrink:0;position:relative}
+  .step:not(:last-child) .bullet::after{content:"";position:absolute;left:50%;top:11px;transform:translateX(-50%);width:2px;height:calc(100% + .6rem);background:var(--line)}
+  .step .t{font-size:clamp(1rem,2.1vw,1.28rem)}
+  .step .t b{color:var(--paper);font-weight:600}
+  .stamp{display:inline-block;margin-top:1.6rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:.5rem 1rem}
+
+  /* MCP-диаграмма */
+  .flow{display:flex;flex-direction:column;gap:.6rem;font-family:var(--mono)}
+  .flow-row{display:flex;align-items:center;gap:1rem}
+  .node{
+    flex:1;padding:1.1rem 1.2rem;background:var(--ink-2);border:1px solid var(--line);
+    display:flex;flex-direction:column;gap:.25rem;
+  }
+  .node .t{font-size:1rem;color:var(--paper);letter-spacing:.02em}
+  .node .s{font-size:.72rem;color:var(--faint);letter-spacing:.1em;text-transform:uppercase}
+  .node.hub{border-color:var(--accent);background:linear-gradient(180deg,rgba(255,106,26,.12),transparent);border-width:1px}
+  .node.hub .t{color:var(--accent)}
+  .wire{width:2px;height:1.4rem;background:var(--accent);margin-left:1.4rem;opacity:.6}
+  .stack{display:flex;flex-direction:column;gap:.5rem}
+  .chip{padding:.7rem 1rem;background:var(--ink-2);border:1px solid var(--line);font-size:.86rem;color:var(--muted);font-family:var(--mono)}
+
+  /* Телеграм-мокап */
+  .phone{
+    max-width:400px;margin:0 auto;width:100%;
+    background:#0E1621;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.7);
+  }
+  .tg-head{
+    display:flex;align-items:center;gap:.8rem;padding:.85rem 1rem;
+    background:#17212B;border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .tg-ava{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--wine));
+    display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:.8rem;color:#fff;flex-shrink:0}
+  .tg-who{display:flex;flex-direction:column;line-height:1.25}
+  .tg-who b{font-size:.95rem;color:#fff;font-weight:600}
+  .tg-who span{font-size:.76rem;color:#5EC26A}
+  .tg-body{
+    padding:1rem .9rem;display:flex;flex-direction:column;gap:.55rem;
+    background:
+      radial-gradient(60% 50% at 20% 0%,rgba(255,106,26,.05),transparent),
+      #0E1621;
+    min-height:340px;
+  }
+  .msg{max-width:82%;padding:.6rem .8rem;border-radius:12px;font-size:.92rem;line-height:1.4}
+  .msg .tm{display:block;font-size:.66rem;color:rgba(255,255,255,.4);text-align:right;margin-top:.25rem}
+  .in{align-self:flex-start;background:#182533;color:#E9EEF2;border-bottom-left-radius:4px}
+  .out{align-self:flex-end;background:#2B5378;color:#fff;border-bottom-right-radius:4px}
+  .in b{color:var(--gold)}
+  .num-big{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .tg-input{
+    display:flex;align-items:center;gap:.6rem;padding:.7rem 1rem;
+    background:#17212B;border-top:1px solid rgba(255,255,255,.06);
+    color:rgba(255,255,255,.35);font-size:.9rem;
+  }
+  .tg-input .snd{margin-left:auto;color:var(--accent);font-size:1.2rem}
+  .cap{margin-top:1rem;text-align:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+
+  /* Кейсы */
+  .cases{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:2rem}
+  @media(min-width:720px){.cases{grid-template-columns:1fr 1fr}}
+  .case{
+    padding:1.4rem 1.5rem;background:var(--ink-2);border:1px solid var(--line);
+    display:flex;flex-direction:column;gap:.5rem;
+  }
+  .case .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .case h3{font-family:var(--serif);font-size:1.3rem;font-weight:700}
+  .case p{color:var(--muted);font-size:.96rem}
+  .case .res{margin-top:auto;font-family:var(--mono);font-size:.9rem;color:var(--gold);padding-top:.6rem;border-top:1px solid var(--line-2)}
+
+  /* Сдвиг — плохой/хороший вопрос */
+  .vs{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-top:2.2rem}
+  @media(min-width:760px){.vs{grid-template-columns:1fr 1fr}}
+  .card-q{padding:1.6rem;border:1px solid var(--line);background:var(--ink-2)}
+  .card-q.bad{border-left:3px solid var(--faint)}
+  .card-q.good{border-left:3px solid var(--accent)}
+  .card-q .lbl{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:.9rem}
+  .card-q.good .lbl{color:var(--accent)}
+  .card-q .q{font-family:var(--serif);font-size:clamp(1.1rem,2.4vw,1.5rem);line-height:1.35;color:var(--paper)}
+  .card-q .note{margin-top:1rem;font-size:.9rem;color:var(--muted)}
+
+  /* Дискуссия */
+  .qs{display:grid;gap:.9rem;margin-top:2rem;counter-reset:q}
+  .qrow{display:flex;gap:1.2rem;align-items:baseline;padding:1.1rem 1.3rem;background:var(--ink-2);border:1px solid var(--line)}
+  .qrow::before{counter-increment:q;content:counter(q);font-family:var(--mono);color:var(--accent);font-weight:700;font-size:1.1rem}
+  .qrow p{font-size:clamp(1rem,2.2vw,1.28rem)}
+
+  /* Как создавалась */
+  .meta-row{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:2rem}
+  @media(min-width:760px){.meta-row{grid-template-columns:repeat(3,1fr)}}
+  .meta{padding:1.3rem 1.4rem;background:var(--ink-2);border:1px solid var(--line);display:flex;flex-direction:column;gap:.5rem}
+  .meta .big{font-family:var(--mono);font-size:clamp(1.6rem,4vw,2.4rem);color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .meta .lbl{font-size:.95rem;color:var(--muted)}
+
+  /* Финал */
+  .close{background:
+    radial-gradient(90% 80% at 90% 100%,rgba(255,106,26,.14),transparent 55%),
+    radial-gradient(80% 70% at 0% 0%,rgba(154,34,51,.16),transparent 60%),
+    var(--ink);}
+  .close h2{font-size:clamp(2.2rem,6.5vw,4.4rem)}
+  .pill{display:inline-flex;align-items:center;gap:.7rem;margin-top:2rem;padding:.8rem 1.4rem;
+    border:1px solid var(--accent);color:var(--accent);font-family:var(--mono);font-size:.9rem;letter-spacing:.1em;text-transform:uppercase}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* Навигация */
+  .dots{position:fixed;right:clamp(.7rem,2vw,1.6rem);top:50%;transform:translateY(-50%);
+    display:flex;flex-direction:column;gap:.55rem;z-index:20}
+  .dots a{width:9px;height:9px;border-radius:50%;background:var(--line);border:1px solid var(--faint);
+    transition:all .25s;display:block}
+  .dots a:hover{background:var(--muted)}
+  .dots a.on{background:var(--accent);border-color:var(--accent);transform:scale(1.35)}
+  .hint{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);z-index:20;
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+    background:rgba(20,16,14,.7);padding:.4rem .9rem;border:1px solid var(--line);border-radius:100px;backdrop-filter:blur(6px)}
+  .pg{position:fixed;left:clamp(.9rem,2vw,1.6rem);bottom:1rem;z-index:20;font-family:var(--mono);font-size:.75rem;color:var(--faint);letter-spacing:.1em}
+  .pg b{color:var(--accent)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pill .dot{animation:none}}
+</style>
+</head>
+<body>
+<nav class="dots" aria-label="Слайды">
+  <a href="#s1" class="on" aria-label="Слайд 1"></a>
+  <a href="#s2" aria-label="Слайд 2"></a>
+  <a href="#s3" aria-label="Слайд 3"></a>
+  <a href="#s4" aria-label="Слайд 4"></a>
+  <a href="#s5" aria-label="Слайд 5"></a>
+  <a href="#s6" aria-label="Слайд 6"></a>
+  <a href="#s7" aria-label="Слайд 7"></a>
+  <a href="#s8" aria-label="Слайд 8"></a>
+  <a href="#s9" aria-label="Слайд 9"></a>
+  <a href="#s10" aria-label="Слайд 10"></a>
+  <a href="#s11" aria-label="Слайд 11"></a>
+  <a href="#s12" aria-label="Слайд 12"></a>
+  <a href="#s13" aria-label="Слайд 13"></a>
+</nav>
+<div class="pg"><b id="cur">01</b> / 13</div>
+<div class="hint">↓ / → листать · esc — обзор</div>
+
+<main class="deck">
+
+  <!-- 1 · Титул -->
+  <section class="slide cover" id="s1">
+    <div class="cover-top wrap">
+      <div class="brand"><b>Мафклуб</b> · предприниматели играют в мафию</div>
+      <div class="brand">18 июля</div>
+    </div>
+    <div class="wrap">
+      <div class="eyebrow">Разговор до игры</div>
+      <h1>ИИ и маркетплейсы:<br><span class="accent">куда движется мир</span></h1>
+      <p class="lead">Три вещи, которые год назад были фантастикой. Сейчас делаются за вечер.</p>
+    </div>
+    <div class="cover-foot wrap">
+      <div>Роман Воробьёв · <b>8 лет в e-commerce</b></div>
+      <div>≈45 минут · показываю, спрашиваю, слушаю</div>
+    </div>
+  </section>
+
+  <!-- 2 · Разминка -->
+  <section class="slide" id="s2">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">01</span> Разминка · поднимите руку</div>
+      <h2>Прежде чем начнём —<br>честно, где вы сейчас</h2>
+      <div class="hands">
+        <div class="hand"><span class="n">1</span><p>Пользуюсь ChatGPT как поиском</p><span class="lv">почти все</span></div>
+        <div class="hand"><span class="n">2</span><p>ChatGPT подключён к моим знаниям, к базе</p><span class="lv">многие</span></div>
+        <div class="hand"><span class="n">3</span><p>Пробовал <em>использовать</em> агентов</p><span class="lv">половина</span></div>
+        <div class="hand"><span class="n">4</span><p>Постоянно использую агентов <em>в деле</em></p><span class="lv">единицы</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Про меня · что сделал -->
+  <section class="slide" id="s3">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">02</span> Кто это говорит</div>
+      <h2>Что я собрал <span class="accent">за две недели</span></h2>
+      <div class="did">
+        <div class="did-groups">
+          <div class="grp">
+            <div class="gh">Боты в Telegram</div>
+            <div class="tags"><span>Публикатор постов · новая разметка</span><span>Ассистент-секретарь в личных чатах</span><span>Напоминания и регистрация на эфиры</span></div>
+          </div>
+          <div class="grp">
+            <div class="gh">Видео и контент</div>
+            <div class="tags"><span>Скрайбинг — рисованные ИИ-ролики</span><span>Авто-дайджест новостей</span></div>
+          </div>
+          <div class="grp">
+            <div class="gh">Данные бизнеса</div>
+            <div class="tags"><span>1С заговорила · бизнес-ассистент</span><span>Свой MCP-сервер</span><span>Расшифровка встреч голосом</span></div>
+          </div>
+        </div>
+        <div class="badge">
+          <div class="rank">#15<small> / за квартал</small></div>
+          <div class="desc">среди багхантеров за 2-й квартал на крупнейшей платформе</div>
+          <div class="sub">ищу дыры в чужой безопасности · с ИИ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Что уже происходит · сервис за вечер -->
+  <section class="slide" id="s4">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow"><span class="num">03</span> Что уже происходит</div>
+        <h2>Он попросил у меня<br>вечер. Собрал <span class="accent">сервис</span></h2>
+        <p class="lead">Один из наших. Я попросил скриншот его системы ставок — а он решил, что надо покрасивее.</p>
+      </div>
+      <div>
+        <div class="steps">
+          <div class="step"><span class="bullet"></span><span class="t">Придумал имя, <b>нашёл домен</b></span></div>
+          <div class="step"><span class="bullet"></span><span class="t">Нарисовал <b>логотипы</b></span></div>
+          <div class="step"><span class="bullet"></span><span class="t">Поднял <b>лендинг</b></span></div>
+          <div class="step"><span class="bullet"></span><span class="t">Прикрутил <b>регистрацию</b> через Telegram</span></div>
+          <div class="step"><span class="bullet"></span><span class="t">К ночи по адресу <b>уже можно зайти</b></span></div>
+        </div>
+        <span class="stamp">Вечер пятницы · без программистов</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Куда движется мир (подводка от сервиса) -->
+  <section class="slide thesis" id="s5">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">04</span> Что это значит</div>
+      <p class="pre">Он сделал за вечер то, за что раньше платили разработчикам. И вот вывод:</p>
+      <blockquote>Эпоха <span class="accent">не создать</span> продукт. А в него <em>вовлечь</em>.</blockquote>
+      <p class="lead">Продукты теперь делаются быстро и почти бесплатно. Кто владеет вниманием — владеет всем. Трафик — новая нефть.</p>
+    </div>
+  </section>
+
+  <!-- 6 · Вау 1 · голос -->
+  <section class="slide" id="s6">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow"><span class="num">05</span> Вау первое · голос</div>
+        <h2>Я попросил его <em>обидеться</em>.<br>И он обиделся</h2>
+        <p class="lead">Голосом. Потом — злым. Потом как футбольный комментатор. А потом запомнил три голоса в комнате и стал понимать, кто говорит.</p>
+      </div>
+      <div class="stack">
+        <div class="chip">🎙 «поговори со мной обиженно»</div>
+        <div class="chip">🎙 «а теперь — как футбольный комментатор»</div>
+        <div class="chip">🎙 распознал 3 голоса → кто сейчас говорит</div>
+        <div class="chip">🎙 «побудь модератором нашей беседы»</div>
+        <p class="kicker" style="margin-top:.6rem">Пошёл проверять, умеет ли так Клод. Не умеет.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · MCP -->
+  <section class="slide" id="s7">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow"><span class="num">06</span> Как это вообще работает</div>
+        <h2>MCP — это <span class="accent">портал</span> к цифрам вашего магазина</h2>
+        <p class="lead">Раньше, чтобы ИИ увидел ваши продажи, выгрузки копировали руками. MCP — это провод. Воткнул — и ИИ говорит с вашими данными напрямую.</p>
+      </div>
+      <div class="flow" aria-label="Схема: данные через MCP в один чат">
+        <div class="flow-row"><div class="node"><span class="t">Озон · WB</span><span class="s">продажи, ставки</span></div></div>
+        <div class="wire"></div>
+        <div class="flow-row"><div class="node"><span class="t">МойСклад · 1С</span><span class="s">остатки, деньги</span></div></div>
+        <div class="wire"></div>
+        <div class="flow-row"><div class="node hub"><span class="t">▸ MCP-сервер</span><span class="s">один провод ко всему</span></div></div>
+        <div class="wire"></div>
+        <div class="flow-row"><div class="node" style="border-color:var(--gold)"><span class="t gold">Вы · обычными словами</span><span class="s">вся компания в одном чате</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · Вау 2 · 1С заговорила -->
+  <section class="slide" id="s8">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow"><span class="num">07</span> Вау главное · 1С</div>
+        <h2>Восемь лет 1С была<br>чёрным ящиком.<br><span class="accent">Я её вскрыл</span></h2>
+        <p class="lead">Подключил к ИИ. Теперь вопрос боту обычными словами — и в ответ цифра из живой базы. Прямо в телеге.</p>
+        <p class="kicker" style="margin-top:1.4rem">Это не магия. Это 1С, которая наконец заговорила по-человечески.</p>
+      </div>
+      <div>
+        <div class="phone" role="img" aria-label="Скриншот телеграм-чата с 1С-ботом: вопросы про сотрудника и прибыльного клиента, бот переспрашивает про трактовку прибыли">
+          <div class="tg-head">
+            <div class="tg-ava">1С</div>
+            <div class="tg-who"><b>Бот компании · demo</b><span>● на связи</span></div>
+          </div>
+          <div class="tg-body">
+            <div class="msg out">Какой сотрудник получил больше всех за июнь?<span class="tm">12:04</span></div>
+            <div class="msg in">Пекарь-бригадир Н. Смирнова — <b class="num-big">148 200 ₽</b>. Это на <b class="num-big">22%</b> выше средней по цеху.<span class="tm">12:04</span></div>
+            <div class="msg out">А самый прибыльный клиент?<span class="tm">12:05</span></div>
+            <div class="msg in">Уточню, что считать прибылью 👇<br>• по выручке — сеть «Пятёрочка»<br>• по <b>марже</b> — кофейни «Правда»<br>Это два разных клиента. Какой берём?<span class="tm">12:05</span></div>
+          </div>
+          <div class="tg-input">Сообщение…<span class="snd">➤</span></div>
+        </div>
+        <p class="cap">ИИ, который переспрашивает, дороже ИИ, который отвечает</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · Кейсы -->
+  <section class="slide" id="s9">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">08</span> Это не теория · это уже вокруг меня</div>
+      <h2>Что собрали <em>сами</em>, без программистов</h2>
+      <div class="cases">
+        <div class="case">
+          <span class="tag">Бухгалтерия</span>
+          <h3>ИИ-аудит за вечер</h3>
+          <p>Заподозрил бухгалтерию. ИИ сам запросил выписку, банк, декларации — провёл аудит как аудитор.</p>
+          <span class="res">→ «считают нормально. Теперь сплю спокойно»</span>
+        </div>
+        <div class="case">
+          <span class="tag">Снабжение · производство</span>
+          <h3>Что подвезти и что произвести</h3>
+          <p>Финансовый агент сам считает остатки и оборачиваемость — и говорит, что подвезти на склад и какие заявки отправить на производство.</p>
+          <span class="res">→ снабжение и цех на автомате</span>
+        </div>
+        <div class="case">
+          <span class="tag">Реклама</span>
+          <h3>Свои правила → ИИ</h3>
+          <p>Записал собственные правила управления ставками, отдал ИИ. Правила писал сам — не ИИ.</p>
+          <span class="res">→ время на рекламу ×0.5</span>
+        </div>
+        <div class="case">
+          <span class="tag">Управление</span>
+          <h3>Вся компания в таблице</h3>
+          <p>Данные тянутся по API сами. Смотрю на показатели своего бизнеса так, как мне удобно.</p>
+          <span class="res">→ «дать доступ — и вот коммерческий директор»</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · Сдвиг -->
+  <section class="slide" id="s10">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">09</span> Где теперь настоящая стена</div>
+      <h2>Мы думали, стена — <em>подключить</em>.<br>Пробили. А за ней — вопрос</h2>
+      <div class="vs">
+        <div class="card-q bad">
+          <div class="lbl">Плохой вопрос · просит данные</div>
+          <p class="q">«Покажи продажи за неделю»</p>
+          <p class="note">Получаешь цифру, которую и так видел в кабинете. Новый пульт от того же телевизора.</p>
+        </div>
+        <div class="card-q good">
+          <div class="lbl">Хороший вопрос · просит решение</div>
+          <p class="q">«Дай три гипотезы, что сделать сегодня для прибыли. И скажи, каких данных тебе не хватает»</p>
+          <p class="note">Просит действие. И разрешает машине сказать «я не знаю» — это самое ценное, что она может сказать.</p>
+        </div>
+      </div>
+      <p class="lead" style="max-width:52ch;margin-top:2rem">Мы купили не аналитика. Мы купили <em>стажёра с идеальной памятью</em>, который никогда не переспрашивает сам. Новый навык — уметь спросить.</p>
+    </div>
+  </section>
+
+  <!-- 11 · Дискуссия -->
+  <section class="slide" id="s11">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">10</span> Теперь ваша очередь</div>
+      <h2>Давайте обсудим</h2>
+      <div class="qs">
+        <div class="qrow"><p>Что из показанного вы попробуете уже <em>на этой неделе</em>?</p></div>
+        <div class="qrow"><p>Где ваша граница — что вы ИИ <em>не отдадите</em> никогда?</p></div>
+        <div class="qrow"><p>Ваш сосед по нише уже внедряет ИИ, вы — нет. Через сколько месяцев это <em>видно в деньгах</em>?</p></div>
+        <div class="qrow"><p>Если продукт делается за вечер — за что будут платить через год?</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · Как создавалась презентация -->
+  <section class="slide" id="s12">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">11</span> Пока вы смотрели</div>
+      <h2>Эту презентацию <span class="accent">собрал ИИ</span></h2>
+      <p class="lead" style="max-width:52ch">Я не открывал PowerPoint. Всё — в чат-режиме: я просто разговаривал, голосом и текстом. ИИ разобрал расшифровку встречи, выбрал сюжеты, написал слайды. Даже вот тот чат с 1С — не скриншот, а свёрстанная им картинка.</p>
+      <div class="meta-row">
+        <div class="meta"><span class="big">8 вопросов</span><span class="lbl">ИИ задал мне, чтобы понять замысел</span></div>
+        <div class="meta"><span class="big">14 правок</span><span class="lbl">я внёс, прочитав черновики</span></div>
+        <div class="meta"><span class="big">0</span><span class="lbl">раз открыл PowerPoint</span></div>
+      </div>
+      <p class="kicker" style="margin-top:1.8rem">Всё, о чём я говорил, — я только что сделал у вас на глазах.</p>
+    </div>
+  </section>
+
+  <!-- 13 · Финал -->
+  <section class="slide close" id="s13">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">12</span> И последнее</div>
+      <h2>Это не мои находки.<br>Это то, что мы вытаскиваем<br><span class="accent">друг у друга по пятницам</span></h2>
+      <p class="lead" style="max-width:48ch">Собираемся, каждый показывает с экрана, что заработало за неделю. Без гуру, без сцены — просто практики друг о друга. Кто-то тыкает пальцем «а что конкретно работает» — и у многих рассыпается. А у нас уже что-то твёрдое.</p>
+      <span class="pill"><span class="dot"></span>Интересно такое? Подходите после игры</span>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const dots=[...document.querySelectorAll('.dots a')];
+  const slides=[...document.querySelectorAll('.slide')];
+  const cur=document.getElementById('cur');
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        const i=slides.indexOf(e.target);
+        dots.forEach((d,j)=>d.classList.toggle('on',j===i));
+        cur.textContent=String(i+1).padStart(2,'0');
+      }
+    });
+  },{threshold:.55});
+  slides.forEach(s=>io.observe(s));
+  addEventListener('keydown',(e)=>{
+    const at=slides.findIndex(s=>{const r=s.getBoundingClientRect();return r.top>=-5&&r.top<innerHeight*.5});
+    if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();slides[Math.min(at+1,slides.length-1)]?.scrollIntoView()}
+    if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();slides[Math.max(at-1,0)]?.scrollIntoView()}
+  });
+</script>
+
+</body>
+</html>

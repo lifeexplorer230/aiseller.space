@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>СИИстема — сообщество предпринимателей, внедряющих ИИ</title>
+<meta name="description" content="Закрытое сообщество предпринимателей про реальные внедрения ИИ в бизнес. Еженедельные встречи, живые разборы внедрений, цели недели. Мастерская, а не обучение." />
+<link rel="canonical" href="https://aiseller.space/siistema/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aiseller.space/siistema/">
+<meta property="og:title" content="СИИстема — сообщество предпринимателей, внедряющих ИИ">
+<meta property="og:description" content="Закрытое сообщество предпринимателей про реальные внедрения ИИ в бизнес: каждую неделю конкретные кейсы — что сделали, как внедрили, где ошиблись.">
+<meta property="og:image" content="https://aiseller.space/siistema/images/photo_new.webp">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="СИИстема">
+<link rel="stylesheet" href="css/fonts.css">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0A0B0C; color: #F4F5F6; font-family: 'Manrope', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: var(--ac, #C9F14A); text-decoration: none; }
+  a:hover { color: #E6FF8F; }
+  ::selection { background: var(--ac, #C9F14A); color: #0A0B0C; }
+  video { display: block; }
+  input, textarea, button { font-family: inherit; }
+  input::placeholder, textarea::placeholder { color: #55585C; }
+  @keyframes blip { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+</style>
+<style>.h0:hover{color: #F4F5F6;}
+.h1:hover{background: #DDFF74;}
+.h2:hover{border-color: rgba(255,255,255,.4);}
+.h3:hover{background: rgba(255,255,255,.025);}
+.h4:hover{border-color: var(--ac, #C9F14A); color: var(--ac, #C9F14A);}
+.h5:hover{border-color: var(--ac, #C9F14A);}
+.h6:hover{color: var(--ac, #C9F14A);}
+.h7:hover{color: #9DA1A6;}
+.only-wide{display:contents}
+@media (max-width:860px){.only-wide{display:none}}
+.faq-q{width:100%}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50}
+#track{will-change:transform}
+</style>
+</head>
+<body>
+<div style="--ac: #C9F14A; position: relative; overflow-x: clip; background: #0A0B0C;">
+
+<div style="position: fixed; inset: 0; pointer-events: none; z-index: 0; background-image: linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px); background-size: 72px 72px; opacity: 1;"></div>
+
+<div style="position: relative; z-index: 1;">
+
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(10,11,12,.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.08);">
+  <div style="max-width: 1140px; margin: 0 auto; padding: 14px clamp(18px,5vw,40px); display: flex; align-items: center; gap: 24px; justify-content: space-between;">
+    <a href="#" style="color: #F4F5F6; font-weight: 700; font-size: 17px; letter-spacing: -.01em; display: flex; align-items: center; gap: 9px;">
+      <span style="width: 7px; height: 7px; background: var(--ac, #C9F14A); display: block; animation: blip 2.4s ease-in-out infinite;"></span>
+      <span>С<span style="color: var(--ac, #C9F14A);">ИИ</span>стема</span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: clamp(14px,2vw,28px); flex-wrap: wrap; justify-content: flex-end;">
+      <div class="only-wide">
+        <div style="display: flex; align-items: center; gap: clamp(14px,2vw,28px);">
+          <a href="#about" style="color: #9DA1A6; font-size: 14px; font-weight: 500;" class="h0">О сообществе</a>
+          <a href="#formats" style="color: #9DA1A6; font-size: 14px; font-weight: 500;" class="h0">Форматы</a>
+          <a href="#cases" style="color: #9DA1A6; font-size: 14px; font-weight: 500;" class="h0">Внедрения</a>
+          <a href="#pricing" style="color: #9DA1A6; font-size: 14px; font-weight: 500;" class="h0">Тарифы</a>
+          <a href="#faq" style="color: #9DA1A6; font-size: 14px; font-weight: 500;" class="h0">FAQ</a>
+        </div>
+      </div>
+      <a href="#apply" style="background: var(--ac, #C9F14A); color: #0A0B0C; font-weight: 700; font-size: 14px; padding: 11px 18px; border-radius: 2px;" class="h1">Познакомиться</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding: clamp(48px,8vw,104px) clamp(18px,5vw,40px) clamp(56px,8vw,110px);">
+  <div style="max-width: 1140px; margin: 0 auto; display: grid; gap: clamp(36px,5vw,64px); grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center;">
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #6F7378; display: flex; align-items: center; gap: 10px; margin-bottom: 22px;">
+        <span style="width: 26px; height: 1px; background: var(--ac, #C9F14A); display: block;"></span>Сообщество СИИстема
+      </div>
+      <h1 style="margin: 0 0 22px; font-size: clamp(38px,7vw,76px); line-height: 1.02; letter-spacing: -.035em; font-weight: 700; text-wrap: balance;">Чего не расскажет <span style="color: var(--ac, #C9F14A);">ChatGPT</span></h1>
+      <p style="margin: 0 0 30px; font-size: clamp(16px,1.7vw,19px); line-height: 1.6; color: #9DA1A6; max-width: 33em; text-wrap: pretty;">«СИИстема» — закрытое сообщество предпринимателей про реальные внедрения ИИ в бизнес. Каждую неделю — конкретные кейсы: что сделали, как внедрили, где ошиблись и какой результат получили</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+        <a href="#apply" style="background: var(--ac, #C9F14A); color: #0A0B0C; font-weight: 700; font-size: 16px; padding: 17px 28px; border-radius: 2px;" class="h1">Познакомиться — 15 минут</a>
+        <a href="https://t.me/lifeexplorer23" target="_blank" rel="noopener" style="border: 1px solid rgba(255,255,255,.18); color: #F4F5F6; font-weight: 600; font-size: 16px; padding: 16px 24px; border-radius: 2px;" class="h2">Telegram</a>
+      </div>
+      <p style="margin: 20px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.7; color: #6F7378; max-width: 34em;">Напишете в Telegram, созвонимся на 15–20 минут. Берём не всех, и скажем об этом прямо.</p>
+    </div>
+    <div style="position: relative;">
+      <div style="position: absolute; inset: -1px -1px auto auto; width: 56px; height: 56px; border-top: 1px solid var(--ac, #C9F14A); border-right: 1px solid var(--ac, #C9F14A);"></div>
+      <img src="https://aiseller.space/siistema/images/photo_new.webp" alt="Роман Воробьёв — основатель сообщества СИИстема" style="width: 100%; display: block; aspect-ratio: 4 / 4.6; object-fit: cover; object-position: center 20%; border: 1px solid rgba(255,255,255,.1); filter: grayscale(.2) contrast(1.04);" />
+      <div style="display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #6F7378;">
+        <span>Роман Воробьёв</span><span>Основатель</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto;">
+    <h2 style="margin: 0 0 26px; font-size: clamp(28px,4.4vw,54px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700; max-width: 26em; text-wrap: pretty;">Инструментов становится всё больше. <span style="color: #6F7378;">Ясности — нет.</span></h2>
+    <p style="margin: 0 0 44px; font-size: clamp(16px,1.6vw,18px); line-height: 1.65; color: #9DA1A6; max-width: 40em; text-wrap: pretty;">ChatGPT знает, какие есть сервисы, как их подключить и как написать код. А вот этого он не знает — и, если спросить, ответит уверенно, но мимо:</p>
+    <div style="display: grid; gap: 0;">
+      <div style="display: grid; grid-template-columns: 56px 1fr; gap: 8px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.08);">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ac, #C9F14A); padding-top: 5px;">01</span>
+        <p style="margin: 0; font-size: clamp(17px,1.9vw,22px); line-height: 1.45; color: #E9EAEB; font-weight: 500; text-wrap: pretty;">что из этого реально заработало у предпринимателя с похожим бизнесом</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 56px 1fr; gap: 8px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.08);">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ac, #C9F14A); padding-top: 5px;">02</span>
+        <p style="margin: 0; font-size: clamp(17px,1.9vw,22px); line-height: 1.45; color: #E9EAEB; font-weight: 500; text-wrap: pretty;">сколько времени это заняло на самом деле, а не по описанию на сайте</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 56px 1fr; gap: 8px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.08);">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ac, #C9F14A); padding-top: 5px;">03</span>
+        <p style="margin: 0; font-size: clamp(17px,1.9vw,22px); line-height: 1.45; color: #E9EAEB; font-weight: 500; text-wrap: pretty;">что развалилось на второй неделе и почему</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 56px 1fr; gap: 8px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08);">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ac, #C9F14A); padding-top: 5px;">04</span>
+        <p style="margin: 0; font-size: clamp(17px,1.9vw,22px); line-height: 1.45; color: #E9EAEB; font-weight: 500; text-wrap: pretty;">стоит ли вообще браться за это в вашем случае</p>
+      </div>
+    </div>
+    <p style="margin: 40px 0 0; font-size: clamp(16px,1.6vw,18px); line-height: 1.65; color: #9DA1A6; max-width: 42em; text-wrap: pretty;">Вам не нужно знать всё про ИИ. Нужно понимать, что внедрять первым, что из этого даст результат и что можно отдать команде. Такого знания нет ни в одной статье: оно есть только у тех, кто уже прошёл этот путь на своём бизнесе.</p>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto; display: grid; gap: clamp(28px,4vw,56px); grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: start;">
+    <h2 style="margin: 0; font-size: clamp(28px,4vw,48px); line-height: 1.1; letter-spacing: -.028em; font-weight: 700; text-wrap: pretty;">Готовых инструкций пока нет. <span style="color: var(--ac, #C9F14A);">А первые пройденные пути уже есть</span></h2>
+    <div>
+      <p style="margin: 0 0 28px; font-size: clamp(16px,1.6vw,18px); line-height: 1.65; color: #9DA1A6; text-wrap: pretty;">ИИ меняется быстрее, чем выходят книги и курсы: программа устаревает раньше, чем вы её пройдёте. Поэтому мы не обсуждаем теорию — мы разбираем внедрения, которые уже случились у участников.</p>
+      <div style="border-left: 2px solid var(--ac, #C9F14A); padding: 4px 0 4px 22px;">
+        <p style="margin: 0; font-size: clamp(18px,2.1vw,24px); line-height: 1.4; color: #F4F5F6; font-weight: 500; text-wrap: pretty;">«СИИстема» — <strong style="font-weight: 700; color: var(--ac, #C9F14A);">мастерская, а не обучение</strong>. Учимся только в действии.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formats" data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #6F7378; margin-bottom: 18px;">Формат</div>
+    <h2 style="margin: 0 0 44px; font-size: clamp(28px,4.4vw,54px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700;">Что происходит на встречах</h2>
+    <div style="display: grid; gap: 1px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.08);">
+      <div style="background: #0A0B0C; padding: clamp(22px,2.6vw,32px);" class="h3">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 28px; color: rgba(255,255,255,.14); margin-bottom: 18px; line-height: 1;">01</div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #C9CDD1; text-wrap: pretty;"><strong style="color: #F4F5F6; font-weight: 700;">Демонстрация с экрана</strong> — участники показывают дашборды, ботов и ИИ-агентов: программы, которые сами делают рутину — собирают отчёты, следят за ценами, готовят ответы на отзывы. Показывают как есть, вместе с недоделками</p>
+      </div>
+      <div style="background: #0A0B0C; padding: clamp(22px,2.6vw,32px);" class="h3">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 28px; color: rgba(255,255,255,.14); margin-bottom: 18px; line-height: 1;">02</div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #C9CDD1; text-wrap: pretty;"><strong style="color: #F4F5F6; font-weight: 700;">Разбор вашей задачи</strong> — приносите свою, обсуждаем всей группой. Один участник собрал за три часа то, на что до этого потратил двое суток впустую: на встрече увидел, как похожее уже сделали другие</p>
+      </div>
+      <div style="background: #0A0B0C; padding: clamp(22px,2.6vw,32px);" class="h3">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 28px; color: rgba(255,255,255,.14); margin-bottom: 18px; line-height: 1;">03</div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #C9CDD1; text-wrap: pretty;"><strong style="color: #F4F5F6; font-weight: 700;">Цели недели</strong> — ставите одну задачу на неделю и коротко отчитываетесь по форме. Это помогает держать фокус и не откладывать внедрение</p>
+      </div>
+      <div style="background: #0A0B0C; padding: clamp(22px,2.6vw,32px);" class="h3">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 28px; color: rgba(255,255,255,.14); margin-bottom: 18px; line-height: 1;">04</div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #C9CDD1; text-wrap: pretty;"><strong style="color: #F4F5F6; font-weight: 700;">Показ результата</strong> — на следующей встрече показываете с экрана, что сделали и на чём остановились</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,110px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.018);">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <blockquote style="margin: 0; font-size: clamp(20px,2.7vw,32px); line-height: 1.35; letter-spacing: -.015em; color: #F4F5F6; font-weight: 500; text-wrap: pretty;">В искусственном интеллекте крайне мало кто вообще что-то понимает — обсудить это больше не с кем. А тут задал вопрос, получил большое обсуждение и полезную обратную связь. Вот это для меня самое важное.</blockquote>
+    <div style="margin-top: 26px; display: flex; align-items: center; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .06em; color: #6F7378;">
+      <span style="width: 22px; height: 1px; background: var(--ac, #C9F14A); display: block;"></span>
+      <span style="color: #C9CDD1;">Константин</span><span>Селлер Ozon, собственный бренд</span>
+    </div>
+  </div>
+</section>
+
+<section id="cases" data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto;">
+    <div style="display: flex; gap: 24px; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; margin-bottom: 40px;">
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #6F7378; margin-bottom: 18px;">Внедрения</div>
+        <h2 style="margin: 0 0 16px; font-size: clamp(28px,4.4vw,54px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700; max-width: 24em; text-wrap: pretty;">Что участники <span style="color: var(--ac, #C9F14A);">собрали сами</span></h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #9DA1A6;">Не обещания дохода. Решения, которые работают в их компаниях прямо сейчас.</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6F7378; margin-right: 6px;"><span id="slideLabel">01 / 03</span></span>
+        <button type="button" onclick="slide(-1)" aria-label="Предыдущий кейс" style="width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.18); background: transparent; color: #F4F5F6; cursor: pointer; border-radius: 2px; font-size: 16px;" class="h4">←</button>
+        <button type="button" onclick="slide(1)" aria-label="Следующий кейс" style="width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.18); background: transparent; color: #F4F5F6; cursor: pointer; border-radius: 2px; font-size: 16px;" class="h4">→</button>
+      </div>
+    </div>
+
+    <div style="overflow: hidden; border: 1px solid rgba(255,255,255,.09);">
+      <div id="track" style="display: flex; transition: transform .55s cubic-bezier(.2,.7,.2,1); transform: translateX(0%);">
+
+        <div style="flex: 0 0 100%; padding: clamp(24px,3.4vw,44px); display: grid; gap: clamp(24px,3vw,44px); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start;">
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ac, #C9F14A); margin-bottom: 14px;">EasyLight · 13–15 млн ₽/мес</div>
+            <h3 style="margin: 0 0 6px; font-size: clamp(24px,3vw,34px); line-height: 1.1; letter-spacing: -.02em; font-weight: 700;">Константин</h3>
+            <p style="margin: 0 0 26px; font-size: 14px; color: #6F7378;">Гибкое стекло на маркетплейсах</p>
+            <div style="display: grid; gap: 14px;">
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #9DA1A6; text-wrap: pretty;"><strong style="color: #6F7378; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; display: block; margin-bottom: 6px;">Было</strong>аналитика на Google Таблицах, сторонние программисты, много времени и денег.</p>
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;"><strong style="color: var(--ac, #C9F14A); font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; display: block; margin-bottom: 6px;">Стало</strong>своя система управления рекламой, финансовая аналитика по всем магазинам в одном окне, трекинг позиций в поисковой выдаче. Дашборд для 1265 товаров — меньше чем за две недели.</p>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #9DA1A6;">Никто в компании не пишет код напрямую.</p>
+              <blockquote style="margin: 6px 0 0; border-left: 2px solid rgba(255,255,255,.2); padding-left: 18px; font-size: 17px; line-height: 1.45; color: #F4F5F6; font-style: normal; text-wrap: pretty;">«Описываю проблему и без месяца ожиданий получаю необходимый мне результат»</blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex: 0 0 100%; padding: clamp(24px,3.4vw,44px); display: grid; gap: clamp(24px,3vw,44px); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start;">
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ac, #C9F14A); margin-bottom: 14px;">Косметика · ≈10 млн ₽/мес</div>
+            <h3 style="margin: 0 0 6px; font-size: clamp(24px,3vw,34px); line-height: 1.1; letter-spacing: -.02em; font-weight: 700;">Сергей</h3>
+            <p style="margin: 0 0 26px; font-size: 14px; color: #6F7378;">Бренд профессиональной косметики</p>
+            <div style="display: grid; gap: 16px;">
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;">ИИ-агент сам собирает на маркетплейсе показатели за вчера — по рекламе, продажам и заказам — и даёт рекомендации. Раньше Сергей делал это руками.</p>
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #9DA1A6; text-wrap: pretty;">Дальше: полный цикл управления товаром от заказа на производстве до распределения по складам, еженедельный анализ конкурентов с подсветкой «красных зон», аудит бухгалтерии.</p>
+              <p style="margin: 0; font-size: 20px; line-height: 1.4; color: var(--ac, #C9F14A); font-weight: 600;">Освободил 6 часов в неделю.</p>
+              <blockquote style="margin: 6px 0 0; border-left: 2px solid rgba(255,255,255,.2); padding-left: 18px; font-size: 17px; line-height: 1.45; color: #F4F5F6; text-wrap: pretty;">«На маркетплейсах я всё делаю один, в связке с ИИ, который закрывает определённые функции»</blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex: 0 0 100%; padding: clamp(24px,3.4vw,44px); display: grid; gap: clamp(24px,3vw,44px); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start;">
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ac, #C9F14A); margin-bottom: 14px;">Сервис для селлеров WB</div>
+            <h3 style="margin: 0 0 6px; font-size: clamp(24px,3vw,34px); line-height: 1.1; letter-spacing: -.02em; font-weight: 700;">Александр М.</h3>
+            <p style="margin: 0 0 26px; font-size: 14px; color: #6F7378;">Платный сервис для селлеров Wildberries</p>
+            <div style="display: grid; gap: 16px;">
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;">Двухфакторная авторизация на входе в сервис.</p>
+              <p style="margin: 0; font-size: 20px; line-height: 1.4; color: var(--ac, #C9F14A); font-weight: 600; text-wrap: pretty;">На это ушло два дня. Прежний программист не мог решить задачу с декабря.</p>
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #9DA1A6; text-wrap: pretty;">Следом — автоматическая замена устаревающих прокси и автобронирование слотов поставки.</p>
+              <blockquote style="margin: 6px 0 0; border-left: 2px solid rgba(255,255,255,.2); padding-left: 18px; font-size: 17px; line-height: 1.45; color: #F4F5F6; text-wrap: pretty;">«Двадцать минут — и полная автоматизация»</blockquote>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 8px; margin-top: 18px; align-items: center;">
+      <button type="button" class="dot" onclick="goSlide(0)" aria-label="Кейс 1" style="height: 4px; border: 0; padding: 0; cursor: pointer; border-radius: 2px; transition: all .3s ease; width: 22px; background: #C9F14A;"></button>
+      <button type="button" class="dot" onclick="goSlide(1)" aria-label="Кейс 2" style="height: 4px; border: 0; padding: 0; cursor: pointer; border-radius: 2px; transition: all .3s ease; width: 10px; background: rgba(255,255,255,.25);"></button>
+      <button type="button" class="dot" onclick="goSlide(2)" aria-label="Кейс 3" style="height: 4px; border: 0; padding: 0; cursor: pointer; border-radius: 2px; transition: all .3s ease; width: 10px; background: rgba(255,255,255,.25);"></button>
+    </div>
+
+    <div style="margin-top: 40px; border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.022); padding: clamp(22px,2.6vw,32px);">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #6F7378; margin-bottom: 14px;">И ещё, из показанного на встречах</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 0 clamp(24px,3vw,44px);"><div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Бот-охранник сервера</strong> — проверяет сервер каждые 15 минут. Появился после того, как одному участнику подсадили майнер</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Сверка замеров на Ozon</strong> — бот обходит карточки каждые 15 минут и ловит изменения: «за день было 50 изменений»</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Автопостинг из одного эфира</strong> — видео из облака → описание → публикация по соцсетям, около 10 роликов с одной записи</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Бартер с блогерами</strong> — воронка и промокоды на автомате</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Оспаривание несправедливых отзывов</strong> — ИИ сверяет каждый новый отзыв с правилами площадки и готовит обоснование</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">ИИ-тесты для найма и аттестации</strong> — вместо собеседований «по ощущениям» — вопросы по инструкциям компании</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Приложение в Google Play и App Store</strong> — собрано участником вместе с Claude Code</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Замена устаревающих прокси</strong> — «двадцать минут — и полная автоматизация»</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Автобронирование слотов поставки</strong> — перестало съедать время на ручную проверку</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Боты остатков и поставок</strong> — мониторинг складов, чтобы не ловить дефицит вручную</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Свой VPN за пятнадцать минут</strong> — после двух суток безуспешных попыток на других инструментах</p></div>
+<div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">1С, подключённая к ИИ</strong> — вопросы к базе обычным языком, ответы приходят в Telegram</p></div></div><div style="margin-top: 40px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #6F7378; margin-bottom: 8px;">А это ломалось</div>
+<p style="margin: 0 0 22px; font-size: 16px; line-height: 1.6; color: #9DA1A6;">Разбираем не только победы. Из того, что показывали на встречах:</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(18px,2.2vw,28px);">
+<div style="border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.022); padding: clamp(20px,2.4vw,28px);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Сервер взломали из-за короткого пароля.</strong> ИИ поднял участнику базу данных и оставил слабый пароль. Сервер взломали и трое суток гоняли на нём чужой майнер. Разбирали всей группой, как раздавать доступы, чтобы такого не повторилось.</p></div>
+<div style="border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.022); padding: clamp(20px,2.4vw,28px);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">Шесть часов работы пропали.</strong> Помощник потерял контекст задачи, и день ушёл впустую. На той же встрече участник собрал себе правило, которое теперь сохраняет состояние после каждого шага, — проблему закрыли, пока разговаривали.</p></div>
+<div style="border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.022); padding: clamp(20px,2.4vw,28px);"><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1;"><strong style="color: #F4F5F6;">ChatGPT посчитал кассовый разрыв неверно.</strong> Складывал погашения вместо того, чтобы вычитать. Ошибку нашли, только когда пересчитали руками. Отсюда правило: за ИИ проверяем.</p></div>
+</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,110px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+<div style="max-width: 1100px; margin: 0 auto;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: #6F7378; margin-bottom: 18px;">Запись</div>
+<h2 style="margin: 0 0 14px; font-size: clamp(26px,3.4vw,44px); line-height: 1.12; letter-spacing: -.026em; font-weight: 700; text-wrap: pretty;">Моменты <span style="color: var(--ac, #C9F14A);">с наших встреч</span></h2>
+<p style="margin: 0 0 28px; font-size: 16px; line-height: 1.6; color: #9DA1A6; max-width: 46em; text-wrap: pretty;">Фрагменты записей за февраль–июль. Ничего не переснимали: демонстрации с экрана, реакции, разбор провалов.</p>
+<video controls playsinline preload="none" poster="media/vstrecha-poster.jpg" width="1280" height="720" style="display: block; width: 100%; border: 1px solid rgba(255,255,255,.09); background: #000;">
+<source src="media/vstrecha.mp4" type="video/mp4">
+Ваш браузер не поддерживает видео. <a href="media/vstrecha.mp4">Скачать нарезку встречи</a>.
+</video>
+<p style="margin: 14px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6F7378;">7 минут · загрузится по нажатию</p>
+</div>
+</section>
+<section data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto;">
+    <h2 style="margin: 0 0 40px; font-size: clamp(28px,4.4vw,54px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700;">Трое участников — <span style="color: var(--ac, #C9F14A);">своими словами</span></h2>
+    <div style="display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <figure style="margin: 0;">
+        <video controls="controls" preload="metadata" poster="media/otzyv-kostya.jpg" playsinline="playsinline" style="width: 100%; aspect-ratio: 9/16; height: auto; object-fit: cover; border: 1px solid rgba(255,255,255,.1); background: #000;">
+          <source src="media/otzyv-kostya.mp4" type="video/mp4" />
+          Ваш браузер не поддерживает видео. <a href="media/otzyv-kostya.mp4">Скачать</a>.
+        </video>
+        <figcaption style="margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: #6F7378; line-height: 1.7;"><span style="color: #C9CDD1;">Константин</span> · EasyLight · гибкое стекло, 13–15 млн ₽/мес</figcaption>
+      </figure>
+      <figure style="margin: 0;">
+        <video controls="controls" preload="metadata" poster="media/otzyv-alex.jpg" playsinline="playsinline" style="width: 100%; aspect-ratio: 9/16; height: auto; object-fit: cover; border: 1px solid rgba(255,255,255,.1); background: #000;">
+          <source src="media/otzyv-alex.mp4" type="video/mp4" />
+          Ваш браузер не поддерживает видео. <a href="media/otzyv-alex.mp4">Скачать</a>.
+        </video>
+        <figcaption style="margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: #6F7378; line-height: 1.7;"><span style="color: #C9CDD1;">Александр Б.</span> · селлер Ozon · сервис Seller-Power</figcaption>
+      </figure>
+<figure style="margin: 0;">
+        <video controls="controls" preload="metadata" poster="media/otzyv-sergey.jpg" playsinline="playsinline" style="width: 100%; aspect-ratio: 9/16; height: auto; object-fit: cover; border: 1px solid rgba(255,255,255,.1); background: #000;">
+          <source src="media/otzyv-sergey.mp4" type="video/mp4" />
+          Ваш браузер не поддерживает видео. <a href="media/otzyv-sergey.mp4">Скачать</a>.
+        </video>
+        <figcaption style="margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: #6F7378; line-height: 1.7;"><span style="color: #C9CDD1;">Сергей</span> · Бренд профессиональной косметики, ≈10 млн ₽/мес</figcaption>
+      </figure>
+    </div>
+    <div style="margin-top: 48px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 40px; max-width: 900px;">
+      <blockquote style="margin: 0; font-size: clamp(19px,2.4vw,28px); line-height: 1.38; letter-spacing: -.012em; color: #F4F5F6; font-weight: 500; text-wrap: pretty;">Группа дала мне ритм формулирования целей — и это немножко порядок в голове наводит. Я постоянно выделяю на это время, много чего нового узнаю из наших разговоров. Я кайфую здесь, и от результатов доволен.</blockquote>
+      <div style="margin-top: 22px; display: flex; align-items: center; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .06em; color: #6F7378;">
+        <span style="width: 22px; height: 1px; background: var(--ac, #C9F14A); display: block;"></span>
+        <span style="color: #C9CDD1;">Александр</span><span>Селлер Ozon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.022);">
+  <div style="max-width: 1140px; margin: 0 auto; display: grid; gap: clamp(32px,4vw,64px); grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: start;">
+    <div>
+      <h2 style="margin: 0 0 20px; font-size: clamp(28px,4.2vw,50px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700; text-wrap: pretty;">Есть задача, которую давно хотите <span style="color: var(--ac, #C9F14A);">решить с помощью ИИ</span>?</h2>
+      <p style="margin: 0 0 26px; font-size: clamp(16px,1.6vw,18px); line-height: 1.65; color: #9DA1A6; max-width: 32em; text-wrap: pretty;">Давайте созвонимся на 15–20 минут. Я отвечу на вопросы, узнаю ваш контекст и честно скажу, подходит ли вам формат.</p>
+      <a href="https://t.me/lifeexplorer23" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(255,255,255,.18); color: #F4F5F6; font-weight: 600; font-size: 15px; padding: 14px 22px; border-radius: 2px;" class="h5">Или сразу в Telegram →</a>
+    </div>
+    <div style="border: 1px solid rgba(255,255,255,.1); background: #0A0B0C; padding: clamp(22px,2.8vw,36px);">
+      <div id="formSent" hidden>
+        <div style="display: grid; gap: 14px; padding: 22px 0;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ac, #C9F14A);">Заявка отправлена</div>
+          <p style="margin: 0; font-size: 18px; line-height: 1.5; color: #F4F5F6;">Спасибо. Напишу вам в Telegram и предложу время для разговора на 15–20 минут.</p>
+        </div>
+      </div>
+      <div id="formIdle">
+        <form id="applyForm" style="display: grid; gap: 16px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #6F7378;">Заявка на знакомство</div>
+          <label style="display: grid; gap: 7px;">
+            <span style="font-size: 13px; color: #9DA1A6;">Имя</span>
+            <input name="hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"><input name="name" required="required" type="text" placeholder="Как к вам обращаться" style="background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.14); color: #F4F5F6; padding: 14px 14px; font-size: 15px; border-radius: 2px; outline: none;" style-focus="border-color: var(--ac, #C9F14A);" />
+          </label>
+          <label style="display: grid; gap: 7px;">
+            <span style="font-size: 13px; color: #9DA1A6;">Telegram или телефон</span>
+            <input name="contact" required="required" type="text" placeholder="@username" style="background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.14); color: #F4F5F6; padding: 14px 14px; font-size: 15px; border-radius: 2px; outline: none;" style-focus="border-color: var(--ac, #C9F14A);" />
+          </label>
+          <label style="display: grid; gap: 7px;">
+            <span style="font-size: 13px; color: #9DA1A6;">Бизнес и что хотите внедрить</span>
+            <textarea name="task" rows="3" placeholder="Пара строк: чем занимаетесь и какая задача" style="background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.14); color: #F4F5F6; padding: 14px; font-size: 15px; border-radius: 2px; outline: none; resize: vertical;" style-focus="border-color: var(--ac, #C9F14A);"></textarea>
+          </label>
+          <label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #9DA1A6; cursor: pointer;"><input name="privacy" type="checkbox" required="required" style="margin-top: 3px; accent-color: #C9F14A; flex: 0 0 auto;"><span>Согласен на обработку персональных данных — имя и контакт нужны, чтобы связаться и договориться о разговоре. <a href="privacy.html" target="_blank" style="color: #C9F14A;">Как мы с ними обращаемся</a></span></label>
+<button type="submit" style="background: var(--ac, #C9F14A); color: #0A0B0C; font-weight: 700; font-size: 16px; padding: 16px 24px; border: 0; border-radius: 2px; cursor: pointer;" class="h1">Познакомиться — 15 минут</button>
+          <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.7; color: #55585C;">Берём не всех, и скажем об этом прямо.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto;">
+    <h2 style="margin: 0 0 44px; font-size: clamp(28px,4.4vw,54px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700;">Как устроено участие</h2>
+    <div style="display: grid; gap: clamp(32px,4vw,56px); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: start;">
+      <div>
+        <h3 style="margin: 0 0 22px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ac, #C9F14A); font-weight: 500;">Каждую неделю</h3>
+        <div style="display: grid;">
+          <div style="padding: 20px 0; border-top: 1px solid rgba(255,255,255,.08);">
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;"><strong style="color: #F4F5F6;">Онлайн-встреча по пятницам</strong>, полтора часа — свободный рабочий формат: делимся находками, разбираем, кто что собрал и внедрил. Если накопились похожие задачи, встреча превращается в воркшоп «внедряем в прямом эфире»: от задачи до первого рабочего прототипа</p>
+          </div>
+          <div style="padding: 20px 0; border-top: 1px solid rgba(255,255,255,.08);">
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;"><strong style="color: #F4F5F6;">Цели недели</strong> — каждую неделю ставите одну задачу и коротко отчитываетесь по форме. Это помогает держать фокус</p>
+          </div>
+          <div style="padding: 20px 0; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08);">
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;"><strong style="color: #F4F5F6;">Между встречами</strong> — общий чат и база участников «кто что внедрил»</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 22px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #6F7378; font-weight: 500;">Реже, но регулярно</h3>
+        <div style="display: grid;">
+          <div style="padding: 20px 0; border-top: 1px solid rgba(255,255,255,.08);">
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;"><strong style="color: #F4F5F6;">Мафклуб предпринимателей</strong> — наши живые встречи в Москве вокруг игры в мафию: два раза в месяц, знакомства и разговоры вне онлайна</p>
+          </div>
+          <div style="padding: 20px 0; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08);">
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;"><strong style="color: #F4F5F6;">«Совет директоров»</strong> — ежемесячная стратегическая сессия в формате «равный с равным»: обсуждаем большие цели бизнеса и приоритеты внедрения. Входит в верхний уровень участия, не в базовый</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+    <h2 style="margin: 0 0 24px; font-size: clamp(26px,3.8vw,44px); line-height: 1.12; letter-spacing: -.026em; font-weight: 700; text-wrap: pretty;">Сообщество <span style="color: var(--ac, #C9F14A);">предпринимателей</span>, <span style="color: var(--ac, #C9F14A);">руководителей</span> и <span style="color: var(--ac, #C9F14A);">собственников, которые сами в операционке</span>. Тех, кто уже пробует ИИ в своём деле, а не пересказывает статьи о нём</h2>
+    <p style="margin: 0 auto 32px; font-size: clamp(16px,1.6vw,18px); line-height: 1.65; color: #9DA1A6; max-width: 40em; text-wrap: pretty;">Главное — не размер бизнеса, а готовность разбираться самому: приносить настоящую задачу своего бизнеса и вместе искать, каким ИИ-инструментом её закрыть. Писать код при этом необязательно.</p>
+    <a href="#apply" style="display: inline-block; background: var(--ac, #C9F14A); color: #0A0B0C; font-weight: 700; font-size: 16px; padding: 17px 28px; border-radius: 2px;" class="h1">Познакомиться — 15 минут</a>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto;">
+    <h2 style="margin: 0 0 44px; font-size: clamp(28px,4.4vw,54px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700;">Три сомнения, которые чаще всего мешают</h2>
+    <div style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <div style="border: 1px solid rgba(255,255,255,.09); padding: clamp(22px,2.6vw,30px); display: grid; gap: 16px; align-content: start;">
+        <p style="margin: 0; font-size: clamp(18px,2vw,22px); line-height: 1.35; color: #F4F5F6; font-weight: 600; text-wrap: pretty;">«Я не технарь. У меня не получится»</p>
+        <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #9DA1A6; text-wrap: pretty;">Мы обсуждаем, что должно получиться, а не как это написать. От вас — сформулировать цель, понять логику решения и проверить результат. Код напишет ИИ, специалист или ваша команда.</p>
+        <p style="margin: 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.08); font-size: 15px; line-height: 1.6; color: var(--ac, #C9F14A); text-wrap: pretty;">Дашборд для 1265 товаров собрал селлер, который до этого не написал ни строчки кода.</p>
+      </div>
+      <div style="border: 1px solid rgba(255,255,255,.09); padding: clamp(22px,2.6vw,30px); display: grid; gap: 16px; align-content: start;">
+        <p style="margin: 0; font-size: clamp(18px,2vw,22px); line-height: 1.35; color: #F4F5F6; font-weight: 600; text-wrap: pretty;">«Пусть этим занимается моя команда»</p>
+        <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #9DA1A6; text-wrap: pretty;">Команда может внедрять. Но предприниматель выбирает, какую задачу решать, какой результат считать ценным и куда направлять ресурсы.</p>
+        <p style="margin: 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.08); font-size: 15px; line-height: 1.6; color: var(--ac, #C9F14A); text-wrap: pretty;">Чтобы правильно поставить задачу команде, нужно самому понимать возможности и ограничения ИИ.</p>
+      </div>
+      <div style="border: 1px solid rgba(255,255,255,.09); padding: clamp(22px,2.6vw,30px); display: grid; gap: 16px; align-content: start;">
+        <p style="margin: 0; font-size: clamp(18px,2vw,22px); line-height: 1.35; color: #F4F5F6; font-weight: 600; text-wrap: pretty;">«Это не применимо к моему бизнесу»</p>
+        <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #9DA1A6; text-wrap: pretty;">Мы не предлагаем копировать чужие решения один в один. Мы разбираем принципы: какую задачу решали, почему выбрали этот подход, где были ошибки и как адаптировать решение под другой бизнес.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto; display: grid; gap: clamp(28px,4vw,56px); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: start;">
+    <div>
+      <h2 style="margin: 0 0 20px; font-size: clamp(28px,4vw,48px); line-height: 1.1; letter-spacing: -.028em; font-weight: 700; text-wrap: pretty;">Мы тоже выбираем — <span style="color: var(--ac, #C9F14A);">и это часть продукта</span></h2>
+      <p style="margin: 0; font-size: clamp(16px,1.6vw,18px); line-height: 1.65; color: #9DA1A6; max-width: 34em; text-wrap: pretty;">«СИИстема» — для тех, кто готов не только брать, но и делиться своим опытом. Поэтому вход — через заявку и короткий разговор на 15–20 минут, а не «оплатил и зашёл».</p>
+    </div>
+    <div style="display: grid;">
+      <div style="display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.08);">
+        <span style="color: #FF6A4D; font-size: 18px; line-height: 1.4;">✕</span>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;">Отказываем, если у человека нет настоящей задачи в собственном бизнесе. «Просто интересно» и «сейчас это модно» здесь не работают</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.08);">
+        <span style="color: #FF6A4D; font-size: 18px; line-height: 1.4;">✕</span>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;">Отказываем, если человек ждёт, что ИИ всё сделает сам, а его участие сведётся к просмотру</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08);">
+        <span style="color: #FF6A4D; font-size: 18px; line-height: 1.4;">✕</span>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;">Отказываем, если нужны гарантии результата в договоре — их не будет</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,110px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <h2 style="margin: 0 0 22px; font-size: clamp(28px,4.4vw,52px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700; text-wrap: pretty;">Через месяц что-нибудь сломается. <span style="color: var(--ac, #C9F14A);">Это нормально</span></h2>
+    <p style="margin: 0; font-size: clamp(16px,1.7vw,19px); line-height: 1.65; color: #9DA1A6; text-wrap: pretty;">Эйфория от ИИ спадает примерно через месяц-полтора. Что-то перестаёт работать, кажется, что время потрачено зря. В одиночку на этом месте бросают. В группе — нет: на следующей встрече кто-то показывает, как он прошёл ровно это.</p>
+<div style="margin-top: 34px;"><div style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <div style="border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.022); padding: clamp(22px,2.6vw,32px);">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ac, #C9F14A); margin-bottom: 16px;">01 / Гарантии</div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #C9CDD1; text-wrap: pretty;">Гарантий нет, и в договоре их не будет: результат делаете вы. Что есть с нашей стороны — люди, которые уже проходили похожее, разбор вашей задачи всей группой и срок, к которому вы сами обещали показать результат.</p>
+      </div>
+      <div style="border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.022); padding: clamp(22px,2.6vw,32px);">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ac, #C9F14A); margin-bottom: 16px;">02 / Цифры</div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #C9CDD1; text-wrap: pretty;">Кейсы с цифрами публикуем по мере их появления. Если цифр нет — не придумываем.</p>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,110px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.022);">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <p style="margin: 0 0 26px; font-size: clamp(20px,2.8vw,34px); line-height: 1.32; letter-spacing: -.018em; color: #F4F5F6; font-weight: 600; text-wrap: pretty;">«Для меня это вообще прям окно в будущее. Я слушаю, и мне хочется тянуться, идти вперёд. Вдохновляюсь»</p>
+    <p style="margin: 0 0 28px; font-size: clamp(15px,1.6vw,17px); line-height: 1.7; color: #9DA1A6; text-wrap: pretty;">«Классно получать отклик в своих вопросах. Наверное, вот это самое важное» <span style="color: var(--ac, #C9F14A);">·</span> «Пазл начинает складываться — получаешь внутреннее ощущение классное» <span style="color: var(--ac, #C9F14A);">·</span> «Жалко, что мы только раз в неделю»</p>
+    <div style="display: flex; align-items: center; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #6F7378; flex-wrap: wrap;">
+      <span style="width: 22px; height: 1px; background: var(--ac, #C9F14A); display: block;"></span>
+      <span style="color: #C9CDD1;">Участники сообщества</span><span>Из записей встреч, февраль–июль 2026</span>
+    </div>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #6F7378; margin-bottom: 34px;">Кто ведёт</div>
+    <div style="display: grid; gap: clamp(28px,4vw,56px); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start;">
+      <div style="max-width: 420px;">
+        <img src="https://aiseller.space/siistema/images/photo_new.webp" alt="Роман Воробьёв" style="width: 100%; display: block; aspect-ratio: 1 / 1.15; object-fit: cover; object-position: center 20%; border: 1px solid rgba(255,255,255,.1); filter: grayscale(.25) contrast(1.04);" />
+      </div>
+      <div>
+        <h2 style="margin: 0 0 10px; font-size: clamp(26px,3.4vw,40px); line-height: 1.1; letter-spacing: -.026em; font-weight: 700;">Роман Воробьёв</h2>
+        <p style="margin: 0 0 28px; font-size: 15px; line-height: 1.6; color: var(--ac, #C9F14A);">Основатель сообщества «СИИстема», предприниматель</p>
+        <div style="display: grid;">
+          <div style="padding: 18px 0; border-top: 1px solid rgba(255,255,255,.08);">
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;">Работает с маркетплейсами с 2017 года: сначала Amazon, затем Ozon и Wildberries</p>
+          </div>
+          <div style="padding: 18px 0; border-top: 1px solid rgba(255,255,255,.08);">
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;">Бизнес-тренер: преподавал коучинг в Международном Эриксоновском университете, вёл тренинги по управлению для Сбербанка, соавтор курса по маркетплейсам в РУДН</p>
+          </div>
+          <div style="padding: 18px 0; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08);">
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;">Собрал себе команду ИИ-агентов — программ, которые работают как сотрудники: ищут, пишут, следят за задачами. С их помощью за квартал с нуля вошёл в топ-20 исследователей кибербезопасности. Не рассказывает про ИИ, а работает им</p>
+          </div>
+        </div>
+        <blockquote style="margin: 28px 0 0; border-left: 2px solid var(--ac, #C9F14A); padding-left: 20px; font-size: clamp(17px,1.9vw,21px); line-height: 1.45; color: #F4F5F6; text-wrap: pretty;">«Если ИИ сделал это со мной в чужом, сложнейшем поле — представьте, что он сделает внутри вашего бизнеса, который вы знаете назубок»</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto;">
+    <h2 style="margin: 0 0 18px; font-size: clamp(28px,4.4vw,54px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700;">Два уровня участия</h2>
+    <p style="margin: 0 0 44px; font-size: clamp(16px,1.6vw,18px); line-height: 1.65; color: #9DA1A6; max-width: 44em; text-wrap: pretty;">«Сообщество» — основной уровень. «Совет директоров» — для собственников, которым нужна ещё и стратегическая работа.</p>
+    <div style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: start;">
+      <div style="border: 1px solid rgba(255,255,255,.1); padding: clamp(24px,3vw,38px); display: grid; gap: 18px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #6F7378;">Уровень 01</div>
+        <h3 style="margin: 0; font-size: clamp(24px,2.8vw,32px); line-height: 1.1; letter-spacing: -.02em; font-weight: 700;">Сообщество</h3>
+        <div style="font-size: clamp(30px,4vw,44px); line-height: 1; letter-spacing: -.03em; font-weight: 700; color: #F4F5F6;">15 000 ₽<span style="font-size: 16px; color: #6F7378; font-weight: 500; letter-spacing: 0;">/мес</span></div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #9DA1A6; text-wrap: pretty;">или <strong style="color: #C9CDD1;">60 000 ₽ за полгода</strong> — это 10 000 ₽ в месяц. Входят: еженедельная встреча по пятницам · цели недели · чат и база внедрений участников · живые встречи Мафклуба в Москве два раза в месяц</p>
+        <a href="#apply" style="border: 1px solid rgba(255,255,255,.2); color: #F4F5F6; font-weight: 600; font-size: 15px; padding: 15px 22px; border-radius: 2px; text-align: center;" class="h5">Познакомиться — 15 минут</a>
+      </div>
+      <div style="border: 1px solid var(--ac, #C9F14A); padding: clamp(24px,3vw,38px); display: grid; gap: 18px; background: rgba(201,241,74,.04); position: relative;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ac, #C9F14A);">Для собственников</div>
+        <h3 style="margin: 0; font-size: clamp(24px,2.8vw,32px); line-height: 1.1; letter-spacing: -.02em; font-weight: 700;">«Совет директоров»</h3>
+        <div style="font-size: clamp(30px,4vw,44px); line-height: 1; letter-spacing: -.03em; font-weight: 700; color: #F4F5F6;">300 000 ₽<span style="font-size: 16px; color: #6F7378; font-weight: 500; letter-spacing: 0;">/год</span></div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #C9CDD1; text-wrap: pretty;">Всё из «Сообщества» + ежемесячная встреча в формате «Совет директоров»: стратегическая сессия по целям бизнеса, равный с равным</p>
+        <a href="#apply" style="background: var(--ac, #C9F14A); color: #0A0B0C; font-weight: 700; font-size: 15px; padding: 15px 22px; border-radius: 2px; text-align: center;" class="h1">Познакомиться — 15 минут</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.018);">
+  <div style="max-width: 1140px; margin: 0 auto;">
+    <h2 style="margin: 0 0 44px; font-size: clamp(28px,4.4vw,54px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700;">Как попасть в сообщество?</h2>
+    <div style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));">
+      <div style="border-top: 2px solid var(--ac, #C9F14A); padding: 24px 0 0; display: grid; gap: 14px; align-content: start;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 40px; line-height: 1; color: rgba(255,255,255,.13);">01</div>
+        <h3 style="margin: 0; font-size: clamp(19px,2.2vw,24px); line-height: 1.2; letter-spacing: -.018em; font-weight: 700;">Шаг 1: написать нам</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #9DA1A6; text-wrap: pretty;">Напишите пару слов в Telegram: кто вы, чем занимаетесь и что хотите внедрить. Чем подробнее расскажете, тем точнее мы поймём, есть ли вам смысл заходить.</p>
+        <a href="#apply" style="font-size: 14px; font-weight: 600;">Познакомиться — 15 минут →</a>
+      </div>
+      <div style="border-top: 2px solid rgba(255,255,255,.14); padding: 24px 0 0; display: grid; gap: 14px; align-content: start;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 40px; line-height: 1; color: rgba(255,255,255,.13);">02</div>
+        <h3 style="margin: 0; font-size: clamp(19px,2.2vw,24px); line-height: 1.2; letter-spacing: -.018em; font-weight: 700;">Шаг 2: короткий разговор-знакомство</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #9DA1A6; text-wrap: pretty;">15–20 минут: знакомимся, отвечаем на вопросы. Мы тоже выбираем: принимаем тех, кому действительно нужно внедрять.</p>
+      </div>
+      <div style="border-top: 2px solid rgba(255,255,255,.14); padding: 24px 0 0; display: grid; gap: 14px; align-content: start;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 40px; line-height: 1; color: rgba(255,255,255,.13);">03</div>
+        <h3 style="margin: 0; font-size: clamp(19px,2.2vw,24px); line-height: 1.2; letter-spacing: -.018em; font-weight: 700;">Шаг 3: первая встреча</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #9DA1A6; text-wrap: pretty;">Заходите в чат и на ближайшую еженедельную встречу. У большинства первый работающий процесс появляется через две-четыре недели. Это не гарантия — это то, что мы видим по группе.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <h2 style="margin: 0 0 14px; font-size: clamp(28px,4.4vw,54px); line-height: 1.08; letter-spacing: -.028em; font-weight: 700;">Частые вопросы</h2>
+    <p style="margin: 0 0 36px; font-size: 16px; line-height: 1.6; color: #9DA1A6;">Те, что задают на знакомстве и на первых встречах</p>
+    <div style="display: grid;">
+      <div style="border-top: 1px solid rgba(255,255,255,.1);">
+        <button type="button" class="faq-q" aria-expanded="false" onclick="faq(0)" style="width: 100%; background: transparent; border: 0; cursor: pointer; padding: 22px 0; display: flex; gap: 18px; align-items: center; justify-content: space-between; text-align: left; color: #F4F5F6; font-size: clamp(16px,1.9vw,20px); font-weight: 600; line-height: 1.35;" class="h6">
+          <span>Надо ли уметь программировать?</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; color: var(--ac, #C9F14A); flex: 0 0 auto;"><span id="faq-s-0">+</span></span>
+        </button>
+        <div class="faq-a" id="faq-a-0" hidden>
+          <p style="margin: 0; padding: 0 0 26px; max-width: 44em; font-size: 16px; line-height: 1.7; color: #9DA1A6; text-wrap: pretty;">Нет. Важно уметь сформулировать задачу бизнеса и проверить результат — техническую часть можно делать вместе с ИИ, командой или специалистом. Дашборд для 1265 товаров собрал селлер, который до этого не написал ни строчки кода.</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,.1);">
+        <button type="button" class="faq-q" aria-expanded="false" onclick="faq(1)" style="width: 100%; background: transparent; border: 0; cursor: pointer; padding: 22px 0; display: flex; gap: 18px; align-items: center; justify-content: space-between; text-align: left; color: #F4F5F6; font-size: clamp(16px,1.9vw,20px); font-weight: 600; line-height: 1.35;" class="h6">
+          <span>А это не страшно — давать ИИ доступ к данным бизнеса?</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; color: var(--ac, #C9F14A); flex: 0 0 auto;"><span id="faq-s-1">+</span></span>
+        </button>
+        <div class="faq-a" id="faq-a-1" hidden>
+          <p style="margin: 0; padding: 0 0 26px; max-width: 44em; font-size: 16px; line-height: 1.7; color: #9DA1A6; text-wrap: pretty;">Не любому сервису и не ко всем данным. На практике: доступ «только чтение», правило «один помощник — одна задача», базовая безопасность сервера. Это одна из самых частых тем на встречах — разбираем и то, что у кого-то пошло не так, чтобы остальные не повторяли.</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,.1);">
+        <button type="button" class="faq-q" aria-expanded="false" onclick="faq(2)" style="width: 100%; background: transparent; border: 0; cursor: pointer; padding: 22px 0; display: flex; gap: 18px; align-items: center; justify-content: space-between; text-align: left; color: #F4F5F6; font-size: clamp(16px,1.9vw,20px); font-weight: 600; line-height: 1.35;" class="h6">
+          <span>Сколько времени это занимает в неделю?</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; color: var(--ac, #C9F14A); flex: 0 0 auto;"><span id="faq-s-2">+</span></span>
+        </button>
+        <div class="faq-a" id="faq-a-2" hidden>
+          <p style="margin: 0; padding: 0 0 26px; max-width: 44em; font-size: 16px; line-height: 1.7; color: #9DA1A6; text-wrap: pretty;">Одна онлайн-встреча в неделю — полтора часа. Плюс ваша собственная работа над задачей: сколько готовы вложить, столько и вложите. Посещение свободное, а еженедельная цель помогает держать фокус даже в загруженные недели.</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,.1);">
+        <button type="button" class="faq-q" aria-expanded="false" onclick="faq(3)" style="width: 100%; background: transparent; border: 0; cursor: pointer; padding: 22px 0; display: flex; gap: 18px; align-items: center; justify-content: space-between; text-align: left; color: #F4F5F6; font-size: clamp(16px,1.9vw,20px); font-weight: 600; line-height: 1.35;" class="h6">
+          <span>Я не селлер маркетплейсов — мне подойдёт?</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; color: var(--ac, #C9F14A); flex: 0 0 auto;"><span id="faq-s-3">+</span></span>
+        </button>
+        <div class="faq-a" id="faq-a-3" hidden>
+          <p style="margin: 0; padding: 0 0 26px; max-width: 44em; font-size: 16px; line-height: 1.7; color: #9DA1A6; text-wrap: pretty;">Да, если у вас свой бизнес и есть задача, которую хочется решить. Ядро сообщества — селлеры, поэтому много разборов про маркетплейсы, но методы одни и те же: база знаний, агенты, автоматизация процессов. В сообществе есть участники из медиа, услуг и производства.</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,.1);">
+        <button type="button" class="faq-q" aria-expanded="false" onclick="faq(4)" style="width: 100%; background: transparent; border: 0; cursor: pointer; padding: 22px 0; display: flex; gap: 18px; align-items: center; justify-content: space-between; text-align: left; color: #F4F5F6; font-size: clamp(16px,1.9vw,20px); font-weight: 600; line-height: 1.35;" class="h6">
+          <span>Чем это отличается от курса по нейросетям?</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; color: var(--ac, #C9F14A); flex: 0 0 auto;"><span id="faq-s-4">+</span></span>
+        </button>
+        <div class="faq-a" id="faq-a-4" hidden>
+          <p style="margin: 0; padding: 0 0 26px; max-width: 44em; font-size: 16px; line-height: 1.7; color: #9DA1A6; text-wrap: pretty;">У курса есть заранее написанная программа. У нас её нет: участники приносят свои живые задачи и показывают, что внедрили на этой неделе. Мы разбираем то, что происходит сейчас, а не то, что было актуально в момент записи урока.</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.1);">
+        <button type="button" class="faq-q" aria-expanded="false" onclick="faq(5)" style="width: 100%; background: transparent; border: 0; cursor: pointer; padding: 22px 0; display: flex; gap: 18px; align-items: center; justify-content: space-between; text-align: left; color: #F4F5F6; font-size: clamp(16px,1.9vw,20px); font-weight: 600; line-height: 1.35;" class="h6">
+          <span>С чего начать, если я пока ничего не знаю про ИИ?</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; color: var(--ac, #C9F14A); flex: 0 0 auto;"><span id="faq-s-5">+</span></span>
+        </button>
+        <div class="faq-a" id="faq-a-5" hidden>
+          <p style="margin: 0; padding: 0 0 26px; max-width: 44em; font-size: 16px; line-height: 1.7; color: #9DA1A6; text-wrap: pretty;">С одной понятной задачи вашего бизнеса — не нужно изучать все инструменты сразу. Новичкам на встречах помогают, вопросы с нуля здесь нормальны. Путь у большинства один и тот же: разобраться в инструменте, собрать первого помощника, автоматизировать первый процесс. Обычно на это уходит две-четыре недели, но это наблюдение, а не обещание.</p>
+        </div>
+      </div>
+    </div>
+    <p style="margin: 28px 0 0;"><a href="https://t.me/lifeexplorer23" target="_blank" rel="noopener" style="font-size: 15px; font-weight: 600;">Задать свой вопрос →</a></p>
+  </div>
+</section>
+
+<section data-reveal="" style="padding: clamp(64px,9vw,130px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 860px; margin: 0 auto; text-align: center;">
+    <p style="margin: 0 0 34px; font-size: clamp(20px,2.8vw,32px); line-height: 1.35; letter-spacing: -.018em; color: #F4F5F6; font-weight: 600; text-wrap: pretty;">Всё остальное вам расскажет ChatGPT. <span style="color: var(--ac, #C9F14A);">А сроки, цифры и чужие грабли — только те, кто их прошёл.</span> Созвонимся на 15–20 минут: я отвечу на ваши вопросы, познакомимся и поймём, подходим ли мы друг другу.</p>
+    <a href="#apply" style="display: inline-block; background: var(--ac, #C9F14A); color: #0A0B0C; font-weight: 700; font-size: 17px; padding: 18px 32px; border-radius: 2px;" class="h1">Познакомиться — 15 минут</a>
+  </div>
+</section>
+
+<footer style="padding: 40px clamp(18px,5vw,40px) 110px; border-top: 1px solid rgba(255,255,255,.07);">
+  <div style="max-width: 1140px; margin: 0 auto; display: flex; gap: 18px; flex-wrap: wrap; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #55585C;">
+    <span>© 2026 СИИстема · Роман Воробьёв</span>
+    <a href="privacy.html" style="color: #55585C;" class="h7">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<div id="sticky" class="sticky" hidden>
+  <div style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(10,11,12,.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid rgba(255,255,255,.1); display: flex; gap: 12px; align-items: center;">
+    <a href="#apply" style="flex: 1; text-align: center; background: var(--ac, #C9F14A); color: #0A0B0C; font-weight: 700; font-size: 16px; padding: 15px 18px; border-radius: 2px;">Познакомиться — 15 минут</a>
+    <a href="https://t.me/lifeexplorer23" target="_blank" rel="noopener" aria-label="Telegram" style="border: 1px solid rgba(255,255,255,.2); color: #F4F5F6; font-weight: 600; font-size: 14px; padding: 15px 16px; border-radius: 2px;">TG</a>
+  </div>
+</div>
+
+</div>
+</div>
+<script>
+function faq(i){
+  var a=document.getElementById('faq-a-'+i), s=document.getElementById('faq-s-'+i);
+  var btn=s.closest('button'); var open=a.hasAttribute('hidden');
+  if(open){a.removeAttribute('hidden');s.textContent='\u2212';btn.setAttribute('aria-expanded','true');}
+  else{a.setAttribute('hidden','');s.textContent='+';btn.setAttribute('aria-expanded','false');}
+}
+var cur=0, N=3;
+function render(){
+  var t=document.getElementById('track');
+  if(t) t.style.transform='translateX(-'+(cur*100)+'%)';
+  var l=document.getElementById('slideLabel');
+  if(l) l.textContent='0'+(cur+1)+' / 0'+N;
+  document.querySelectorAll('.dot').forEach(function(d,i){
+    d.style.width = i===cur ? '22px' : '10px';
+    d.style.background = i===cur ? '#C9F14A' : 'rgba(255,255,255,.25)';
+  });
+}
+function goSlide(i){cur=(i+N)%N;render();}
+function slide(d){goSlide(cur+d);}
+document.addEventListener('DOMContentLoaded',function(){
+  var t=document.getElementById('track'), x0=null;
+  if(t){
+    t.addEventListener('touchstart',function(e){x0=e.changedTouches[0].clientX;},{passive:true});
+    t.addEventListener('touchend',function(e){
+      if(x0===null)return; var dx=e.changedTouches[0].clientX-x0;
+      if(Math.abs(dx)>40) slide(dx<0?1:-1); x0=null;
+    },{passive:true});
+  }
+  render();
+  var f=document.getElementById('applyForm');
+  if(f) f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=new FormData(f), btn=f.querySelector('button[type=submit]');
+    var name=(d.get('name')||'').trim(), contact=(d.get('contact')||'').trim(), task=(d.get('task')||'').trim();
+    if(!name||!contact) return;
+    if((d.get('hp')||'').trim()) return;
+    var payload={name:name, phone:contact, email:'', task:task, source:'siistema', hp:''};
+    var msg='Заявка в СИИстему\n\nИмя: '+name+'\nКонтакт: '+contact+'\nЗадача: '+task;
+    function done(){
+      document.getElementById('formIdle').setAttribute('hidden','');
+      document.getElementById('formSent').removeAttribute('hidden');
+    }
+    function fallback(){ window.open('https://t.me/lifeexplorer23?text='+encodeURIComponent(msg),'_blank'); done(); }
+    if(btn){ btn.disabled=true; btn.textContent='Отправляем…'; }
+    fetch('https://functions.yandexcloud.net/d4eto14ls1nol0q6p1ve',{
+      method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
+    }).then(function(r){ if(!r.ok) throw new Error('bad'); return r.json(); })
+      .then(function(){ done(); })
+      .catch(function(){ fallback(); })
+      .finally(function(){ if(btn){ btn.disabled=false; btn.textContent='Познакомиться — 15 минут'; } });
+  });
+  var st=document.getElementById('sticky');
+  if(st) window.addEventListener('scroll',function(){
+    if(window.scrollY>900) st.removeAttribute('hidden'); else st.setAttribute('hidden','');
+  },{passive:true});
+});
+</script>
+</body>
+</html>
