@@ -1,0 +1,25 @@
+# Выкладка сайта в Yandex Object Storage (бакет www.aiseller.space) при каждом пуше в master.
+# HTTPS и сертификат — на стороне бакета (Certificate Manager), см. lifeexplorer230/core#168.
+name: Выкладка в Яндекс
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Синхронизация с бакетом
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.YC_S3_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.YC_S3_SECRET }}
+          AWS_DEFAULT_REGION: ru-central1
+        run: |
+          aws s3 sync . s3://www.aiseller.space \
+            --endpoint-url https://storage.yandexcloud.net \
+            --acl public-read --delete \
+            --exclude ".git/*" --exclude ".github/*" \
+            --exclude ".gitignore" --exclude "CNAME"
