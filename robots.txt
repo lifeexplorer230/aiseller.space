@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /oferta/
+
+Sitemap: https://www.aiseller.space/sitemap.xml
