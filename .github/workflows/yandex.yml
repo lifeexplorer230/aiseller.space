@@ -1,5 +1,6 @@
 # Выкладка сайта в Yandex Object Storage (бакет www.aiseller.space) при каждом пуше в master.
 # HTTPS и сертификат — на стороне бакета (Certificate Manager), см. lifeexplorer230/core#168.
+# 15.10.2026: карта сайта собирается автоматически (даты из git), после выкладки — IndexNow в Яндекс.
 name: Выкладка в Яндекс
 
 on:
@@ -12,6 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # нужна история git: из неё даты lastmod в карте сайта
+      - name: Карта сайта
+        uses: cicirello/generate-sitemap@v1.10.4
+        with:
+          base-url-path: https://www.aiseller.space/
+          include-pdf: false
+          date-only: true
+          exclude-paths: /googlec619d27e6e9b8f19.html /049524c46b52fd6e184ee759e87c15b7.txt /oferta/ /siistema/mafia/
       - name: Синхронизация с бакетом
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.YC_S3_KEY_ID }}
@@ -23,3 +33,10 @@ jobs:
             --acl public-read --delete \
             --exclude ".git/*" --exclude ".github/*" \
             --exclude ".gitignore" --exclude "CNAME"
+      - name: IndexNow — новые и изменённые страницы в Яндекс
+        uses: bojieyang/indexnow-action@v3.0.0
+        with:
+          sitemap-location: https://www.aiseller.space/sitemap.xml
+          endpoint: yandex.com
+          key: 049524c46b52fd6e184ee759e87c15b7
+          failure-strategy: ignore
