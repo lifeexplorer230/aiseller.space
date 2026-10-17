@@ -21,7 +21,7 @@ jobs:
           base-url-path: https://www.aiseller.space/
           include-pdf: false
           date-only: true
-          exclude-paths: /googlec619d27e6e9b8f19.html /049524c46b52fd6e184ee759e87c15b7.txt /oferta/ /siistema/mafia/
+          exclude-paths: /googlec619d27e6e9b8f19.html /yandex_fc1149f6133aefd3.html /049524c46b52fd6e184ee759e87c15b7.txt /oferta/ /siistema/mafia/
       - name: Синхронизация с бакетом
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.YC_S3_KEY_ID }}
