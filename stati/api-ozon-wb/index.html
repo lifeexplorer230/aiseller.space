@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API Озон и WB для селлера: что автоматизировать без программиста</title>
+<meta name="description" content="API Озон и Вайлдберриз простыми словами: где взять ключ, что автоматизировать (остатки, цены, заказы, отчёты, отзывы), лимиты и безопасность.">
+<link rel="canonical" href="https://www.aiseller.space/stati/api-ozon-wb/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.aiseller.space/stati/api-ozon-wb/">
+<meta property="og:title" content="API Озон и WB для селлера: что автоматизировать без программиста">
+<meta property="og:description" content="API Озон и Вайлдберриз простыми словами: где взять ключ, что автоматизировать (остатки, цены, заказы, отчёты, отзывы), лимиты и безопасность.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ИИ для селлеров маркетплейсов">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/stati/stati.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.aiseller.space/stati/api-ozon-wb/#article",
+   "headline": "API Озон и WB для селлера: что автоматизировать без программиста",
+   "description": "API Озон и Вайлдберриз простыми словами: где взять ключ, что автоматизировать (остатки, цены, заказы, отчёты, отзывы), лимиты и безопасность.",
+   "inLanguage": "ru",
+   "url": "https://www.aiseller.space/stati/api-ozon-wb/",
+   "mainEntityOfPage": "https://www.aiseller.space/stati/api-ozon-wb/",
+   "datePublished": "2026-10-17",
+   "dateModified": "2026-10-17",
+   "author": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "publisher": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "keywords": "api озон",
+   "citation": [
+    "https://seller-edu.ozon.ru/libra/api-ozon/how-to-api",
+    "https://seller-edu.ozon.ru/libra/api-ozon/external-api",
+    "https://docs.ozon.ru/api/seller/",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/wb-api",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-update-or-delete-a-wb-api-token",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/wb-api-data-categories",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/api-integration-with-token",
+    "https://dev.wildberries.ru/docs/openapi/api-information",
+    "https://dev.wildberries.ru/docs/openapi/documents-and-accounting",
+    "https://yandex.ru/dev/market/partner-api/doc/ru/concepts/api-key",
+    "https://yandex.ru/dev/market/partner-api/doc/ru/concepts/limits"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Главная",
+     "item": "https://www.aiseller.space/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Статьи",
+     "item": "https://www.aiseller.space/stati/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "API Озон и WB для селлера: что автоматизировать без программиста",
+     "item": "https://www.aiseller.space/stati/api-ozon-wb/"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.aiseller.space/#roman",
+   "name": "Роман Воробьёв",
+   "url": "https://www.aiseller.space/",
+   "jobTitle": "Селлер Ozon и Wildberries, внедряет ИИ для селлеров",
+   "sameAs": [
+    "https://t.me/FirstonOzon",
+    "https://t.me/sellersmafia"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Где найти Client ID и API-ключ Ozon?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "«Настройки → Seller API». Там же генерируется ключ и выбирается роль."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Сколько действует ключ API Озон?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "С 3 сентября 2026 года — 3 месяца, и для новых ключей, и для бывших бессрочных."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Сколько действует токен WB API и можно ли его продлить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "180 дней. Продлить нельзя: создаёте новый кнопкой «Дублировать», переключаете интеграцию, потом удаляете старый."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Для второго магазина нужен отдельный ключ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "В чатах отвечают так: да, у каждого магазина свой Client ID, и ключ создаётся в настройках именно этого магазина. В Базе знаний Ozon я прямого ответа не нашёл, поэтому проверьте в своём кабинете."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Какой токен WB выбрать для 1С на своём компьютере?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "По инструкции WB — персональный. Для облачного сервиса из каталога — сервисный."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Нужен ли программист, чтобы пользоваться API?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Чтобы подключить готовый сервис или Google-таблицу — нет. Свою логику на стыке нескольких площадок проще собрать с ИИ-агентом или разработчиком."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="layer">
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="/" class="logo"><span class="dot"></span><span><span class="hl">ai</span>seller</span></a>
+    <nav class="nav">
+      <div class="only-wide"><div class="nav-links">
+        <a href="/stati/">Статьи</a><a href="/kurs/">Курс</a><a href="/siistema/">Сообщество</a>
+      </div></div>
+      <a href="/#napisat" class="btn btn-sm">Написать</a>
+    </nav>
+  </div>
+</header>
+<main class="st"><article class="st-in"><nav class="kroshki"><a href="/">Главная</a> / <a href="/stati/">Статьи</a></nav><p class="st-meta">Роман Воробьёв · проверено 17.10.2026</p><h1>API Озон и Вайлдберриз для селлера: что автоматизировать без программиста</h1>
+<p>API Озон (Ozon Seller API) — это официальный способ, которым программа или сервис работает с вашим магазином без ручных кликов в личном кабинете: обновляет остатки и цены, забирает заказы, выгружает отчёты, отвечает на отзывы. Ключ создаётся в кабинете Ozon в разделе «Настройки → Seller API», у Вайлдберриз — токен в разделе «Интеграции по API». Писать код для этого не обязательно. Ключ можно отдать готовому сервису из каталога площадки, подключить Google-таблицу или ИИ-агента.</p>
+<h2>Коротко</h2>
+<ul>
+<li>API — «розетка» магазина для программ. Через неё сервис делает то же, что вы руками в кабинете, только за секунды и без ошибок копирования.</li>
+<li>Ozon: ключ — в «Настройки → Seller API», для рекламы отдельный — «Performance API». С 3 сентября 2026 новые ключи Ozon действуют 3 месяца.</li>
+<li>WB: токен — в «Интеграции по API», живёт 180 дней, показывается один раз. Всего до 20 активных токенов.</li>
+<li>Главное правило безопасности — минимум прав. Сервису аналитики хватит «только чтения».</li>
+<li>У каждого метода есть лимит запросов. Превысили — получите ошибку 429 и ждёте.</li>
+</ul>
+<h2>Что такое API простыми словами</h2>
+<p>Личный кабинет сделан для человека: кнопки, таблицы, фильтры. API — тот же магазин, но для программ. Программа отправляет запрос «дай заказы за сегодня» или «поставь остаток 15 на артикул», а площадка отвечает данными.</p>
+<p>Ozon объясняет это так: API — посредник между двумя системами, который позволяет им обмениваться данными без доступа к коду друг друга (<a href="https://seller-edu.ozon.ru/libra/api-ozon/how-to-api" target="_blank" rel="noopener">База знаний Ozon</a>). У WB смысл тот же: сторонние сервисы и ваши программы обмениваются информацией с магазином (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/wb-api" target="_blank" rel="noopener">справочный центр WB</a>).</p>
+<p>Что это даёт селлеру: меньше рутины и меньше ошибок. Ozon в своей статье приводит пример: обновить остатки у 10 000 товаров вручную — десятки человеко-часов, через API — несколько секунд.</p>
+<h2>Как получить API-ключ Озон</h2>
+<p>По <a href="https://seller-edu.ozon.ru/libra/api-ozon/how-to-api" target="_blank" rel="noopener">Базе знаний Ozon</a>:</p>
+<ol>
+<li>В правом верхнем углу кабинета откройте «Настройки».</li>
+<li>Перейдите в раздел «Seller API» и нажмите «Сгенерировать ключ».</li>
+<li>Укажите название, цель использования и, если ключ для внешнего сервиса, его название.</li>
+<li>Выберите роль. Роль ограничивает, какие методы доступны этому ключу.</li>
+<li>Нажмите «Сгенерировать».</li>
+</ol>
+<p>В запросах вместе с ключом используется Client ID вашего магазина. Что важно на октябрь 2026:</p>
+<ul>
+<li><strong>Срок ключей.</strong> С 3 сентября 2026 года новые ключи создаются на 3 месяца. Старые «бессрочные» тоже получили срок в 3 месяца. Поставьте напоминание, иначе интеграция однажды утром молча перестанет работать.</li>
+<li><strong>Разрешённые сети.</strong> В настройках ключа можно задать диапазон IP-адресов, с которых он работает. Если ключ утечёт, с чужого сервера его не используют.</li>
+<li><strong>Реклама — отдельно.</strong> Для рекламного кабинета нужен Performance API: «Настройки → Performance API», там создаётся сервисный аккаунт и ключ. Лимит — не больше 100 000 запросов в сутки на сервисный аккаунт (<a href="https://seller-edu.ozon.ru/libra/api-ozon/external-api" target="_blank" rel="noopener">Ozon</a>).</li>
+<li><strong>Документация Озон API</strong> — <a href="https://docs.ozon.ru/api/seller/" target="_blank" rel="noopener">docs.ozon.ru/api/seller</a>. Методы можно попробовать прямо там, вписав Client ID и API Key. Ozon также выкладывает коллекцию для Postman.</li>
+</ul>
+<h2>Как получить токен API Вайлдберриз</h2>
+<p>По <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-update-or-delete-a-wb-api-token" target="_blank" rel="noopener">инструкции WB</a> (правка 18.05.2026):</p>
+<ol>
+<li>Откройте раздел «Интеграции по API» в профиле и нажмите «+ Создать токен».</li>
+<li>Выберите вкладку: «Для сервиса из каталога» или «Для интеграции вручную».</li>
+<li>Отметьте категории данных и уровень доступа: «Чтение и запись» или «Только чтение».</li>
+<li>Нажмите «Создать», затем «Скопировать и закрыть».</li>
+</ol>
+<p>У WB четыре типа токенов:</p>
+<table>
+<thead>
+<tr>
+<th>Тип</th>
+<th>Для чего</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сервисный</td>
+<td>облачный сервис из официального каталога решений WB; настройки подставятся сами</td>
+</tr>
+<tr>
+<td>Персональный</td>
+<td>ваши программы и коробочные системы (1С, ERP) на своих серверах; передавать третьим лицам и в облачные сервисы нельзя</td>
+</tr>
+<tr>
+<td>Базовый</td>
+<td>тестирование на реальных данных и случаи, когда другие не подходят; часть данных недоступна</td>
+</tr>
+<tr>
+<td>Тестовый</td>
+<td>песочница без реальных данных магазина</td>
+</tr>
+</tbody>
+</table>
+<p>Правила, которые проще запомнить сразу:</p>
+<ul>
+<li>Токены создаёт и удаляет только владелец профиля.</li>
+<li>Токен показывается один раз. Потеряли — удаляйте и создавайте новый.</li>
+<li>Срок жизни — 180 дней, продлить нельзя. WB советует перевыпускать за 7–14 дней до конца срока кнопкой «Дублировать».</li>
+<li>Категории после создания не меняются. WB не рекомендует брать больше трёх категорий в один токен.</li>
+<li>Если сервис из каталога поддерживает OAuth 2.0, WB советует подключать через него. Так вы вообще не передаёте токен руками.</li>
+</ul>
+<h2>Какие задачи закрывает API Озон и WB</h2>
+<table>
+<thead>
+<tr>
+<th>Задача</th>
+<th>WB API (категория токена)</th>
+<th>Ozon Seller API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Остатки на своём складе (FBS)</td>
+<td>«Маркетплейс»</td>
+<td>обновление остатков для FBS и realFBS</td>
+</tr>
+<tr>
+<td>Цены и скидки, акции</td>
+<td>«Цены и скидки»</td>
+<td>цены, участие в акциях</td>
+</tr>
+<tr>
+<td>Заказы FBS / DBS</td>
+<td>«Маркетплейс»</td>
+<td>отправления FBO, FBS, realFBS</td>
+</tr>
+<tr>
+<td>Карточки товаров</td>
+<td>«Контент»</td>
+<td>загрузка и обновление товаров, атрибуты</td>
+</tr>
+<tr>
+<td>Отчёты реализации, финансы</td>
+<td>«Финансы», «Статистика»</td>
+<td>отчёты по ценам, остаткам, отправлениям</td>
+</tr>
+<tr>
+<td>Аналитика, удержания, хранение</td>
+<td>«Аналитика»</td>
+<td>аналитика (методы зависят от роли)</td>
+</tr>
+<tr>
+<td>Отзывы и вопросы</td>
+<td>«Вопросы и отзывы»</td>
+<td>чаты с покупателями; отзывы — уточните в документации</td>
+</tr>
+<tr>
+<td>Реклама</td>
+<td>«Продвижение»</td>
+<td>отдельный Performance API</td>
+</tr>
+<tr>
+<td>Поставки FBW / возвраты</td>
+<td>«Поставки», «Возвраты»</td>
+<td>склады, возвраты</td>
+</tr>
+</tbody>
+</table>
+<p>Источники: <a href="https://seller.wildberries.ru/instructions/ru/ru/material/wb-api-data-categories" target="_blank" rel="noopener">категории данных WB API</a>, <a href="https://seller-edu.ozon.ru/libra/api-ozon/how-to-api" target="_blank" rel="noopener">База знаний Ozon</a>.</p>
+<p>Одна оговорка от Ozon: на FBO остатки обновлять не нужно, их учитывает сам Ozon. Самая большая экономия от API — на FBS и realFBS, где остатки живут у вас.</p>
+<h2>Лимиты: почему API «перестаёт отвечать»</h2>
+<p>У WB для каждого метода свой лимит, и зависит он от типа токена (<a href="https://dev.wildberries.ru/docs/openapi/api-information" target="_blank" rel="noopener">dev.wildberries.ru</a>). Пример из документации — категория «Маркетплейс»:</p>
+<table>
+<thead>
+<tr>
+<th>Тип токена</th>
+<th>Лимит в минуту</th>
+<th>Интервал</th>
+<th>Всплеск</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Персональный, сервисный</td>
+<td>300 запросов</td>
+<td>200 мс</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Базовый, тестовый</td>
+<td>150 запросов</td>
+<td>200 мс</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>Ещё три вещи, о которых селлеры узнают на собственном опыте:</p>
+<ul>
+<li>Запрос с ошибкой 4XX в категории «Маркетплейс» засчитывается за 10 запросов. Кривой скрипт съедает лимит в десять раз быстрее.</li>
+<li>Детализация отчёта реализации за период: 1 запрос в минуту на персональном и сервисном токене. На базовом — только 2 запроса в сутки (<a href="https://dev.wildberries.ru/docs/openapi/documents-and-accounting" target="_blank" rel="noopener">документация WB</a>).</li>
+<li>При ошибке 429 WB возвращает заголовок <code>X-Ratelimit-Retry</code> — через сколько секунд можно повторить.</li>
+</ul>
+<p>У Ozon лимиты указаны в документации отдельно по методам, и общей цифры я приводить не буду — уточните в <a href="https://docs.ozon.ru/api/seller/" target="_blank" rel="noopener">docs.ozon.ru</a>. Точно известно одно: Performance API — до 100 000 запросов в сутки на сервисный аккаунт.</p>
+<p>У Яндекс Маркета — не больше четырёх одновременных запросов на магазин или кабинет; при превышении сервер отвечает кодом 420 (<a href="https://yandex.ru/dev/market/partner-api/doc/ru/concepts/limits" target="_blank" rel="noopener">документация Маркета</a>). Токен Маркета создаётся в «Настройки → API и модули», действует бессрочно, в кабинете их может быть до 30.</p>
+<h2>Безопасность ключей</h2>
+<p>WB прямо пишет: токен — аналог пароля, только для программы. Что делать:</p>
+<ul>
+<li>Давать минимум прав. Сервис аналитики — «Только чтение». Автоответчик на отзывы — только «Вопросы и отзывы».</li>
+<li>Отдельный ключ под каждый сервис. Перестали работать с сервисом или разработчиком — сразу удаляйте его ключ.</li>
+<li>Хранить в менеджере паролей, не в чатах и не в заметках.</li>
+<li>На Ozon — ограничить ключ разрешёнными IP-сетями.</li>
+<li>Не вставлять токен WB в онлайн-декодеры: WB отдельно не рекомендует смотреть токен внешними инструментами.</li>
+<li>Не пользоваться «интеграциями» через логин, пароль и куки кабинета. На портале разработчиков WB сказано, что по пункту 9.9.6 оферты интеграция с порталом продавца без WB API запрещена.</li>
+</ul>
+<h2>Что можно сделать без программиста</h2>
+<p><strong>Бесплатно или почти бесплатно:</strong>
+- Готовые сервисы из каталога решений WB и интеграций Ozon подключаются ключом за пару минут. Стоимость у всех разная. Цены я не называю: проверяйте на сайте сервиса.
+- Google-таблицы. В документации WB у методов детализации отчёта реализации стоит пометка, что данные можно выгрузить в Google Таблицы.
+- Тестовые токены и песочница WB позволяют попробовать запросы без риска для реального магазина.</p>
+<p><strong>Где упрётесь:</strong>
+- Сводить данные WB и Ozon в одну картину сервис из каталога одной площадки не будет.
+- Своя логика («если остаток меньше 5 и реклама крутится — выключи рекламу») в готовом сервисе часто не настраивается.
+- Методы устаревают. Ozon и WB регулярно отключают старые версии, и интеграцию приходится поддерживать.</p>
+<p><strong>ИИ-агент.</strong> Я сам подключаю ИИ-агентов на Claude к кабинету Ozon через API. Агент — это программа, которая понимает задачу словами и сама вызывает нужные методы. Селлер пишет «покажи товары, где остаток кончится за неделю», а агент забирает данные и отвечает таблицей. Кода вы при этом не пишете. Но ключ и роль выбираете вы, и агенту на старте я даю только чтение.</p>
+<h2>Что говорят селлеры в чатах</h2>
+<p>С 22 сентября по 16 октября 2026 года в чатах селлеров, которые мы читаем, было 68 разных вопросов про API и токены. Больше половины — в чате разработчиков Ozon, остальное — WB и Яндекс Маркет. Типичные проблемы:</p>
+<ol>
+<li><strong>«Ошибка obsolete method cannot be used».</strong> Метод устарел и отключён, нужна новая версия. Такое случается и с готовыми сервисами, если те не обновились.</li>
+<li><strong>«Токен не подходит» в бухгалтерии или 1С.</strong> В чатах разбирали случай: финансовые отчёты WB через базовый токен упираются в лимит 2 запроса в сутки. Совет — перевыпустить персональный токен с правами только на чтение. Это совпадает с документацией WB.</li>
+<li><strong>«Отчёт за вчера отдаёт пустой ответ 204».</strong> Детализация WB ещё не сформирована. В чатах советуют повторять запрос несколько раз в день, а не сразу считать это ошибкой.</li>
+<li><strong>«Насколько безопасно давать ключ сервису аналитики?»</strong> Ответ в чатах — тот же, что у площадок: только чтение, проверенный сервис, перевыпуск ключа, удаление после отказа от сервиса.</li>
+<li><strong>«С нашего сервера не соединяется с api-seller.ozon.ru».</strong> Похоже на сетевые ограничения со стороны сервера или хостинга. Решается сменой хостинга или сети, а не ключа. Я сам с этим сталкивался.</li>
+</ol>
+<h2>Частые вопросы</h2>
+<p><strong>Где найти Client ID и API-ключ Ozon?</strong>
+«Настройки → Seller API». Там же генерируется ключ и выбирается роль.</p>
+<p><strong>Сколько действует ключ API Озон?</strong>
+С 3 сентября 2026 года — 3 месяца, и для новых ключей, и для бывших бессрочных.</p>
+<p><strong>Сколько действует токен WB API и можно ли его продлить?</strong>
+180 дней. Продлить нельзя: создаёте новый кнопкой «Дублировать», переключаете интеграцию, потом удаляете старый.</p>
+<p><strong>Для второго магазина нужен отдельный ключ?</strong>
+В чатах отвечают так: да, у каждого магазина свой Client ID, и ключ создаётся в настройках именно этого магазина. В Базе знаний Ozon я прямого ответа не нашёл, поэтому проверьте в своём кабинете.</p>
+<p><strong>Какой токен WB выбрать для 1С на своём компьютере?</strong>
+По инструкции WB — персональный. Для облачного сервиса из каталога — сервисный.</p>
+<p><strong>Нужен ли программист, чтобы пользоваться API?</strong>
+Чтобы подключить готовый сервис или Google-таблицу — нет. Свою логику на стыке нескольких площадок проще собрать с ИИ-агентом или разработчиком.</p>
+<h2>Об авторе</h2>
+<p>Я Роман Воробьёв, 8 лет продаю на Wildberries и Ozon, подключаю ИИ к кабинету Ozon по API и собираю агентов на Claude и Telegram-ботов. Разбираем такие задачи в клубе селлеров «СИИстема» (aiseller.space/siistema). С нуля — вводный курс «ИИ для селлеров» (aiseller.space/kurs).</p>
+<h2>Читайте также</h2>
+<ul>
+<li><a href="/stati/analitika-ozon/">Аналитика Озон</a></li>
+<li><a href="/stati/zaderzhka-vyplat-wildberries/">Выплаты Вайлдберриз</a></li>
+<li><a href="/stati/ii-dlya-marketplejsov/">ИИ для маркетплейсов</a></li>
+</ul>
+<h2>Источники</h2>
+<p>Дата проверки всех ссылок — 17.10.2026.</p>
+<ul>
+<li><a href="https://seller-edu.ozon.ru/libra/api-ozon/how-to-api" target="_blank" rel="noopener">Начало работы с Seller API</a> — База знаний Ozon</li>
+<li><a href="https://seller-edu.ozon.ru/libra/api-ozon/external-api" target="_blank" rel="noopener">Начало работы с Performance API</a> — База знаний Ozon</li>
+<li><a href="https://docs.ozon.ru/api/seller/" target="_blank" rel="noopener">Документация Ozon Seller API</a> — Ozon</li>
+<li><a href="https://seller.wildberries.ru/instructions/ru/ru/material/wb-api" target="_blank" rel="noopener">Что такое WB API и как с ним работать</a> — справочный центр WB, правка 18.05.2026</li>
+<li><a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-update-or-delete-a-wb-api-token" target="_blank" rel="noopener">Как создать, обновить или удалить токен WB API</a> — WB, правка 18.05.2026</li>
+<li><a href="https://seller.wildberries.ru/instructions/ru/ru/material/wb-api-data-categories" target="_blank" rel="noopener">Категории данных WB API</a> — WB, правка 26.08.2026</li>
+<li><a href="https://seller.wildberries.ru/instructions/ru/ru/material/api-integration-with-token" target="_blank" rel="noopener">Подключение по токену</a> — WB, правка 28.05.2026</li>
+<li><a href="https://dev.wildberries.ru/docs/openapi/api-information" target="_blank" rel="noopener">WB API: общая информация, токены, лимиты</a> — портал разработчиков WB</li>
+<li><a href="https://dev.wildberries.ru/docs/openapi/documents-and-accounting" target="_blank" rel="noopener">WB API: документы и бухгалтерия</a> — портал разработчиков WB</li>
+<li><a href="https://yandex.ru/dev/market/partner-api/doc/ru/concepts/api-key" target="_blank" rel="noopener">Авторизация по токену</a> и <a href="https://yandex.ru/dev/market/partner-api/doc/ru/concepts/limits" target="_blank" rel="noopener">ограничения</a> — API Яндекс Маркета</li>
+</ul></article></main>
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-links">
+      <a href="/stati/">Статьи</a>
+      <a href="/kurs/">Курс «ИИ для селлеров»</a>
+      <a href="/siistema/">Сообщество «СИИстема»</a>
+      <a href="https://t.me/FirstonOzon" target="_blank" rel="noopener">Канал «Системный гуманИИст»</a>
+      <a href="https://t.me/sellersmafia" target="_blank" rel="noopener">Мафклуб предпринимателей</a>
+    </div>
+    <small>Роман Воробьёв · ИИ для селлеров маркетплейсов</small>
+  </div>
+</footer>
+</div>
+</body>
+</html>
