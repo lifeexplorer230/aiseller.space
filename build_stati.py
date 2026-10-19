@@ -6,7 +6,7 @@
 Разметка: canonical, Open Graph, JSON-LD Article + BreadcrumbList + FAQPage (если есть «Частые вопросы»).
 Запуск: python3 build_stati.py [папка_с_черновиками]"""
 import os, re, sys, json, html, glob, datetime as dt
-import markdown
+import markdown, yaml
 
 SRC = sys.argv[1] if len(sys.argv) > 1 else '/home/redline/core/projects/aiseller-stati/chernoviki'
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -16,10 +16,7 @@ SEGODNYA = dt.date.today().isoformat()
 def razobrat(path):
     s = open(path, encoding='utf-8').read()
     _, fm, body = s.split('---', 2)
-    meta = {}
-    for line in fm.strip().splitlines():
-        m = re.match(r'^([a-z_]+):\s*"?(.*?)"?\s*$', line)
-        if m and m.group(2): meta[m.group(1)] = m.group(2)
+    meta = {k: (v if isinstance(v, list) else str(v)) for k, v in (yaml.safe_load(fm) or {}).items() if v}
     body = re.sub(r'<!--.*?-->', '', body, flags=re.S).strip()
     istochniki = re.findall(r'^\s*-\s*"?(https?://\S+?)"?\s*$', fm, re.M)
     return meta, body, istochniki
@@ -117,6 +114,24 @@ def og_kartinka(path, zagolovok, podzag='Роман Воробьёв · стат
         d.text((80, y), st, font=f, fill='#F4F5F6'); y += int(razmer * 1.2)
     d.text((80, 540), podzag, font=ImageFont.truetype(SHRIFT, 28), fill='#9DA1A6')
     im.save(path, optimize=True)
+
+def osnovy(m):
+    t = ' '.join([m['title'], m.get('glavnyj_zapros', ''), m.get('description', '')] + list(m.get('zaprosy', [])))
+    return {w[:max(4, len(w) - 3)] for w in re.findall(r'[а-яёa-z]{4,}', t.lower())}
+
+def chitajte(meta, statyi, n=4):
+    """«Читайте также» — 4 самые близкие по теме статьи; пересобирается при каждой сборке,
+    поэтому старые статьи сами получают ссылки на новые."""
+    moi = osnovy(meta)
+    blizkie = sorted((m for m in statyi if m['slug'] != meta['slug']),
+                     key=lambda m: (-len(moi & osnovy(m)), m['slug']))[:n]
+    return '## Читайте также\n\n' + '\n'.join(f'- [{m["title"]}](/stati/{m["slug"]}/)' for m in blizkie) + '\n'
+
+def postavit_chitajte(body, blok):
+    body = re.sub(r'^## Читайте также\s*$.*?(?=^## |\Z)', '', body, flags=re.M | re.S)
+    if re.search(r'^## Источники', body, re.M):
+        return re.sub(r'^(## Источники)', blok + '\n\\1', body, count=1, flags=re.M)
+    return body.rstrip() + '\n\n' + blok
 
 def stranica(meta, body, istochniki):
     slug = meta['slug']; url = f'{SITE}/stati/{slug}/'
@@ -243,13 +258,17 @@ def blok_na_stranice(path, statyi, n=6):
     if s2 != s: open(path, 'w', encoding='utf-8').write(s2)
 
 def main():
-    statyi = []
-    for p in sorted(glob.glob(os.path.join(SRC, '[0-9][0-9]-*.md'))):
-        meta, body, ist = razobrat(p)
+    # новые — первыми: по дате публикации, при равной дате — по номеру файла
+    fajly = sorted(glob.glob(os.path.join(SRC, '[0-9]*-*.md')), key=lambda p: int(os.path.basename(p).split('-')[0]))
+    razobrannye = [razobrat(p) for p in fajly]
+    razobrannye.sort(key=lambda r: r[0].get('data_publikacii', ''), reverse=True)
+    statyi = [r[0] for r in razobrannye]
+    for meta, body, ist in razobrannye:
+        body = postavit_chitajte(body, chitajte(meta, statyi))
         d = os.path.join(ROOT, 'stati', meta['slug']); os.makedirs(d, exist_ok=True)
         open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(stranica(meta, body, ist))
         og_kartinka(os.path.join(d, 'og.png'), meta['title'])
-        statyi.append(meta); print('  ', meta['slug'], '| FAQ:', len(faq(body)))
+        print('  ', meta['slug'], '| FAQ:', len(faq(body)))
     open(os.path.join(ROOT, 'stati', 'index.html'), 'w', encoding='utf-8').write(spisok(statyi))
     og_kartinka(os.path.join(ROOT, 'og.png'), 'ИИ для селлеров маркетплейсов: статьи, курс, клуб', 'Роман Воробьёв · селлер WB и Ozon')
     os.makedirs(os.path.join(ROOT, 'avtor'), exist_ok=True)
