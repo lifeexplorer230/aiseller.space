@@ -66,6 +66,9 @@ HEAD = '''<!DOCTYPE html>
   </div>
 </header>
 '''
+# Счётчик Яндекс Метрики 113669934 (создан 19.10.2026); фигурные скобки удвоены под str.format
+METRIKA = open(os.path.join(ROOT, 'metrika.html'), encoding='utf-8').read().replace('{', '{{').replace('}', '}}')
+HEAD = HEAD.replace('</head>', METRIKA + '</head>')
 FOOT = '''<footer class="ftr">
   <div class="ftr-in">
     <div class="ftr-links">

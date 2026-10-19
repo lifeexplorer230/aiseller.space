@@ -21,7 +21,7 @@ jobs:
           base-url-path: https://www.aiseller.space/
           include-pdf: false
           date-only: true
-          exclude-paths: /googlec619d27e6e9b8f19.html /yandex_fc1149f6133aefd3.html /049524c46b52fd6e184ee759e87c15b7.txt /oferta/ /siistema/mafia/
+          exclude-paths: /metrika.html /googlec619d27e6e9b8f19.html /yandex_fc1149f6133aefd3.html /049524c46b52fd6e184ee759e87c15b7.txt /oferta/ /siistema/mafia/
       - name: Синхронизация с бакетом
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.YC_S3_KEY_ID }}
@@ -32,7 +32,7 @@ jobs:
             --endpoint-url https://storage.yandexcloud.net \
             --acl public-read --delete \
             --exclude ".git/*" --exclude ".github/*" \
-            --exclude ".gitignore" --exclude "CNAME" --exclude "*.py"
+            --exclude ".gitignore" --exclude "CNAME" --exclude "*.py" --exclude "metrika.html"
           # llms.txt — карта сайта для ИИ-ассистентов; без charset кириллица читается кракозябрами
           aws s3 cp llms.txt s3://www.aiseller.space/llms.txt \
             --endpoint-url https://storage.yandexcloud.net --acl public-read \

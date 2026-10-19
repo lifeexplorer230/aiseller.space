@@ -40,6 +40,19 @@
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50}
 #track{will-change:transform}
 </style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113669934', 'ym');
+
+ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113669934" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </head>
 <body>
 <div style="--ac: #C9F14A; position: relative; overflow-x: clip; background: #0A0B0C;">
@@ -325,19 +338,19 @@
         </div>
       </div>
       <div id="formIdle">
-        <form id="applyForm" style="display: grid; gap: 16px;">
+        <form id="applyForm" class="ym-hide-content" style="display: grid; gap: 16px;">
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #6F7378;">Заявка на знакомство</div>
           <label style="display: grid; gap: 7px;">
             <span style="font-size: 13px; color: #9DA1A6;">Имя</span>
-            <input name="hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"><input name="name" required="required" type="text" placeholder="Как к вам обращаться" style="background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.14); color: #F4F5F6; padding: 14px 14px; font-size: 15px; border-radius: 2px; outline: none;" style-focus="border-color: var(--ac, #C9F14A);" />
+            <input name="hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"><input class="ym-disable-keys" name="name" required="required" type="text" placeholder="Как к вам обращаться" style="background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.14); color: #F4F5F6; padding: 14px 14px; font-size: 15px; border-radius: 2px; outline: none;" style-focus="border-color: var(--ac, #C9F14A);" />
           </label>
           <label style="display: grid; gap: 7px;">
             <span style="font-size: 13px; color: #9DA1A6;">Telegram или телефон</span>
-            <input name="contact" required="required" type="text" placeholder="@username" style="background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.14); color: #F4F5F6; padding: 14px 14px; font-size: 15px; border-radius: 2px; outline: none;" style-focus="border-color: var(--ac, #C9F14A);" />
+            <input class="ym-disable-keys" name="contact" required="required" type="text" placeholder="@username" style="background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.14); color: #F4F5F6; padding: 14px 14px; font-size: 15px; border-radius: 2px; outline: none;" style-focus="border-color: var(--ac, #C9F14A);" />
           </label>
           <label style="display: grid; gap: 7px;">
             <span style="font-size: 13px; color: #9DA1A6;">Бизнес и что хотите внедрить</span>
-            <textarea name="task" rows="3" placeholder="Пара строк: чем занимаетесь и какая задача" style="background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.14); color: #F4F5F6; padding: 14px; font-size: 15px; border-radius: 2px; outline: none; resize: vertical;" style-focus="border-color: var(--ac, #C9F14A);"></textarea>
+            <textarea class="ym-disable-keys" name="task" rows="3" placeholder="Пара строк: чем занимаетесь и какая задача" style="background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.14); color: #F4F5F6; padding: 14px; font-size: 15px; border-radius: 2px; outline: none; resize: vertical;" style-focus="border-color: var(--ac, #C9F14A);"></textarea>
           </label>
           <label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #9DA1A6; cursor: pointer;"><input name="privacy" type="checkbox" required="required" style="margin-top: 3px; accent-color: #C9F14A; flex: 0 0 auto;"><span>Согласен на обработку персональных данных — имя и контакт нужны, чтобы связаться и договориться о разговоре. <a href="privacy.html" target="_blank" style="color: #C9F14A;">Как мы с ними обращаемся</a></span></label>
 <button type="submit" style="background: var(--ac, #C9F14A); color: #0A0B0C; font-weight: 700; font-size: 16px; padding: 16px 24px; border: 0; border-radius: 2px; cursor: pointer;" class="h1">Познакомиться — 15 минут</button>
