@@ -44,6 +44,10 @@ HEAD = '''<!DOCTYPE html>
 <meta property="og:description" content="{descr}">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="ИИ для селлеров маркетплейсов">
+<meta property="og:image" content="{ogimg}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/stati/stati.css">
@@ -91,16 +95,40 @@ PERSON = {"@type": "Person", "@id": f"{SITE}/#roman", "name": "Роман Вор
           "knowsAbout": ["Wildberries", "Ozon", "Яндекс Маркет", "нейросети для селлеров", "Seller API", "ИИ-агенты", "Telegram-боты"],
           "sameAs": ["https://t.me/FirstonOzon", "https://t.me/sellersmafia"]}
 
+SHRIFT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+
+def og_kartinka(path, zagolovok, podzag='Роман Воробьёв · статьи для селлеров WB и Ozon'):
+    """Превью 1200×630 для соцсетей, мессенджеров и сниппетов: тёмный фон и акцент сайта."""
+    from PIL import Image, ImageDraw, ImageFont
+    im = Image.new('RGB', (1200, 630), '#0A0B0C'); d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, 1200, 8], fill='#C9F14A')
+    d.ellipse([80, 82, 98, 100], fill='#C9F14A')
+    f_logo = ImageFont.truetype(SHRIFT, 34)
+    d.text((112, 72), 'ai', font=f_logo, fill='#C9F14A'); d.text((112 + d.textlength('ai', font=f_logo), 72), 'seller.space', font=f_logo, fill='#F4F5F6')
+    for razmer in (64, 58, 52, 46):
+        f = ImageFont.truetype(SHRIFT, razmer); stroki, tek = [], ''
+        for slovo in zagolovok.split():
+            if d.textlength((tek + ' ' + slovo).strip(), font=f) <= 1040: tek = (tek + ' ' + slovo).strip()
+            else: stroki.append(tek); tek = slovo
+        stroki.append(tek)
+        if len(stroki) * razmer * 1.2 <= 330: break
+    y = 170
+    for st in stroki:
+        d.text((80, y), st, font=f, fill='#F4F5F6'); y += int(razmer * 1.2)
+    d.text((80, 540), podzag, font=ImageFont.truetype(SHRIFT, 28), fill='#9DA1A6')
+    im.save(path, optimize=True)
+
 def stranica(meta, body, istochniki):
     slug = meta['slug']; url = f'{SITE}/stati/{slug}/'
     title = meta['title']; descr = meta.get('description', '')
+    body = re.sub(r'(?<![(<"\[])(https?://[^\s)<>\]]+?)([.,;:]?)(?=\s|$)', r'<\1>\2', body, flags=re.M)
     md = markdown.Markdown(extensions=['tables', 'sane_lists'])
     tel = md.convert(body)
     tel = re.sub(r'<a href="(https?://[^"]+)"', r'<a href="\1" target="_blank" rel="noopener"', tel)
     data = meta.get('data_proverki', SEGODNYA)
     graf = [
         {"@type": "Article", "@id": url + "#article", "headline": title, "description": descr,
-         "inLanguage": "ru", "url": url, "mainEntityOfPage": url, "datePublished": meta.get('data_publikacii', data), "dateModified": data,
+         "inLanguage": "ru", "url": url, "mainEntityOfPage": url, "image": url + 'og.png', "datePublished": meta.get('data_publikacii', data), "dateModified": data,
          "author": {"@id": f"{SITE}/#roman"}, "publisher": {"@id": f"{SITE}/#roman"},
          "keywords": meta.get('glavnyj_zapros', ''), **({"citation": istochniki[:20]} if istochniki else {})},
         {"@type": "BreadcrumbList", "itemListElement": [
@@ -113,7 +141,7 @@ def stranica(meta, body, istochniki):
         graf.append({"@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in f]})
     jsonld = json.dumps({"@context": "https://schema.org", "@graph": graf}, ensure_ascii=False, indent=1)
-    shapka = HEAD.format(title=html.escape(title), descr=html.escape(descr), url=url, ogtype='article', jsonld=jsonld)
+    shapka = HEAD.format(title=html.escape(title), descr=html.escape(descr), url=url, ogtype='article', jsonld=jsonld, ogimg=url + 'og.png')
     krohi = f'<nav class="kroshki"><a href="/">Главная</a> / <a href="/stati/">Статьи</a></nav>'
     podpis = (f'<p class="st-meta"><a href="/avtor/">Роман Воробьёв</a> · проверено {dt.date.fromisoformat(data):%d.%m.%Y}</p>')
     return shapka + f'<main class="st"><article class="st-in">{krohi}{podpis}{tel}</article></main>\n' + FOOT
@@ -131,7 +159,7 @@ def spisok(statyi):
     kartochki = '\n'.join(
         f'<a class="st-card" href="/stati/{m["slug"]}/"><h2>{html.escape(m["title"])}</h2><p>{html.escape(m.get("description",""))}</p></a>'
         for m in statyi)
-    return (HEAD.format(title=html.escape(title), descr=html.escape(descr), url=url, ogtype='website', jsonld=jsonld)
+    return (HEAD.format(title=html.escape(title), descr=html.escape(descr), url=url, ogtype='website', jsonld=jsonld, ogimg=f'{SITE}/og.png')
             + f'<main class="st"><div class="st-in"><h1>Статьи для селлеров</h1>'
               f'<p class="lead">Нейросети, автоматизация и правила площадок — простыми словами, с источниками '
               f'и тем, что реально спрашивают в чатах селлеров.</p><div class="st-list">{kartochki}</div></div></main>\n' + FOOT)
@@ -146,7 +174,7 @@ def avtor(statyi):
                 {"@type": "ListItem", "position": 2, "name": "Об авторе", "item": url}]}, PERSON]
     jsonld = json.dumps({"@context": "https://schema.org", "@graph": graf}, ensure_ascii=False, indent=1)
     spisok_st = '\n'.join(f'<li><a href="/stati/{m["slug"]}/">{html.escape(m["title"])}</a></li>' for m in statyi)
-    return (HEAD.format(title=html.escape(title), descr=html.escape(descr), url=url, ogtype='profile', jsonld=jsonld)
+    return (HEAD.format(title=html.escape(title), descr=html.escape(descr), url=url, ogtype='profile', jsonld=jsonld, ogimg=f'{SITE}/og.png')
             + f'''<main class="st"><article class="st-in"><nav class="kroshki"><a href="/">Главная</a> / Об авторе</nav>
 <h1>Роман Воробьёв</h1>
 <p class="lead">Восемь лет продаю на Wildberries и Ozon, сейчас торгую ещё и на Яндекс Маркете. Собираю ИИ-агентов на Claude,
@@ -220,8 +248,10 @@ def main():
         meta, body, ist = razobrat(p)
         d = os.path.join(ROOT, 'stati', meta['slug']); os.makedirs(d, exist_ok=True)
         open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(stranica(meta, body, ist))
+        og_kartinka(os.path.join(d, 'og.png'), meta['title'])
         statyi.append(meta); print('  ', meta['slug'], '| FAQ:', len(faq(body)))
     open(os.path.join(ROOT, 'stati', 'index.html'), 'w', encoding='utf-8').write(spisok(statyi))
+    og_kartinka(os.path.join(ROOT, 'og.png'), 'ИИ для селлеров маркетплейсов: статьи, курс, клуб', 'Роман Воробьёв · селлер WB и Ozon')
     os.makedirs(os.path.join(ROOT, 'avtor'), exist_ok=True)
     open(os.path.join(ROOT, 'avtor', 'index.html'), 'w', encoding='utf-8').write(avtor(statyi))
     open(os.path.join(ROOT, 'llms.txt'), 'w', encoding='utf-8').write(llms(statyi))

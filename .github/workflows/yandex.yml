@@ -41,6 +41,6 @@ jobs:
         uses: bojieyang/indexnow-action@v3.0.0
         with:
           sitemap-location: https://www.aiseller.space/sitemap.xml
-          endpoint: yandex.com
+          endpoint: api.indexnow.org   # общий узел IndexNow: раздаёт Яндексу, Bing (поиск ChatGPT и Copilot), Seznam, Naver
           key: 049524c46b52fd6e184ee759e87c15b7
           failure-strategy: ignore
