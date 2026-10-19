@@ -33,6 +33,10 @@ jobs:
             --acl public-read --delete \
             --exclude ".git/*" --exclude ".github/*" \
             --exclude ".gitignore" --exclude "CNAME" --exclude "*.py"
+          # llms.txt — карта сайта для ИИ-ассистентов; без charset кириллица читается кракозябрами
+          aws s3 cp llms.txt s3://www.aiseller.space/llms.txt \
+            --endpoint-url https://storage.yandexcloud.net --acl public-read \
+            --content-type "text/plain; charset=utf-8"
       - name: IndexNow — новые и изменённые страницы в Яндекс
         uses: bojieyang/indexnow-action@v3.0.0
         with:
