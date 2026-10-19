@@ -92,6 +92,19 @@ PERSON = {"@type": "Person", "@id": f"{SITE}/#roman", "name": "Роман Вор
           "knowsAbout": ["Wildberries", "Ozon", "Яндекс Маркет", "нейросети для селлеров", "Seller API", "ИИ-агенты", "Telegram-боты"],
           "sameAs": ["https://t.me/FirstonOzon", "https://t.me/sellersmafia"]}
 
+# Блок курса — во всех статьях перед «Частыми вопросами» (решение Романа 19.10.2026).
+# Текст здесь один на все статьи: поменял — пересобрал — обновились все, включая вышедшие.
+KURS = ('<aside class="st-kurs"><p class="st-kurs-t">Курс «ИИ для селлеров»</p>'
+        '<p>Если хочется не читать про ИИ, а настроить его под свой магазин, — у меня есть курс для владельцев магазинов '
+        'на Wildberries и Ozon. Без программирования, по шагам: подключаем ИИ к данным вашего кабинета и разбираем '
+        'задачи вроде той, что в этой статье.</p>'
+        '<p><a class="btn" href="/kurs/">Подробнее о курсе</a></p></aside>')
+
+def vstavit_kurs(tel):
+    for metka in ('<h2>Частые вопросы', '<h2>Об авторе', '<h2>Читайте также', '<h2>Источники'):
+        if metka in tel: return tel.replace(metka, KURS + '\n' + metka, 1)
+    return tel + KURS
+
 OPUBL = set()   # slug опубликованных статей — заполняется в main()
 SHRIFT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 
@@ -141,6 +154,7 @@ def stranica(meta, body, istochniki):
     md = markdown.Markdown(extensions=['tables', 'sane_lists'])
     tel = md.convert(body)
     tel = re.sub(r'<a href="(https?://[^"]+)"', r'<a href="\1" target="_blank" rel="noopener"', tel)
+    tel = vstavit_kurs(tel)
     # ссылка на статью, которая ещё не вышла (лежит в gotovye/), — пока просто текст; оживёт при её выходе
     tel = re.sub(r'<a href="/stati/([a-z0-9-]+)/?">(.*?)</a>',
                  lambda m: m.group(0) if m.group(1) in OPUBL else m.group(2), tel)
