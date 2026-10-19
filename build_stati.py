@@ -92,6 +92,7 @@ PERSON = {"@type": "Person", "@id": f"{SITE}/#roman", "name": "Роман Вор
           "knowsAbout": ["Wildberries", "Ozon", "Яндекс Маркет", "нейросети для селлеров", "Seller API", "ИИ-агенты", "Telegram-боты"],
           "sameAs": ["https://t.me/FirstonOzon", "https://t.me/sellersmafia"]}
 
+OPUBL = set()   # slug опубликованных статей — заполняется в main()
 SHRIFT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 
 def og_kartinka(path, zagolovok, podzag='Роман Воробьёв · статьи для селлеров WB и Ozon'):
@@ -140,6 +141,9 @@ def stranica(meta, body, istochniki):
     md = markdown.Markdown(extensions=['tables', 'sane_lists'])
     tel = md.convert(body)
     tel = re.sub(r'<a href="(https?://[^"]+)"', r'<a href="\1" target="_blank" rel="noopener"', tel)
+    # ссылка на статью, которая ещё не вышла (лежит в gotovye/), — пока просто текст; оживёт при её выходе
+    tel = re.sub(r'<a href="/stati/([a-z0-9-]+)/?">(.*?)</a>',
+                 lambda m: m.group(0) if m.group(1) in OPUBL else m.group(2), tel)
     data = meta.get('data_proverki', SEGODNYA)
     graf = [
         {"@type": "Article", "@id": url + "#article", "headline": title, "description": descr,
@@ -263,6 +267,7 @@ def main():
     razobrannye = [razobrat(p) for p in fajly]
     razobrannye.sort(key=lambda r: r[0].get('data_publikacii', ''), reverse=True)
     statyi = [r[0] for r in razobrannye]
+    OPUBL.update(m['slug'] for m in statyi)
     for meta, body, ist in razobrannye:
         body = postavit_chitajte(body, chitajte(meta, statyi))
         d = os.path.join(ROOT, 'stati', meta['slug']); os.makedirs(d, exist_ok=True)
