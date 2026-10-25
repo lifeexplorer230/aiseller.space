@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatGPT для маркетплейса: промпты селлеру и где он врёт</title>
+<meta name="description" content="ChatGPT для маркетплейса без обзоров: готовые промпты для названий, поддержки WB, разбора отчёта и ТН ВЭД. Где нейросеть ошибается и как проверять.">
+<link rel="canonical" href="https://www.aiseller.space/stati/chatgpt-dlya-sellera/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.aiseller.space/stati/chatgpt-dlya-sellera/">
+<meta property="og:title" content="ChatGPT для маркетплейса: промпты селлеру и где он врёт">
+<meta property="og:description" content="ChatGPT для маркетплейса без обзоров: готовые промпты для названий, поддержки WB, разбора отчёта и ТН ВЭД. Где нейросеть ошибается и как проверять.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ИИ для селлеров маркетплейсов">
+<meta property="og:image" content="https://www.aiseller.space/stati/chatgpt-dlya-sellera/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/stati/stati.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.aiseller.space/stati/chatgpt-dlya-sellera/#article",
+   "headline": "ChatGPT для маркетплейса: промпты селлеру и где он врёт",
+   "description": "ChatGPT для маркетплейса без обзоров: готовые промпты для названий, поддержки WB, разбора отчёта и ТН ВЭД. Где нейросеть ошибается и как проверять.",
+   "inLanguage": "ru",
+   "url": "https://www.aiseller.space/stati/chatgpt-dlya-sellera/",
+   "mainEntityOfPage": "https://www.aiseller.space/stati/chatgpt-dlya-sellera/",
+   "image": "https://www.aiseller.space/stati/chatgpt-dlya-sellera/og.png",
+   "datePublished": "2026-10-26",
+   "dateModified": "2026-10-19",
+   "author": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "publisher": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "keywords": "chatgpt маркетплейс",
+   "citation": [
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-card",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/site-using-terms",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/contact-support-desk-for-sellers",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/customer-reviews",
+    "https://eec.eaeunion.org/comission/department/catr/ett/",
+    "https://developers.openai.com/api/docs/supported-countries",
+    "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+    "https://help.openai.com/en/articles/7730893-data-controls-faq",
+    "https://openai.com/index/why-language-models-hallucinate/"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Главная",
+     "item": "https://www.aiseller.space/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Статьи",
+     "item": "https://www.aiseller.space/stati/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "ChatGPT для маркетплейса: промпты селлеру и где он врёт",
+     "item": "https://www.aiseller.space/stati/chatgpt-dlya-sellera/"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.aiseller.space/#roman",
+   "name": "Роман Воробьёв",
+   "url": "https://www.aiseller.space/avtor/",
+   "jobTitle": "Селлер Ozon и Wildberries, внедряет ИИ для селлеров",
+   "knowsAbout": [
+    "Wildberries",
+    "Ozon",
+    "Яндекс Маркет",
+    "нейросети для селлеров",
+    "Seller API",
+    "ИИ-агенты",
+    "Telegram-боты"
+   ],
+   "sameAs": [
+    "https://t.me/FirstonOzon",
+    "https://t.me/sellersmafia"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Какая нейросеть лучше для карточек товаров?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Для текста подойдёт любой сильный чат-ассистент: ChatGPT, GigaChat, Алиса, Claude. Разница меньше, чем разница между хорошим и плохим запросом. Для фото генерируйте от реального снимка товара и проверяйте надписи глазами."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Может ли ChatGPT выбрать нишу без платной аналитики?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нет. Без данных о продажах и конкурентах он рассуждает в общем. Дайте ему выгрузку из сервиса аналитики или кабинета, тогда он поможет её разобрать."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Можно ли взять код ТН ВЭД у ChatGPT?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Только как подсказку, где искать. Код в карточке WB должен совпадать с разрешительными документами. За неверный код у маркируемого товара штраф 1 500 ₽ за единицу."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Можно ли отдать нейросети управление рекламой?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Разобрать выгрузку статистики кампаний и предложить гипотезы — да. Менять ставки и отключать кампании без вашего решения — нет: нейросеть не видит всей картины и ошибается в расчётах."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Почему прибыль, посчитанная нейросетью, не совпадает с моей?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Модель ошибается в арифметике на больших таблицах и может по-своему понимать статьи расходов. Просите её написать формулы и считайте в таблице. Итог сверяйте с закрытым отчётом о реализации."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ChatGPT не работает в России. Чем заменить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GigaChat, Алисой или Claude: промпты из статьи подходят без изменений. У WB есть и встроенный генератор описаний в кабинете."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113669934', 'ym');
+
+ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113669934" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="layer">
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="/" class="logo"><span class="dot"></span><span><span class="hl">ai</span>seller</span></a>
+    <nav class="nav">
+      <div class="only-wide"><div class="nav-links">
+        <a href="/stati/">Статьи</a><a href="/kurs/">Курс</a><a href="/siistema/">Сообщество</a>
+      </div></div>
+      <a href="/#napisat" class="btn btn-sm">Написать</a>
+    </nav>
+  </div>
+</header>
+<main class="st"><article class="st-in"><nav class="kroshki"><a href="/">Главная</a> / <a href="/stati/">Статьи</a></nav><p class="st-meta"><a href="/avtor/">Роман Воробьёв</a> · проверено 19.10.2026</p><h1>ChatGPT для маркетплейса: задачи селлера с промптами и места, где он врёт</h1>
+<p>ChatGPT для маркетплейса полезен там, где есть текст или таблица и где результат легко проверить: названия и описания, ответы на отзывы, обращения в поддержку, разбор выгрузки отчёта. Он плохо справляется с точными фактами: кодами ТН ВЭД, свежими правилами WB и Ozon, методами API, итоговыми суммами. Здесь он уверенно выдумывает. Рабочая схема такая: вы даёте нейросети свои данные и правила площадки, она делает черновик, а сверяете вы сами по первоисточнику. Ниже готовые промпты под пять задач и список мест, где его ответы нужно перепроверять.</p>
+<h2>Коротко</h2>
+<ul>
+<li>ChatGPT хорошо пишет и пересказывает, но плохо помнит факты. Чем точнее данные в запросе, тем меньше выдумки.</li>
+<li>Правила площадки вставляйте в запрос сами. Например, у WB название карточки ограничено 60 символами, и в нём нельзя писать бренд, сезон и слова «лучший» или «хит».</li>
+<li>Код ТН ВЭД от нейросети — только кандидат. По правилам WB код должен совпадать с разрешительными документами, а за неверный код у маркируемого товара WB берёт штраф 1 500 ₽ за единицу.</li>
+<li>Россия не входит в список стран, где OpenAI официально поддерживает свои сервисы. Если доступа нет, те же промпты работают в GigaChat, Алисе или Claude.</li>
+<li>С 22 сентября по 19 октября 2026 года в чатах селлеров нейросети упомянули 1 396 раз. Около 90% этих сообщений — реклама, вопросов по делу всего 15.</li>
+</ul>
+<h2>Почему ChatGPT ошибается и как это учитывать</h2>
+<p>Языковая модель не ищет ответ в базе, а подбирает правдоподобное продолжение текста. OpenAI сама пишет, что её модели галлюцинируют: при обучении и проверке моделей угадать выгоднее, чем признать «не знаю» (<a href="https://openai.com/index/why-language-models-hallucinate/" target="_blank" rel="noopener">OpenAI, «Why language models hallucinate»</a>). Для селлера отсюда три правила:</p>
+<ol>
+<li><strong>Давайте данные, а не спрашивайте по памяти.</strong> Вставьте в запрос характеристики товара, кусок отчёта, текст правила. Тогда модель работает с вашим материалом и выдумывает меньше.</li>
+<li><strong>Просите показать, откуда взялся ответ.</strong> Фраза «если данных не хватает, напиши, чего не хватает, и не придумывай» снижает риск уверенной выдумки, но не убирает его.</li>
+<li><strong>Цифры считайте таблицей.</strong> Формулы в Excel или Google Таблицах надёжнее, чем сумма, которую нейросеть посчитала «в уме».</li>
+</ol>
+<p>Сами площадки думают так же. В оферте WB есть отдельный пункт про ИИ-сервисы, встроенные в портал. Продавец сам отвечает за то, что сгенерировал, и обязан проверить контент «на предмет точности, достоверности, актуальности, законности» до использования (п. 9.2.14 <a href="https://seller.wildberries.ru/instructions/ru/ru/material/site-using-terms" target="_blank" rel="noopener">оферты WB</a>). Это сказано про сервисы самого WB. Для внешнего ChatGPT логика та же: ответственность всё равно на продавце.</p>
+<h2>Чат GPT для Вайлдберриз: название карточки</h2>
+<p>Название — самая короткая и самая понятная задача. Правила WB для него конкретные: до 60 символов, ответ на вопрос «что изображено на фото», без синонимов и повторов, бренда, пола и возраста, сезона, оценочных слов, капса, спецсимволов и эмодзи (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-card" target="_blank" rel="noopener">инструкция WB «Как создать карточку»</a>, правка 02.10.2026). Всё это стоит отдать нейросети прямо в запросе.</p>
+<p><code>Ты помогаешь продавцу на Wildberries. Придумай 5 вариантов названия карточки.
+Товар: [что это, из чего, для чего — 2–3 строки фактов].
+Правила WB для названия:
+- не длиннее 60 символов, считая пробелы;
+- отвечает на вопрос «что изображено на фото»;
+- без бренда, пола, возраста, сезона, состава;
+- без слов «лучший», «хит», «супер», без ЗАГЛАВНЫХ слов и эмодзи;
+- без спецсимволов / * - + @ № % &amp; $ ! = ( ) { } [ ];
+- без синонимов и повторов.
+После каждого варианта укажи число символов.
+Не добавляй свойств, которых нет в описании товара.</code></p>
+<p>Что проверить: длину посчитайте сами, потому что нейросети ошибаются в подсчёте символов. И уберите свойства, которых у товара нет: «водонепроницаемый» или «натуральный» модель может дописать для красоты. Про описание и SEO-слова подробнее в статье о <a href="/stati/nejroset-opisanie-tovara/">нейросети для описания товара</a>.</p>
+<h2>Ответ на отзыв и обращение в поддержку</h2>
+<h3>Ответ на отзыв</h3>
+<p>У WB есть встроенная опция «ИИ-ответы на отзывы и вопросы»: нейросеть WB пишет ответ, вы проверяете и отправляете (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/customer-reviews" target="_blank" rel="noopener">инструкция WB «Отзывы покупателей»</a>). Если пишете через ChatGPT, вставьте в запрос требования п. 9.3.3 оферты: достоверная информация, деловой стиль, никакой рекламы сторонних сайтов и каналов, никаких обвинений покупателя в нечестности и никаких персональных данных.</p>
+<p><code>Напиши ответ продавца на отзыв покупателя на Wildberries.
+Отзыв: [текст].
+Факты о товаре и ситуации: [что правда случилось, что мы готовы сделать].
+Требования: деловой тон, 2–4 предложения, без обещаний, которых нет в фактах,
+без ссылок и упоминаний других площадок и мессенджеров,
+не обвинять покупателя, не упоминать его имя и данные заказа.</code></p>
+<p>За нарушение 9.3.3 WB может заблокировать новые ответы, пока вы не удалите те, что нарушают правила. Подробно о рисках — в статье <a href="/stati/otvety-na-otzyvy-nejroset/">ответ на отзыв нейросетью</a>.</p>
+<h3>Обращение в поддержку WB</h3>
+<p>Поддержка WB просит описывать проблему «максимально точно и подробно» и прикладывать файлы (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/contact-support-desk-for-sellers" target="_blank" rel="noopener">инструкция WB «Поддержка продавцов»</a>). ChatGPT хорошо превращает поток эмоций в сухое обращение.</p>
+<p><code>Составь обращение в поддержку продавцов Wildberries.
+Что случилось (своими словами): [текст].
+Данные: номер поставки/заказа [ ], артикул [ ], дата [ ], сумма [ ],
+номер прошлого диалога [ ], что приложу: [скриншоты, файл].
+Структура: суть в одном предложении; факты списком; что прошу сделать.
+Без эмоций и угроз. Если каких-то данных не хватает, перечисли их в конце отдельным списком.</code></p>
+<p>Тему и категорию обращения нейросеть не знает, их выбираете в меню поддержки вы. Как добиться ответа не шаблоном — в статье про <a href="/stati/podderzhka-wildberries/">поддержку Вайлдберриз</a>.</p>
+<h2>Разбор отчёта о реализации с ChatGPT</h2>
+<p>Еженедельный отчёт WB — длинная таблица, где каждая операция идёт отдельной строкой. Причину штрафа WB пишет в столбце «Виды доставок, штрафов и корректировок ВВ», сумму — в «Общая сумма штрафов», часть удержаний — в строках «Удержания» (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization" target="_blank" rel="noopener">инструкция WB по детализации</a>). Вот здесь нейросеть экономит время: она группирует строки и подсвечивает, что выросло.</p>
+<p><code>Вот выгрузка детализации отчёта о реализации Wildberries за неделю (CSV ниже).
+1. Сгруппируй строки по столбцу «Виды доставок, штрафов и корректировок ВВ»
+   и покажи сумму по каждой группе из столбцов «Общая сумма штрафов» и «Удержания».
+2. Отдельно выведи строки без артикула.
+3. Не делай выводов о том, ошибся ли WB. Только факты из таблицы.
+4. Напиши формулы для Google Таблиц, которыми я могу перепроверить твои суммы.</code></p>
+<p>Главное — четвёртый пункт. Итоговые суммы нейросеть иногда путает, особенно на длинных файлах. Поэтому группировку берите у неё, а цифры сверяйте формулой. Вердикт «WB списал лишнее» выносите вы, по оферте и справке. Как читать отчёт и где искать лишнее — в статье <a href="/stati/otchet-o-realizacii-wb/">отчёт о реализации Вайлдберриз</a>.</p>
+<p>Обезличьте файл перед загрузкой: уберите ИНН, реквизиты и данные покупателей, если они там есть. В ChatGPT по умолчанию переписка может идти на обучение моделей. Отключается это в «Settings → Data controls», переключатель «Improve the model for everyone» (<a href="https://help.openai.com/en/articles/7730893-data-controls-faq" target="_blank" rel="noopener">справка OpenAI</a>). Токены API площадок в чат не вставляйте никогда.</p>
+<h2>ТН ВЭД через нейросеть: как подстраховаться</h2>
+<p>Это место, где ChatGPT ошибается опаснее всего. Он выдаст красивый десятизначный код с уверенным пояснением, но этот код может не существовать или относиться к соседней группе. Цена ошибки прописана у WB:</p>
+<ul>
+<li>код ТН ВЭД должен совпадать с кодом в сертификате или декларации, иначе документы не пройдут проверку (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-card" target="_blank" rel="noopener">инструкция WB</a>);</li>
+<li>без кода карточку могут заблокировать или скрыть;</li>
+<li>если у маркируемого товара код не указан или неверен, штраф 1 500 ₽ за каждую переданную единицу (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers" target="_blank" rel="noopener">штрафы WB</a>, правка 13.10.2026).</li>
+</ul>
+<p>Безопасный промпт просит у нейросети не ответ, а варианты и вопросы:</p>
+<p><code>Помоги сузить поиск кода ТН ВЭД ЕАЭС. Товар: [название, материал, назначение, состав].
+Дай 2–3 товарные позиции (первые 4 знака), к которым он может относиться,
+и для каждой: какой признак товара решает выбор между ними.
+Не называй 10-значный код как окончательный. Задай мне вопросы, если не хватает данных.</code></p>
+<p>Дальше идите по шагам: код из ваших разрешительных документов, сверка с <a href="https://eec.eaeunion.org/comission/department/catr/ett/" target="_blank" rel="noopener">Единым таможенным тарифом ЕАЭС</a> (на него ссылается сам WB), выбор из выпадающего списка в карточке. Подробно — в статье <a href="/stati/tn-ved-wildberries/">ТН ВЭД на Вайлдберриз</a>.</p>
+<h2>Где ChatGPT врёт селлеру чаще всего</h2>
+<table>
+<thead>
+<tr>
+<th>Что спрашивают</th>
+<th>Что он делает не так</th>
+<th>Как проверить</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Правила и штрафы WB, Ozon</td>
+<td>Пересказывает старые версии: площадки регулярно правят справку</td>
+<td>Справочный центр WB, база знаний Ozon, дата правки статьи</td>
+</tr>
+<tr>
+<td>Коды ТН ВЭД</td>
+<td>Выдумывает или путает соседние коды</td>
+<td>Разрешительные документы, ЕТТ ЕАЭС</td>
+</tr>
+<tr>
+<td>Методы API</td>
+<td>Придумывает поля и статусы, которых нет</td>
+<td>Документация площадки (dev.wildberries.ru, docs.ozon.ru/api)</td>
+</tr>
+<tr>
+<td>Итоги и проценты</td>
+<td>Ошибается в арифметике на длинных таблицах</td>
+<td>Формулы в таблице</td>
+</tr>
+<tr>
+<td>Выбор ниши</td>
+<td>Рассуждает без данных о рынке</td>
+<td>Выгрузки из аналитики, собственные продажи</td>
+</tr>
+<tr>
+<td>Длина текста</td>
+<td>Неверно считает символы</td>
+<td>Счётчик символов в таблице или редакторе</td>
+</tr>
+</tbody>
+</table>
+<p>Пример из чата за октябрь. Селлер подключал свою CRM к Ozon API и спросил, как отражается частичная отмена заказа. Нейросеть «наговорила», что статус основного заказа не меняется и создаётся новое отправление. Человек усомнился и пошёл переспрашивать живых людей. Рефлекс правильный: ответ про API проверяется только документацией площадки.</p>
+<h2>Что пишут про нейросети в чатах селлеров</h2>
+<p>Мы читаем больше 200 Telegram-чатов селлеров WB, Ozon и Маркета. С 22 сентября по 19 октября 2026 года ChatGPT, GigaChat, Claude, DeepSeek, Gemini и «нейросети» вообще упомянули в 1 396 сообщениях. Из них 1 250 наш классификатор пометил как рекламу: дизайнеры «с нейросетями», «безлимит на ИИ», «ИИ-контент-завод». Настоящих вопросов было 15. Это 0,13% от 11 703 уникальных вопросов за тот же период.</p>
+<p>О чём спрашивали:</p>
+<ul>
+<li><strong>Какая нейросеть лучше для карточек</strong>: для фото, фонов и описаний.</li>
+<li><strong>Может ли ChatGPT выбрать нишу без платной аналитики.</strong> В ответах в чатах сходятся: без данных о рынке не может.</li>
+<li><strong>Можно ли отдать нейросети рекламу</strong>: какие ставки поменять, какие кампании отключить. В чатах ответили, что без понимания логики кампаний советы нейросети не оценить.</li>
+<li><strong>Почему прибыль не сходится.</strong> Цитата: «сам считаю — одна сумма, через нейросеть — другая, через сервисы аналитики — тоже разные».</li>
+</ul>
+<p>Ещё два наблюдения. Для ТН ВЭД в чатах советуют «спросить у ChatGPT», и это ровно та задача, где он опаснее всего. А в обсуждении ИИ-фото один из участников предупредил: генерировать надо от реального фото товара, иначе «нейронка дорисует лишнего и пойдут возвраты».</p>
+<h2>Нейросеть для продавцов без ChatGPT: доступ и бесплатные варианты</h2>
+<p>По данным OpenAI, Россия и Беларусь не входят в список стран, где компания поддерживает свои сервисы. Использование из неподдерживаемой страны может закончиться блокировкой аккаунта (<a href="https://developers.openai.com/api/docs/supported-countries" target="_blank" rel="noopener">список стран OpenAI</a>, <a href="https://help.openai.com/en/articles/7947663-chatgpt-supported-countries" target="_blank" rel="noopener">справка ChatGPT</a>). В чатах регулярно предлагают «настроить стабильное подключение к зарубежным ИИ». Платить незнакомцам за доступ и отдавать им логин — риск остаться и без денег, и без аккаунта.</p>
+<p>Промпты из этой статьи не привязаны к ChatGPT. Они работают в любом сильном чат-ассистенте:</p>
+<ul>
+<li><strong>GigaChat</strong> от Сбера и <strong>Алиса</strong> от Яндекса доступны из России, у них есть бесплатный режим;</li>
+<li><strong>Claude</strong> — модель, на которой я собираю ИИ-агентов;</li>
+<li>встроенные инструменты площадок: у WB без подписки доступно 20 коротких описаний в месяц, с «Джемом» или опцией конструктора тарифов генерация без ограничений (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-card" target="_blank" rel="noopener">инструкция WB</a>). Что встроено у Ozon и Маркета — в обзоре <a href="/stati/ii-dlya-marketplejsov/">ИИ для маркетплейсов</a>.</li>
+</ul>
+<p>Лимиты и условия бесплатных версий меняются, проверяйте в день, когда начинаете работать. Где упрётесь: в объём. Десять названий в чате — нормально. Пятьсот артикулов и еженедельный отчёт копировать в окно чата уже долго.</p>
+<h2>Когда чата мало: ИИ и автоматизация через API</h2>
+<p>Следующий шаг после чата — дать нейросети прямой доступ к данным кабинета. API — это канал, по которому программа сама забирает отчёты, остатки и отзывы без ручной выгрузки. Я подключаю ИИ к кабинету Ozon через API и собираю агентов на Claude. Агент — это нейросеть, которая по расписанию делает несколько шагов сама: забрала данные, сравнила с прошлой неделей, прислала сводку в Telegram.</p>
+<p>Что даёт такая связка по сравнению с чатом:</p>
+<ul>
+<li>данные приходят из кабинета напрямую, а не пересказом, поэтому цифры не «плывут»;</li>
+<li>рутина уходит в расписание: сводка по удержаниям каждое утро, черновики ответов на отзывы по мере поступления;</li>
+<li>нейросеть пишет код по документации API, так что программистом быть не обязательно.</li>
+</ul>
+<p>Чего не отдавать даже агенту: изменение цен, ставок и карточек без вашего подтверждения, коды и документы без сверки, спор с площадкой. Подробнее о том, что можно автоматизировать, — в статье <a href="/stati/api-ozon-wb/">API Озон и WB для селлера</a>.</p>
+<aside class="st-kurs"><p class="st-kurs-t">Курс «ИИ для селлеров»</p><p>Если хочется не читать про ИИ, а настроить его под свой магазин, — у меня есть курс для владельцев магазинов на Wildberries и Ozon. Без программирования, по шагам: подключаем ИИ к данным вашего кабинета и разбираем задачи вроде той, что в этой статье.</p><p><a class="btn" href="/kurs/">Подробнее о курсе</a></p></aside>
+<h2>Частые вопросы</h2>
+<p><strong>Какая нейросеть лучше для карточек товаров?</strong>
+Для текста подойдёт любой сильный чат-ассистент: ChatGPT, GigaChat, Алиса, Claude. Разница меньше, чем разница между хорошим и плохим запросом. Для фото генерируйте от реального снимка товара и проверяйте надписи глазами.</p>
+<p><strong>Может ли ChatGPT выбрать нишу без платной аналитики?</strong>
+Нет. Без данных о продажах и конкурентах он рассуждает в общем. Дайте ему выгрузку из сервиса аналитики или кабинета, тогда он поможет её разобрать.</p>
+<p><strong>Можно ли взять код ТН ВЭД у ChatGPT?</strong>
+Только как подсказку, где искать. Код в карточке WB должен совпадать с разрешительными документами. За неверный код у маркируемого товара штраф 1 500 ₽ за единицу.</p>
+<p><strong>Можно ли отдать нейросети управление рекламой?</strong>
+Разобрать выгрузку статистики кампаний и предложить гипотезы — да. Менять ставки и отключать кампании без вашего решения — нет: нейросеть не видит всей картины и ошибается в расчётах.</p>
+<p><strong>Почему прибыль, посчитанная нейросетью, не совпадает с моей?</strong>
+Модель ошибается в арифметике на больших таблицах и может по-своему понимать статьи расходов. Просите её написать формулы и считайте в таблице. Итог сверяйте с закрытым отчётом о реализации.</p>
+<p><strong>ChatGPT не работает в России. Чем заменить?</strong>
+GigaChat, Алисой или Claude: промпты из статьи подходят без изменений. У WB есть и встроенный генератор описаний в кабинете.</p>
+<h2>Об авторе</h2>
+<p>Я Роман Воробьёв, 8 лет продаю на Wildberries и Ozon, собираю ИИ-агентов на Claude и подключаю ИИ к кабинету Ozon через API. Такие задачи — от промптов до агентов, которые сами разбирают отчёты, — разбираем в клубе селлеров «СИИстема» (aiseller.space/siistema). С нуля — вводный курс «ИИ для селлеров» (aiseller.space/kurs).</p>
+<h2>Читайте также</h2>
+<ul>
+<li><a href="/stati/ii-dlya-marketplejsov/">ИИ для маркетплейсов: где нейросеть помогает селлеру WB и Ozon</a></li>
+<li><a href="/stati/usn-dlya-sellera/">УСН на маркетплейсе: с какой суммы селлер платит налог</a></li>
+<li><a href="/stati/nejroset-opisanie-tovara/">Нейросеть для описания товара на WB и Ozon: промпт и проверка</a></li>
+<li><a href="/stati/bot-dlya-wildberries/">Бот для Вайлдберриз: какие полезны, а какие опасны селлеру</a></li>
+</ul>
+<h2>Источники</h2>
+<p>Дата проверки — 19.10.2026.</p>
+<ul>
+<li>Как создать карточку товара: название, описание, ТН ВЭД, генерация описаний, справочный центр WB (правка 02.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-card" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-card</a></li>
+<li>Оферта WB, раздел 9, п. 9.2.14 (ИИ-сервисы) и п. 9.3.3 (ответы на отзывы) (правка 01.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/site-using-terms" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/site-using-terms</a></li>
+<li>Штрафы, удержания и другие взыскания для продавцов, справочный центр WB (правка 13.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers</a></li>
+<li>Детализация еженедельного отчёта реализации, справочный центр WB (правка 07.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization</a></li>
+<li>Поддержка продавцов, справочный центр WB (правка 27.07.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/contact-support-desk-for-sellers" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/contact-support-desk-for-sellers</a></li>
+<li>Отзывы покупателей, справочный центр WB (правка 12.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/customer-reviews" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/customer-reviews</a></li>
+<li>Единый таможенный тариф ЕАЭС, Евразийская экономическая комиссия — <a href="https://eec.eaeunion.org/comission/department/catr/ett/" target="_blank" rel="noopener">https://eec.eaeunion.org/comission/department/catr/ett/</a></li>
+<li>Supported countries and territories, OpenAI — <a href="https://developers.openai.com/api/docs/supported-countries" target="_blank" rel="noopener">https://developers.openai.com/api/docs/supported-countries</a></li>
+<li>ChatGPT supported countries, справка OpenAI — <a href="https://help.openai.com/en/articles/7947663-chatgpt-supported-countries" target="_blank" rel="noopener">https://help.openai.com/en/articles/7947663-chatgpt-supported-countries</a></li>
+<li>Data Controls FAQ, справка OpenAI — <a href="https://help.openai.com/en/articles/7730893-data-controls-faq" target="_blank" rel="noopener">https://help.openai.com/en/articles/7730893-data-controls-faq</a></li>
+<li>Why language models hallucinate, OpenAI (статья 04.09.2025) — <a href="https://openai.com/index/why-language-models-hallucinate/" target="_blank" rel="noopener">https://openai.com/index/why-language-models-hallucinate/</a></li>
+<li>Вопросы и сообщения селлеров из 200+ Telegram-чатов, 22.09–19.10.2026, база aiseller.space (обезличено)</li>
+</ul></article></main>
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-links">
+      <a href="/stati/">Статьи</a>
+      <a href="/avtor/">Об авторе</a>
+      <a href="/kurs/">Курс «ИИ для селлеров»</a>
+      <a href="/siistema/">Сообщество «СИИстема»</a>
+      <a href="https://t.me/FirstonOzon" target="_blank" rel="noopener">Канал «Системный гуманИИст»</a>
+      <a href="https://t.me/sellersmafia" target="_blank" rel="noopener">Мафклуб предпринимателей</a>
+    </div>
+    <small>Роман Воробьёв · ИИ для селлеров маркетплейсов</small>
+  </div>
+</footer>
+</div>
+</body>
+</html>

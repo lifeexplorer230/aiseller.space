@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Отчет о реализации Вайлдберриз: как читать и где лишнее</title>
+<meta name="description" content="Отчёт о реализации Вайлдберриз построчно: из чего складывается выплата, где удержания за рекламу и отзывы, где детализация штрафов и почему отчёты не сходятся.">
+<link rel="canonical" href="https://www.aiseller.space/stati/otchet-o-realizacii-wb/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.aiseller.space/stati/otchet-o-realizacii-wb/">
+<meta property="og:title" content="Отчет о реализации Вайлдберриз: как читать и где лишнее">
+<meta property="og:description" content="Отчёт о реализации Вайлдберриз построчно: из чего складывается выплата, где удержания за рекламу и отзывы, где детализация штрафов и почему отчёты не сходятся.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ИИ для селлеров маркетплейсов">
+<meta property="og:image" content="https://www.aiseller.space/stati/otchet-o-realizacii-wb/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/stati/stati.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.aiseller.space/stati/otchet-o-realizacii-wb/#article",
+   "headline": "Отчет о реализации Вайлдберриз: как читать и где лишнее",
+   "description": "Отчёт о реализации Вайлдберриз построчно: из чего складывается выплата, где удержания за рекламу и отзывы, где детализация штрафов и почему отчёты не сходятся.",
+   "inLanguage": "ru",
+   "url": "https://www.aiseller.space/stati/otchet-o-realizacii-wb/",
+   "mainEntityOfPage": "https://www.aiseller.space/stati/otchet-o-realizacii-wb/",
+   "image": "https://www.aiseller.space/stati/otchet-o-realizacii-wb/og.png",
+   "datePublished": "2026-10-26",
+   "dateModified": "2026-10-19",
+   "author": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "publisher": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "keywords": "отчет о реализации вайлдберриз",
+   "citation": [
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-general-financial-report",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/retentions",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/retentions-report",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/paid-storage-report",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/budget-and-payment-for-promotion",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/score-for-reviews",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/cashback-for-reviews-and-wibes",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/income-and-expenses-report",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/withdraw-now-service",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-manage-balance",
+    "https://dev.wildberries.ru/docs/openapi/documents-and-accounting"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Главная",
+     "item": "https://www.aiseller.space/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Статьи",
+     "item": "https://www.aiseller.space/stati/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Отчет о реализации Вайлдберриз: как читать и где лишнее",
+     "item": "https://www.aiseller.space/stati/otchet-o-realizacii-wb/"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.aiseller.space/#roman",
+   "name": "Роман Воробьёв",
+   "url": "https://www.aiseller.space/avtor/",
+   "jobTitle": "Селлер Ozon и Wildberries, внедряет ИИ для селлеров",
+   "knowsAbout": [
+    "Wildberries",
+    "Ozon",
+    "Яндекс Маркет",
+    "нейросети для селлеров",
+    "Seller API",
+    "ИИ-агенты",
+    "Telegram-боты"
+   ],
+   "sameAs": [
+    "https://t.me/FirstonOzon",
+    "https://t.me/sellersmafia"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Нужно ли вычитать логистику из «Итого к оплате»?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нет. По справке WB «Итого к оплате» — доход после всех удержаний. Логистику вычитают из «К перечислению за товар»."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Почему удержание за рекламу в отчёте больше, чем траты за неделю в кабинете продвижения?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Удержание выставляется датой списания, а не датой показов. В одну неделю могут попасть расходы за прошлые дни или отложенная оплата. Нажмите на сумму в «Прочих удержаниях» и сверьте номера документов."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Почему еженедельный отчёт разделился на два?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Неделя пришлась на два месяца. WB формирует отдельный отчёт за каждую часть."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Где посмотреть, за что списали удержание?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "В списке отчётов нажмите на сумму в «Прочие удержания/выплаты» — откроется окно с датой, суммой, номером документа и комментарием. В детализации причина — в столбце «Виды доставок, штрафов и корректировок ВВ»."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113669934', 'ym');
+
+ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113669934" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="layer">
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="/" class="logo"><span class="dot"></span><span><span class="hl">ai</span>seller</span></a>
+    <nav class="nav">
+      <div class="only-wide"><div class="nav-links">
+        <a href="/stati/">Статьи</a><a href="/kurs/">Курс</a><a href="/siistema/">Сообщество</a>
+      </div></div>
+      <a href="/#napisat" class="btn btn-sm">Написать</a>
+    </nav>
+  </div>
+</header>
+<main class="st"><article class="st-in"><nav class="kroshki"><a href="/">Главная</a> / <a href="/stati/">Статьи</a></nav><p class="st-meta"><a href="/avtor/">Роман Воробьёв</a> · проверено 19.10.2026</p><h1>Отчёт о реализации Вайлдберриз: как читать построчно и находить лишние списания</h1>
+<p>Отчёт о реализации Вайлдберриз — это еженедельная сводка всех денег между вами и WB: продажи, возвраты, комиссия, доставка, хранение, штрафы и прочие удержания. Итог — столбец «Итого к оплате», то есть ваш доход за неделю после всех вычетов. Отчёт формируется до среды в разделе «Финансовые отчёты». Понять, за что именно списали деньги, можно только в детализации: там каждая операция идёт отдельной строкой, а причина записана в столбцах «Обоснование для оплаты» и «Виды доставок, штрафов и корректировок ВВ».</p>
+<h2>Коротко</h2>
+<ul>
+<li>Выплата = «К перечислению за товар» минус доставка, хранение, приёмка, штрафы, кешбэк и прочие удержания, плюс компенсация скидки по программе лояльности. Так считает сам WB (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-general-financial-report" target="_blank" rel="noopener">справка WB</a>).</li>
+<li>Реклама, оплаченная с баланса, и подписка «Джем» сидят в столбце «Прочие удержания/выплаты». Сумма в нём кликабельна, по клику видна расшифровка с номером документа.</li>
+<li>Удержания не привязаны к заказу: у них пустые артикул и баркод, а дата — день выставления, а не день услуги. Отсюда большинство «лишних» списаний, которые на деле просто пришли позже.</li>
+<li>Отчёты WB не обязаны сходиться между собой: «Показатели» считают продажи по дате заказа, а отчёт реализации — по дате выкупа.</li>
+<li>Детализацию можно скачать в XLSX и разметить по статьям нейросетью. Итог разметки обязательно сверяйте с «Итого к оплате».</li>
+</ul>
+<h2>Где лежит отчёт о реализации и чем он отличается от детализации</h2>
+<p>Отчёт о реализации WB открывается с главной страницы WB Partners: кнопка «Финансовые отчёты» в виджете баланса, вкладка «Еженедельные». В мобильном приложении: виджет баланса → «Отчёты» → «Скачать Excel». Различайте три вещи:</p>
+<ol>
+<li><strong>Строка в списке отчётов</strong> — сводка за неделю, итог в «Итого к оплате».</li>
+<li><strong>Детализация</strong> — открывается кликом по номеру отчёта: каждая продажа, возврат, доставка, штраф и удержание отдельной строкой. Скачивается в XLSX.</li>
+<li><strong>Печатная форма</strong> — приходит в «Документы» в течение 7 дней после недели. Это документ с печатями для налоговой.</li>
+</ol>
+<p>Две детали, на которых спотыкаются чаще всего:</p>
+<ul>
+<li><strong>Отчётов два типа.</strong> Основной — продажи в России и за пределами ЕАЭС, «по выкупам» — в другие страны ЕАЭС (столбец «Тип отчёта»). Если смотреть только основной, часть денег «потеряется».</li>
+<li><strong>Неделя на стыке месяцев — это два отчёта.</strong> Например, неделя 30 марта–5 апреля разобьётся на 30–31 марта и 1–5 апреля (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization" target="_blank" rel="noopener">справка WB по детализации</a>). В октябре 2026 года в чатах спрашивали ровно про это: «почему отчёт разделён на два, с 28 по 30 и с 1 по 4?»</li>
+</ul>
+<h2>Из чего складывается выплата ВБ</h2>
+<p>WB сам даёт формулу проверки «Итого к оплате». Пройдите её один раз руками на своём отчёте — и станет ясно, куда уходят деньги.</p>
+<table>
+<thead>
+<tr>
+<th>Столбец в списке отчётов</th>
+<th>Что это</th>
+<th>Знак в формуле</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>«Продажа»</td>
+<td>Сколько заплатили покупатели с учётом скидок WB за свой счёт</td>
+<td>Не входит в выплату, это выручка</td>
+</tr>
+<tr>
+<td>«К перечислению за товар»</td>
+<td>Ваша цена минус возвраты, комиссия и эквайринг</td>
+<td>Старт расчёта</td>
+</tr>
+<tr>
+<td>«Стоимость доставки»</td>
+<td>Доставка до покупателя, обратная доставка при отказе, возврат брака вам</td>
+<td>Минус</td>
+</tr>
+<tr>
+<td>«Стоимость хранения»</td>
+<td>Хранение на складах WB за неделю</td>
+<td>Минус</td>
+</tr>
+<tr>
+<td>«Стоимость операций при приёмке»</td>
+<td>Только если сдавали поставку в дни платной приёмки</td>
+<td>Минус</td>
+</tr>
+<tr>
+<td>«Общая сумма штрафов»</td>
+<td>Все штрафы за неделю</td>
+<td>Минус</td>
+</tr>
+<tr>
+<td>«Стоимость участия в программе лояльности»</td>
+<td>Комиссия за кешбэк</td>
+<td>Минус</td>
+</tr>
+<tr>
+<td>«Сумма, удержанная за начисленные баллы…»</td>
+<td>Сам кешбэк</td>
+<td>Минус</td>
+</tr>
+<tr>
+<td>«Прочие удержания/выплаты»</td>
+<td>Продвижение, «Джем», компенсации</td>
+<td>Минус (выплата вам — со знаком «−»)</td>
+</tr>
+<tr>
+<td>«Компенсация скидки по программе лояльности»</td>
+<td>Кешбэк, которым покупатель оплатил ваш товар</td>
+<td>Плюс</td>
+</tr>
+<tr>
+<td>«Итого к оплате»</td>
+<td>Доход за неделю после всех удержаний</td>
+<td>Результат</td>
+</tr>
+</tbody>
+</table>
+<p>Главная путаница — между «К перечислению за товар» и «Итого к оплате». В первом ещё не вычтены доставка, хранение и прочее, во втором уже вычтено. Если «Итого к оплате» отрицательное, вы потратили на услуги WB больше, чем продали, и в следующем отчёте эта сумма удержится как долг (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/retentions" target="_blank" rel="noopener">справка WB об удержаниях</a>).</p>
+<p>Налог при этом считают не с выплаты, а с «Продажи». Подробно разобрали это в статье <a href="/stati/usn-dlya-sellera/">УСН на маркетплейсе</a>. Сроки, когда «Итого к оплате» превращается в деньги на счёте, — в статье <a href="/stati/zaderzhka-vyplat-wildberries/">про выплаты Вайлдберриз</a>.</p>
+<h2>Как читать детализацию построчно</h2>
+<p>Откройте детализацию и первым делом отфильтруйте столбец «Обоснование для оплаты». Это тип операции. Вот основные значения по справке WB и что в них проверять:</p>
+<table>
+<thead>
+<tr>
+<th>«Обоснование для оплаты»</th>
+<th>Что значит</th>
+<th>Что проверить</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Продажа / Возврат</td>
+<td>Выкуп и возврат</td>
+<td>Совпадают ли возвраты с тем, что вы видите в заказах</td>
+</tr>
+<tr>
+<td>Доставка</td>
+<td>Логистика по конкретному товару</td>
+<td>Столбец «Фиксированный коэффициент склада по поставке» и даты фиксации</td>
+</tr>
+<tr>
+<td>Хранение</td>
+<td>Хранение за неделю, без привязки к товару</td>
+<td>Сверка с отчётом «Платное хранение»</td>
+</tr>
+<tr>
+<td>Штраф</td>
+<td>Неустойка</td>
+<td>Причина — в «Виды доставок, штрафов и корректировок ВВ»</td>
+</tr>
+<tr>
+<td>Удержания</td>
+<td>Продвижение, «Джем», минимальный платёж за опции конструктора тарифов</td>
+<td>Расшифровка — в том же столбце видов</td>
+</tr>
+<tr>
+<td>Коррекция продаж/доставки/эквайринга</td>
+<td>WB исправил ошибку, в плюс или в минус</td>
+<td>Что именно исправили и в чью пользу</td>
+</tr>
+<tr>
+<td>Компенсация ущерба, Добровольная компенсация при возврате</td>
+<td>Деньги вам за потерянный или повреждённый товар</td>
+<td>Если «Возврат» по тому же обоснованию — WB забрал компенсацию обратно</td>
+</tr>
+<tr>
+<td>Разовое изменение срока перечисления</td>
+<td>Комиссия за «Вывести сейчас»</td>
+<td>Пользовались ли вы этой услугой</td>
+</tr>
+</tbody>
+</table>
+<p>Две вещи, которые помогают читать таблицу:</p>
+<ul>
+<li><strong>Знаки.</strong> В столбцах «Удержания» и «Корректировка ВВ» удержание идёт без знака, а выплата вам — со знаком «−». Это обратно привычной логике.</li>
+<li><strong>Srid.</strong> Это сквозной код заказа: у продажи, доставки и возврата одного заказа он одинаковый. Отфильтруйте по Srid — и увидите всю историю одного заказа.</li>
+</ul>
+<h2>Удержания за рекламу в отчёте ВБ и другие тихие списания</h2>
+<p>Почти всё, что селлеры называют «лишними списаниями», живёт в «Прочих удержаниях/выплатах» и в строках без артикула.</p>
+<h3>Реклама</h3>
+<p>Продвижение WB оплачивается с единого счёта. Сначала деньги берутся со счёта, который вы пополнили сами, а если не хватило — с баланса, то есть из будущих продаж (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/budget-and-payment-for-promotion" target="_blank" rel="noopener">справка WB о бюджете продвижения</a>). В отчёт реализации удержанием попадает именно оплата с баланса. Её обычно списывают в воскресенье той недели, когда шла реклама.</p>
+<p>Почему сумма в отчёте может не совпасть с тратами в кабинете продвижения за ту же неделю:</p>
+<ul>
+<li><strong>Дата удержания ≠ дата услуги.</strong> WB может выставить расходы за несколько дней позже одной суммой. В окне «Детализация суммы удержания/выплаты» стоит дата выставления, а не дата показов (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/retentions" target="_blank" rel="noopener">справка WB</a>).</li>
+<li><strong>Отложенное списание.</strong> В разделе «Финансы» кабинета продвижения можно перенести оплату с баланса на более поздний срок. Отсрочка на одну неделю бесплатная, дальше — комиссия, и она тоже удержится с баланса WB Partners. Выбор фиксируется по воскресеньям и в первый день месяца, когда WB выставляет закрывающие документы.</li>
+</ul>
+<p>Проверка: нажмите на сумму в «Прочих удержаниях» и найдите номера документов в разделе «Документы» — на каждое удержание WB выставляет УПД.</p>
+<h3>Платные отзывы</h3>
+<p>Акции «Баллы за отзывы» и «Кешбэк за отзывы и вайбы» тоже списывают деньги с баланса, и делают это в два этапа.</p>
+<ul>
+<li><strong>«Баллы за отзывы».</strong> После выкупа WB удерживает максимальную стоимость потенциального отзыва — с текстом, фото и видео. Не написал отзыв за 5 дней — стоимость вернётся на баланс. Написал без фото или видео — стоимость недостающего вернётся через 21 день после удержания. После начисления баллов спишут вознаграждение WB 23% и НДС с этого вознаграждения (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/score-for-reviews" target="_blank" rel="noopener">справка WB</a>).</li>
+<li><strong>«Кешбэк за отзывы и вайбы».</strong> Удерживается размер кешбэка (от 25 до 50% цены). Если условия выполнены, дополнительно спишут комиссию 10% от кешбэка (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/cashback-for-reviews-and-wibes" target="_blank" rel="noopener">справка WB</a>).</li>
+</ul>
+<p>В отчёте эти суммы идут в столбцах программы лояльности, возвраты — со знаком «−». Если акция идёт давно, а возвратов нет, сверьте отчёт со списком «Полученные отзывы» в самой акции.</p>
+<h3>Хранение</h3>
+<p>Хранение в детализации — одна сумма за дату, без артикулов. Раскладку по товарам и складам даёт только отчёт «Платное хранение», вкладка «Отчёт по номенклатурам». Там же видно два дорогих случая: товар без габаритов в карточке (коэффициент хранения ×25) и без фото (×10) (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/paid-storage-report" target="_blank" rel="noopener">справка WB</a>).</p>
+<p>Отдельная история — хранение за товар со сгоревших складов: в чатах жалуются на начисления по Владимиру с середины августа и по Рязани. Как это ловить — в статье <a href="/stati/kompensaciya-wildberries/">о компенсации за сгоревший товар</a>.</p>
+<h2>Как найти детализацию штрафов на ВБ</h2>
+<ol>
+<li>Скачайте детализацию недели в XLSX.</li>
+<li>Отфильтруйте «Обоснование для оплаты» по слову «Штраф».</li>
+<li>Причину смотрите в «Виды доставок, штрафов и корректировок ВВ», сумму — в «Общая сумма штрафов».</li>
+<li>Часть штрафов лежит не в «Общей сумме штрафов». Штраф за нарушение срока передачи товара идёт в столбце «Удержание», а штраф за ТН ВЭД — в «Прочих удержаниях» еженедельного отчёта (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers" target="_blank" rel="noopener">справка WB о штрафах</a>).</li>
+<li>Замеры габаритов, подмены и маркировка с фото — в «Аналитика → Отчёты → Отчёт по удержаниям» (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/retentions-report" target="_blank" rel="noopener">справка WB</a>).</li>
+</ol>
+<p>Штраф на главной есть, а в отчёте нет? В чатах на такой вопрос отвечают: в отчёте только закрытые недели, текущая появится в следующем. Перечень штрафов и суммы — в статье <a href="/stati/shtrafy-wildberries/">о штрафах Вайлдберриз</a>.</p>
+<h2>Почему не совпадают данные в отчётах ВБ</h2>
+<p>Чаще всего это не ошибка: объяснение есть в справке WB.</p>
+<ul>
+<li><strong>Отчёт «Показатели» и отчёт реализации.</strong> В «Показателях» продажи считаются на дату заказа. В отчёте реализации — на дату выкупа. В таблицу по товарам в «Показателях» не попадают удержания, хранение и приёмка, а штрафы раскиданы по-разному: одни привязаны к карточке, другие к магазину (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/income-and-expenses-report" target="_blank" rel="noopener">справка WB</a>).</li>
+<li><strong>Виджет «Приход и расход» и выплата.</strong> «Вычитаю расход из прихода — не совпадает с финотчётом». В чатах сошлись на ответе: в выплату входят не только комиссия и логистика.</li>
+<li><strong>«Итого к оплате» и сумма к выводу.</strong> «Можно вывести» обновляется по понедельникам и считается по отчёту, выставленному 2 недели назад, поэтому в моменте почти всегда отличается от последнего отчёта (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-manage-balance" target="_blank" rel="noopener">справка WB о балансе</a>).</li>
+</ul>
+<h2>Что спрашивают селлеры в чатах про отчёт о реализации</h2>
+<p>Мы читаем около 200 Telegram-чатов селлеров. С 22 сентября по 18 октября 2026 года там задали около 8 000 разных вопросов про WB. Примерно 140 из них — про отчёт реализации, детализацию, удержания и списания. Если разложить по темам (по ключевым словам, темы пересекаются):</p>
+<ul>
+<li><strong>штрафы в отчёте</strong> — 18 вопросов: «на главной штраф 45 тысяч, нажимаю — пусто»;</li>
+<li><strong>с какой колонки платить налог</strong> — 14: «Продажа», «К перечислению за товар» или «Итого к оплате»;</li>
+<li><strong>логистика</strong> — около 10, чаще про коэффициент склада после конца фиксации;</li>
+<li><strong>цифры не сходятся</strong> — 7–9;</li>
+<li><strong>хранение</strong> — 9, из них заметная часть про сгоревшие склады;</li>
+<li><strong>реклама</strong> — 7: «в продвижении одна сумма за неделю, в отчёте — в разы больше».</li>
+</ul>
+<p>Три ловушки, которые повторяются:</p>
+<ol>
+<li><strong>Путают «К перечислению за товар» с «Итого к оплате».</strong> Отсюда вопрос «нужно ли ещё вычитать логистику?». Из первого — нужно, из второго — уже вычтено.</li>
+<li><strong>Ищут удержание по дате услуги.</strong> «Продвижение же списывается в воскресенье, а сегодня среда — что за удержание?» Дата в окне удержаний — дата выставления. В чатах ответили, что это может быть реклама: её списывают не только в воскресенье, но и в конце месяца.</li>
+<li><strong>Сравнивают отчёты с разной логикой дат.</strong> «Маленький магазин, раньше не сверял, а сейчас не сходится ни один отчёт» — типичный вопрос новичка.</li>
+</ol>
+<h2>Как ИИ размечает строки отчёта по статьям</h2>
+<p>Детализация — это сотни строк и больше полусотни столбцов. Глазами её каждую неделю никто не читает, и здесь нейросеть реально экономит время.</p>
+<p><strong>Что можно без программиста.</strong> Скачайте XLSX детализации и загрузите в чат-нейросеть, которая умеет работать с таблицами. Попросите:</p>
+<ul>
+<li>сгруппировать строки по «Обоснованию для оплаты» и «Видам доставок, штрафов и корректировок ВВ»;</li>
+<li>свести суммы в статьи: комиссия, логистика, хранение, штрафы, реклама, отзывы, компенсации;</li>
+<li>отдельно вывести строки без артикула и все коррекции;</li>
+<li>сравнить с прошлой неделей и показать статьи, которые выросли сильнее всего.</li>
+</ul>
+<p><strong>Правило проверки.</strong> На большой таблице модель может ошибиться в арифметике. Просите не «посчитай итог», а «построй сводную таблицу» или «напиши формулу», и сверяйте сумму статей с «Итого к оплате». Не сошлось — ошибка в разметке, а не у WB.</p>
+<p><strong>Осторожно с данными.</strong> В детализации есть ИНН и КПП покупателей-юрлиц. Перед загрузкой во внешний сервис эти столбцы лучше удалить.</p>
+<p><strong>Без ручной выгрузки.</strong> У WB есть API (программный доступ к данным кабинета) с методом детализации отчёта за период. Лимиты запросов смотрите в <a href="https://dev.wildberries.ru/docs/openapi/documents-and-accounting" target="_blank" rel="noopener">документации WB API</a>. Я собираю ИИ-агентов на Claude и подключаю ИИ к кабинету Ozon через API. Для WB можно собрать то же: агент раз в неделю забирает детализацию, раскладывает по статьям и присылает в Telegram только отклонения — рост хранения, новые виды удержаний, коррекции. Как получить токен и что ещё можно забирать, разобрали в статье <a href="/stati/api-ozon-wb/">API Озон и WB для селлера</a>.</p>
+<p><strong>Чего ИИ не сделает.</strong> Не узнает причину удержания, если её нет в отчёте, и не вернёт деньги. Черновик обращения в поддержку подготовит, решение спорить — за вами.</p>
+<aside class="st-kurs"><p class="st-kurs-t">Курс «ИИ для селлеров»</p><p>Если хочется не читать про ИИ, а настроить его под свой магазин, — у меня есть курс для владельцев магазинов на Wildberries и Ozon. Без программирования, по шагам: подключаем ИИ к данным вашего кабинета и разбираем задачи вроде той, что в этой статье.</p><p><a class="btn" href="/kurs/">Подробнее о курсе</a></p></aside>
+<h2>Частые вопросы</h2>
+<p><strong>Нужно ли вычитать логистику из «Итого к оплате»?</strong>
+Нет. По справке WB «Итого к оплате» — доход после всех удержаний. Логистику вычитают из «К перечислению за товар».</p>
+<p><strong>Почему удержание за рекламу в отчёте больше, чем траты за неделю в кабинете продвижения?</strong>
+Удержание выставляется датой списания, а не датой показов. В одну неделю могут попасть расходы за прошлые дни или отложенная оплата. Нажмите на сумму в «Прочих удержаниях» и сверьте номера документов.</p>
+<p><strong>Почему еженедельный отчёт разделился на два?</strong>
+Неделя пришлась на два месяца. WB формирует отдельный отчёт за каждую часть.</p>
+<p><strong>Где посмотреть, за что списали удержание?</strong>
+В списке отчётов нажмите на сумму в «Прочие удержания/выплаты» — откроется окно с датой, суммой, номером документа и комментарием. В детализации причина — в столбце «Виды доставок, штрафов и корректировок ВВ».</p>
+<h2>Об авторе</h2>
+<p>Я Роман Воробьёв, 8 лет продаю на Wildberries и Ozon, собираю ИИ-агентов на Claude и подключаю ИИ к кабинету Ozon через API. Разбор отчётов и автоматическую сверку удержаний обсуждаем в клубе селлеров «СИИстема» (aiseller.space/siistema). С нуля — вводный курс «ИИ для селлеров» (aiseller.space/kurs).</p>
+<h2>Читайте также</h2>
+<ul>
+<li><a href="/stati/reklama-wildberries/">Реклама на Вайлдберриз: ставки, ДРР и бюджет для старта</a></li>
+<li><a href="/stati/shtrafy-wildberries/">Штрафы Вайлдберриз: перечень, суммы и как не пропустить удержания</a></li>
+<li><a href="/stati/yunit-ekonomika-wildberries/">Юнит-экономика Вайлдберриз: почему прибыль у всех разная</a></li>
+<li><a href="/stati/zaderzhka-vyplat-wildberries/">Выплаты Вайлдберриз: сроки, задержки и как следить за деньгами</a></li>
+</ul>
+<h2>Источники</h2>
+<p>Дата проверки — 19.10.2026.</p>
+<ul>
+<li>Еженедельные отчёты реализации, справочный центр WB (правка 02.09.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-general-financial-report" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-general-financial-report</a></li>
+<li>Детализация еженедельного отчёта реализации, справочный центр WB (правка 07.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization</a></li>
+<li>Удержания, справочный центр WB (правка 14.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/retentions" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/retentions</a></li>
+<li>Штрафы, удержания и другие взыскания для продавцов (правка 13.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers</a></li>
+<li>Отчёт по удержаниям (правка 21.09.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/retentions-report" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/retentions-report</a></li>
+<li>Отчёт «Платное хранение» (правка 04.09.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/paid-storage-report" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/paid-storage-report</a></li>
+<li>Бюджет и оплата кампаний по продвижению (правка 11.08.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/budget-and-payment-for-promotion" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/budget-and-payment-for-promotion</a></li>
+<li>Баллы за отзывы (правка 01.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/score-for-reviews" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/score-for-reviews</a></li>
+<li>Кешбэк за отзывы и вайбы (правка 24.09.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/cashback-for-reviews-and-wibes" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/cashback-for-reviews-and-wibes</a></li>
+<li>Отчёт «Показатели» (правка 06.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/income-and-expenses-report" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/income-and-expenses-report</a></li>
+<li>Услуга «Вывести сейчас» (правка 02.09.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/withdraw-now-service" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/withdraw-now-service</a></li>
+<li>Баланс (правка 27.08.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-manage-balance" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-manage-balance</a></li>
+<li>WB API: документы и бухгалтерия, портал разработчиков WB — <a href="https://dev.wildberries.ru/docs/openapi/documents-and-accounting" target="_blank" rel="noopener">https://dev.wildberries.ru/docs/openapi/documents-and-accounting</a></li>
+</ul></article></main>
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-links">
+      <a href="/stati/">Статьи</a>
+      <a href="/avtor/">Об авторе</a>
+      <a href="/kurs/">Курс «ИИ для селлеров»</a>
+      <a href="/siistema/">Сообщество «СИИстема»</a>
+      <a href="https://t.me/FirstonOzon" target="_blank" rel="noopener">Канал «Системный гуманИИст»</a>
+      <a href="https://t.me/sellersmafia" target="_blank" rel="noopener">Мафклуб предпринимателей</a>
+    </div>
+    <small>Роман Воробьёв · ИИ для селлеров маркетплейсов</small>
+  </div>
+</footer>
+</div>
+</body>
+</html>
