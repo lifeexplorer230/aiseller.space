@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как выйти из автоакции ВБ и не продавать ниже себестоимости</title>
+<meta name="description" content="Как выйти из автоакции ВБ: исключение до старта, цена после, минимальная цена и блокировка скидок по справке WB. Плюс эластичный бустинг Ozon и сверка по API.">
+<link rel="canonical" href="https://www.aiseller.space/stati/avtoakcii-wildberries/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.aiseller.space/stati/avtoakcii-wildberries/">
+<meta property="og:title" content="Как выйти из автоакции ВБ и не продавать ниже себестоимости">
+<meta property="og:description" content="Как выйти из автоакции ВБ: исключение до старта, цена после, минимальная цена и блокировка скидок по справке WB. Плюс эластичный бустинг Ozon и сверка по API.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ИИ для селлеров маркетплейсов">
+<meta property="og:image" content="https://www.aiseller.space/stati/avtoakcii-wildberries/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/stati/stati.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.aiseller.space/stati/avtoakcii-wildberries/#article",
+   "headline": "Как выйти из автоакции ВБ и не продавать ниже себестоимости",
+   "description": "Как выйти из автоакции ВБ: исключение до старта, цена после, минимальная цена и блокировка скидок по справке WB. Плюс эластичный бустинг Ozon и сверка по API.",
+   "inLanguage": "ru",
+   "url": "https://www.aiseller.space/stati/avtoakcii-wildberries/",
+   "mainEntityOfPage": "https://www.aiseller.space/stati/avtoakcii-wildberries/",
+   "image": "https://www.aiseller.space/stati/avtoakcii-wildberries/og.png",
+   "datePublished": "2026-10-28",
+   "dateModified": "2026-10-19",
+   "author": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "publisher": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "keywords": "как выйти из автоакции вб",
+   "citation": [
+    "https://seller.wildberries.ru/instructions/ru/ru/material/wb-promo-events",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-set-minimal-price-and-block-auto-promotions",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/discount-depth-in-autopromotions",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-add-all-suitable-products-to-an-autopromotion-with-one-button",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/calculating-remuneration-rules-and-fbs-acceptance-procedure",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/price-reporting-and-calculations",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-update-or-delete-a-wb-api-token",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/wb-api-data-categories"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Главная",
+     "item": "https://www.aiseller.space/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Статьи",
+     "item": "https://www.aiseller.space/stati/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Как выйти из автоакции ВБ и не продавать ниже себестоимости",
+     "item": "https://www.aiseller.space/stati/avtoakcii-wildberries/"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.aiseller.space/#roman",
+   "name": "Роман Воробьёв",
+   "url": "https://www.aiseller.space/avtor/",
+   "jobTitle": "Селлер Ozon и Wildberries, внедряет ИИ для селлеров",
+   "knowsAbout": [
+    "Wildberries",
+    "Ozon",
+    "Яндекс Маркет",
+    "нейросети для селлеров",
+    "Seller API",
+    "ИИ-агенты",
+    "Telegram-боты"
+   ],
+   "sameAs": [
+    "https://t.me/FirstonOzon",
+    "https://t.me/sellersmafia"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Как сделать, чтобы WB без моего ведома не ставил огромные скидки?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Поставьте минимальную цену или бессрочную блокировку скидок для автоакций через «Цены и скидки» → «Обновить через Excel». Так скидка автоакции не опустит цену ниже вашего порога."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Товар попал в автоакцию, она уже началась. Как его удалить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Поднимите цену в «Цены и скидки» выше плановой по акции. Через календарь после старта вывести товар нельзя."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Если товар в акции, я получу свою цену или ту, что видит покупатель?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ту, что после вашей скидки, включая скидку автоакции. Скидка WB за его счёт (СПП) вашу выручку не уменьшает. Комиссия и логистика вычитаются из цены после вашей скидки."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Если попала в автоакцию, скидка видна в столбце «Скидка продавца»?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "В «Цены и скидки» есть отметка об участии в автоакции: наведите курсор на статус, и откроется название акции со ссылкой. Изменения из календаря видны в «Истории изменений»."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Как удалить товар из эластичного бустинга на Ozon, если нет кнопки?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "По опыту селлеров в чатах с середины октября 2026 года — только поднять предельную цену выше лимита акции. Официальный порядок уточните в базе знаний Ozon."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "После окончания автоакции цена вернётся сама?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Если вы добавили товары кнопкой «Добавить все подходящие», нет: цена останется акционной, поднимать придётся вручную. Так написано в справке WB."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113669934', 'ym');
+
+ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113669934" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="layer">
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="/" class="logo"><span class="dot"></span><span><span class="hl">ai</span>seller</span></a>
+    <nav class="nav">
+      <div class="only-wide"><div class="nav-links">
+        <a href="/stati/">Статьи</a><a href="/kurs/">Курс</a><a href="/siistema/">Сообщество</a>
+      </div></div>
+      <a href="/#napisat" class="btn btn-sm">Написать</a>
+    </nav>
+  </div>
+</header>
+<main class="st"><article class="st-in"><nav class="kroshki"><a href="/">Главная</a> / <a href="/stati/">Статьи</a></nav><p class="st-meta"><a href="/avtor/">Роман Воробьёв</a> · проверено 19.10.2026</p><h1>Как выйти из автоакции ВБ и запретить скидку ниже себестоимости</h1>
+<p>Выйти из автоакции ВБ можно двумя способами. До старта акции добавьте товар в исключения в «Календаре акций». После старта поднимите цену выше плановой в разделе «Цены и скидки». Чтобы товар вообще не дешевел без вас, заранее поставьте минимальную цену или блокировку скидок для автоакций. Это делается через Excel-шаблон в «Цены и скидки». Так написано в справке Wildberries; последняя правка статьи об акциях — 29 сентября 2026 года.</p>
+<h2>Коротко</h2>
+<ul>
+<li>Автоакция — распродажа, в которую WB сам добавляет подходящие товары и сам ставит скидку в момент старта. По оферте (п. 12.8) это скидка «с согласия продавца»: вы согласились, когда приняли оферту.</li>
+<li>О предстоящей автоакции WB обязан предупредить в кабинете не позже чем за 5 рабочих дней. Уведомление приходит в «колокольчик» и в календарь акций.</li>
+<li>Защита от цены ниже себестоимости — минимальная цена (товар не подешевеет ниже неё) и блокировка скидок на 7 дней, 30 дней или бессрочно.</li>
+<li>Ловушка: кнопка «Добавить все подходящие» игнорирует ваши блокировки, а после конца акции цена сама не вернётся.</li>
+<li>На Ozon похожая механика — «Эластичный бустинг». По жалобам в чатах, с середины октября 2026 года выход из него работает только через цену.</li>
+</ul>
+<h2>Почему ВБ сам поставил скидку на товар</h2>
+<p>Селлеры пишут «товар попал в автоакцию без согласия». Формально согласие было. Пункт 12.8 оферты прямо говорит: скидка по автоакции считается установленной с согласия продавца, и, принимая оферту, вы подтвердили, что знаете правила. Там же записано и ваше право отказаться.</p>
+<p>Что WB обязан сделать по оферте:</p>
+<ul>
+<li>не позже чем за 5 рабочих дней предупредить в кабинете о сроке начала, размере скидки в процентах и списке товаров (п. 12.8.1);</li>
+<li>не применять скидку к товарам, которые вы исключили до старта или во время акции (п. 12.8.3);</li>
+<li>не применять скидку, если цена после неё окажется ниже вашей минимальной цены (п. 12.8.6).</li>
+</ul>
+<p>Скидка включается в 00:00 дня, указанного в уведомлении, если там не написано другое время (п. 12.8.4).</p>
+<p>Что ещё полезно знать из справки WB:</p>
+<ul>
+<li>товары, которые появились на площадке 15 дней назад или меньше, не попадают ни в обычные акции, ни в автоакции;</li>
+<li>если у товара разные цены на разные размеры, автоматически в акцию он не попадёт — так сказано в инструкции о минимальных ценах. В статье «Акции на Wildberries» для таких товаров описан расчёт скидки от максимальной цены. Справки расходятся, поэтому проверяйте такие товары в файле акции;</li>
+<li>в календаре автоакции подписаны и выделены оранжевым;</li>
+<li>карантин цен (защита от опечатки в цене) не срабатывает, если цена упала из-за акции или автоакции.</li>
+</ul>
+<h2>Как выйти из автоакции ВБ: до старта и после</h2>
+<p>Порядок зависит от того, началась акция или нет.</p>
+<p><strong>До старта.</strong> Откройте «Товары и цены → Календарь акций», нажмите на автоакцию, затем «Настроить список товаров». Сформируйте и скачайте XLSX-файл, оставьте в нём только товары, которые пусть участвуют, загрузите файл обратно и нажмите «Исключить товары». Вернуть исключённое можно через тот же календарь.</p>
+<p><strong>После старта.</strong> Через календарь уже не получится. Поднимите цену в «Цены и скидки» так, чтобы она стала выше плановой по акции. Тогда товар выпадет из акции. Вернуть его можно только снижением цены в том же разделе.</p>
+<p>Где посмотреть плановую цену: в файле товаров из календаря. А статус участия по каждому товару WB пишет в столбце «Статус»:</p>
+<table>
+<thead>
+<tr>
+<th>Статус</th>
+<th>Что значит</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Участвует: цена ниже плановой</td>
+<td>Ваша цена и так подходит, товар в акции</td>
+</tr>
+<tr>
+<td>Участвует: не исключён, не заблокирован и минимальная цена ниже или равна плановой</td>
+<td>Скидку поставит WB</td>
+</tr>
+<tr>
+<td>Не участвует: стоит блокировка на снижение цены</td>
+<td>Сработала ваша блокировка</td>
+</tr>
+<tr>
+<td>Не участвует: исключён в календаре</td>
+<td>Вы исключили товар файлом</td>
+</tr>
+<tr>
+<td>Не участвует: минимальная цена выше плановой</td>
+<td>Сработала минимальная цена</td>
+</tr>
+</tbody>
+</table>
+<h3>Глубина скидки: можно не выходить, а уменьшить скидку</h3>
+<p>В автоакциях WB даёт выбрать глубину скидки: лёгкую, умеренную, глубокую или максимальную. <strong>По умолчанию стоит «Максимальная».</strong> Чем глубже скидка, тем выше товар в поиске. Но размер скидки на одном и том же уровне в разных акциях разный, а в некоторых автоакциях уровней меньше четырёх или выбора нет вовсе.</p>
+<p>Какая скидка ляжет на каждый товар, видно в файле: выберите глубину в календаре, «Применить» → «Настроить список товаров» → скачать. Поменять глубину можно не позже чем за 5 часов до старта. Глубина одна на все товары акции. Исключения, которые вы настроили на одной глубине, не переносятся на другую — после смены глубины файл нужно загрузить заново.</p>
+<h2>Минимальная цена и блокировка: как запретить WB опускать цену</h2>
+<p>Это главный инструмент против продажи ниже себестоимости. Работает только для автоакций, на обычные акции не влияет (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-set-minimal-price-and-block-auto-promotions" target="_blank" rel="noopener">справка WB</a>).</p>
+<ul>
+<li><strong>Минимальная цена</strong> — нижняя граница. Во время автоакции товар не подешевеет ниже неё, если только вы сами не снизите цену.</li>
+<li><strong>Блокировка</strong> — к товару вообще не применяется скидка по автоакции. Срок: 7 дней, 30 дней или бессрочно.</li>
+</ul>
+<p>Как поставить:</p>
+<ol>
+<li>«Цены и скидки» → «Обновить через Excel» → «Минимальные цены и блокировки для автоакций».</li>
+<li>«Сформировать шаблон» → «Скачать шаблон».</li>
+<li>Заполните столбцы «Новая минимальная цена для применения скидки по автоакции» и «Новая блокировка применения скидки по автоакции». Цена — целое число, без копеек: 1200 можно, 1199,50 нельзя.</li>
+<li>Загрузите файл и нажмите «Применить изменения».</li>
+</ol>
+<p><strong>Важно: блокировка не означает «товар не участвует».</strong> Если ваша текущая цена и так равна плановой или ниже, товар попадёт в акцию — просто без дополнительной скидки. Пример из справки WB: платье стоит 2 000 ₽, плановая цена по акции — 1 800 ₽.</p>
+<table>
+<thead>
+<tr>
+<th>Что вы настроили</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Минимальная цена 1 900 ₽</td>
+<td>В акцию не попадёт, цена остаётся 2 000 ₽</td>
+</tr>
+<tr>
+<td>Минимальная 1 800 ₽ без блокировки</td>
+<td>Попадёт, продаётся за 1 800 ₽</td>
+</tr>
+<tr>
+<td>Минимальная 1 800 ₽ и блокировка</td>
+<td>Не попадёт: скидку применить нельзя</td>
+</tr>
+<tr>
+<td>Только блокировка</td>
+<td>Не попадёт</td>
+</tr>
+<tr>
+<td>Вы сами снизили цену до 1 700 ₽</td>
+<td>Попадёт и продаётся за 1 700 ₽, минимальная цена не поможет</td>
+</tr>
+<tr>
+<td>Ничего не настроили</td>
+<td>Попадёт, продаётся за 1 800 ₽</td>
+</tr>
+</tbody>
+</table>
+<p>Минимальную цену я бы считал от себестоимости плюс все расходы на единицу: комиссию, логистику, хранение, рекламу. Как это посчитать, разобрал в статье про <a href="/stati/yunit-ekonomika-wildberries/">юнит-экономику Вайлдберриз</a>.</p>
+<h3>Ловушка: кнопка «Добавить все подходящие»</h3>
+<p>В идущей автоакции есть кнопка «Настроить список товаров» → «Добавить все подходящие». Она добавляет в акцию все подходящие товары, <strong>включая заблокированные, исключённые и с минимальной ценой выше плановой</strong>. Цены сразу становятся плановыми.</p>
+<p>Блокировки после этого не удаляются. Они игнорируются только для выбранной акции. Но после конца акции цена <strong>не вернётся сама</strong>. Пример из справки WB: минимальная цена 1 500 ₽, после кнопки платье продаётся за 1 000 ₽ и остаётся по 1 000 ₽, когда акция закончилась. Поднимать цену придётся руками. Нажимать эту кнопку стоит, только если вы проверили файл товаров целиком.</p>
+<h2>Сколько получит продавец при участии в акции ВБ</h2>
+<p>Короткий ответ: вы получите сумму от цены со своей скидкой, включая скидку автоакции. Скидки самого WB вашу выручку не уменьшают.</p>
+<p>По оферте (п. 5.1) «Розничная цена Продавца» — это цена с учётом скидок продавца, в том числе скидок в акциях и автоакциях. По п. 12.8.5 с момента старта автоакции эта цена уменьшается на размер скидки. Платформенные скидки, которые WB даёт покупателю за свой счёт (СПП — скидка постоянного покупателя), сумму к перечислению не уменьшают (п. 5.3–5.4).</p>
+<p>Вознаграждение WB тоже считается от розничной цены со скидками продавца на момент заказа (п. 12.2). Значит, из цены после скидки автоакции вычитаются комиссия, логистика и прочие услуги. Подробно про то, почему цена у покупателя ниже вашей, — в статье про <a href="/stati/spp-wildberries/">СПП Вайлдберриз</a>.</p>
+<p>Пример: цена 2 000 ₽, автоакция со скидкой 10%. Розничная цена продавца — 1 800 ₽. Покупатель может увидеть 1 500 ₽ за счёт СПП, но считать вы будете от 1 800 ₽ минус комиссия и логистика по вашим тарифам.</p>
+<h2>Эластичный бустинг Ozon: как выйти</h2>
+<p>У Ozon похожая механика — акции «Эластичный бустинг» и «Максимальный бустинг». Площадка поднимает товар в выдаче в обмен на скидку. Официальную страницу о бустинге в базе знаний Ozon с нашего сервера открыть не удалось. Поэтому ниже — то, что пишут селлеры, а не правило площадки. Порядок уточните в <a href="https://seller-edu.ozon.ru/" target="_blank" rel="noopener">базе знаний Ozon</a>.</p>
+<p>Что сейчас видно по чатам:</p>
+<ul>
+<li><strong>Пропала кнопка «Удалить».</strong> С 15 октября 2026 года селлеры один за другим пишут, что не могут удалить товары из бустинга в кабинете и в приложении: нет кнопки и галочек.</li>
+<li><strong>Выход — только через цену.</strong> В чатах объясняют: участие теперь регулирует «предельная цена». Если товар в акции, вывести его без повышения предельной цены нельзя. Один селлер описал: цена 1 000 ₽, диапазон бустинга 800–1 200 ₽, выйти можно, только подняв цену до 1 201 ₽.</li>
+<li><strong>Товар возвращается сам.</strong> Пишут, что Ozon добавляет товары в бустинг, даже когда автодобавление выключено, если это позволяет цена.</li>
+<li><strong>По API тоже непросто.</strong> Разработчики жалуются, что запрос на выход с ценой выше лимита отклоняется с ошибкой про процент скидки.</li>
+</ul>
+<p>В конце августа 2026 года Ozon переименовал цены в кабинете. По данным <a href="https://sellers.by/news/ozon-obnovil-nazvaniya-cen-i-skidok/" target="_blank" rel="noopener">sellers.by</a>, «Минимальная цена» стала «Ограничением для акций и стратегий», а «Ваша цена» — «Предельной ценой без акций». В официальном источнике я это не проверял. Практический вывод из чатов: поставьте ограничение для акций не ниже себестоимости и проверяйте цены раз в несколько дней.</p>
+<h2>Что пишут в чатах про автоакции и бустинг</h2>
+<p>Мы читаем больше 200 Telegram-чатов селлеров WB и Ozon. С 22 сентября по 18 октября 2026 года там задали 156 разных вопросов про акции и бустинг. Около 30 из них — про одно: товар попал в акцию сам, как выйти, как не дать площадке снизить цену. Около трети — про WB, остальные — про Ozon. Больше десятка вопросов про Ozon пришлись на 15–18 октября, когда из кабинета пропала кнопка удаления.</p>
+<p>Чаще всего путаются вот в чём:</p>
+<ol>
+<li><strong>«ВБ сам меняет скидку».</strong> Пример: «вечером скидка была 75%, утром 82%». В чатах советуют проверить историю изменений цен, поставить минимальную цену и блокировку. Если скидку дал сам WB за свой счёт (СПП), повлиять на неё продавец не может — и платит её тоже не он.</li>
+<li><strong>«Минимальная цена — формальность?»</strong> Нет, но она не исключает товар из акции. Если ваша цена уже ниже плановой, товар всё равно в акции.</li>
+<li><strong>«Товар исключён, а цена акционная».</strong> Селлер видит в календаре «исключён», а в «Цены и скидки» — акционную цену и изменение в 5 утра. Причину стоит искать в «Истории изменений» раздела «Цены и скидки». Там же видны обновления из календаря акций.</li>
+</ol>
+<p>Отдельная боль — заказ уже пришёл по цене ниже себестоимости. Вариантов два: отменить со штрафом или отправить в минус. Штраф за отмену заказа продавцом — двойная комиссия на товар, от 10 до 10 000 ₽ за единицу (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers" target="_blank" rel="noopener">справка WB о штрафах</a>). Подробнее — в статье про <a href="/stati/shtrafy-wildberries/">штрафы Вайлдберриз</a>.</p>
+<h2>Где здесь помогает ИИ и автоматизация</h2>
+<p>Автоакций много, а файл у каждой свой. Это работа для автоматизации.</p>
+<ul>
+<li><strong>API WB, категория «Цены и скидки».</strong> По <a href="https://seller.wildberries.ru/instructions/ru/ru/material/wb-api-data-categories" target="_blank" rel="noopener">справке WB</a> токен с этой категорией позволяет менять цены и скидки, получать информацию об акциях и добавлять товары в акции. API — это способ, которым программа сама берёт данные из кабинета, без ваших кликов.</li>
+<li><strong>Ежедневная сверка.</strong> Раз в день скрипт или ИИ-агент забирает список акций и цены, сравнивает с вашей таблицей себестоимости и присылает в Telegram список товаров, которые уйдут ниже порога. Это читается за минуту утром.</li>
+<li><strong>Что делаю я.</strong> Я собираю ИИ-агентов на Claude и подключаю ИИ к кабинету Ozon по API. Для такой задачи агенту нужны три вещи: таблица себестоимости, токен только на чтение для начала и правило «что считать опасной ценой». Менять цены сам он у меня не должен: решение «выйти или остаться» остаётся за человеком.</li>
+<li><strong>Без программиста.</strong> Подойдёт сервис из каталога WB с сервисным токеном. Как выдать токен и не отдать лишние права — в статье про <a href="/stati/api-ozon-wb/">API Озон и WB</a>.</li>
+</ul>
+<aside class="st-kurs"><p class="st-kurs-t">Курс «ИИ для селлеров»</p><p>Если хочется не читать про ИИ, а настроить его под свой магазин, — у меня есть курс для владельцев магазинов на Wildberries и Ozon. Без программирования, по шагам: подключаем ИИ к данным вашего кабинета и разбираем задачи вроде той, что в этой статье.</p><p><a class="btn" href="/kurs/">Подробнее о курсе</a></p></aside>
+<h2>Частые вопросы</h2>
+<p><strong>Как сделать, чтобы WB без моего ведома не ставил огромные скидки?</strong>
+Поставьте минимальную цену или бессрочную блокировку скидок для автоакций через «Цены и скидки» → «Обновить через Excel». Так скидка автоакции не опустит цену ниже вашего порога.</p>
+<p><strong>Товар попал в автоакцию, она уже началась. Как его удалить?</strong>
+Поднимите цену в «Цены и скидки» выше плановой по акции. Через календарь после старта вывести товар нельзя.</p>
+<p><strong>Если товар в акции, я получу свою цену или ту, что видит покупатель?</strong>
+Ту, что после вашей скидки, включая скидку автоакции. Скидка WB за его счёт (СПП) вашу выручку не уменьшает. Комиссия и логистика вычитаются из цены после вашей скидки.</p>
+<p><strong>Если попала в автоакцию, скидка видна в столбце «Скидка продавца»?</strong>
+В «Цены и скидки» есть отметка об участии в автоакции: наведите курсор на статус, и откроется название акции со ссылкой. Изменения из календаря видны в «Истории изменений».</p>
+<p><strong>Как удалить товар из эластичного бустинга на Ozon, если нет кнопки?</strong>
+По опыту селлеров в чатах с середины октября 2026 года — только поднять предельную цену выше лимита акции. Официальный порядок уточните в базе знаний Ozon.</p>
+<p><strong>После окончания автоакции цена вернётся сама?</strong>
+Если вы добавили товары кнопкой «Добавить все подходящие», нет: цена останется акционной, поднимать придётся вручную. Так написано в справке WB.</p>
+<h2>Об авторе</h2>
+<p>Я Роман Воробьёв, 8 лет продаю на Wildberries и Ozon и собираю ИИ-агентов на Claude, которые работают с кабинетом через API. Сверку цен и акций с себестоимостью разбираем в клубе селлеров «СИИстема» (aiseller.space/siistema). С нуля — вводный курс «ИИ для селлеров» (aiseller.space/kurs).</p>
+<h2>Читайте также</h2>
+<ul>
+<li><a href="/stati/kak-prodavat-na-ozon/">Как продавать на Озон: 10 вопросов новичка и ответы Ozon</a></li>
+<li><a href="/stati/chestnyj-znak-marketplejs/">Честный знак на маркетплейсе: что маркировать для WB и Ozon</a></li>
+<li><a href="/stati/vyplaty-ozon/">Выплаты Озон селлеру: график, баллы и куда уходят деньги</a></li>
+<li><a href="/stati/fbs-ili-fbo-wildberries/">FBO Вайлдберриз или FBS: что выгоднее селлеру в 2026</a></li>
+</ul>
+<h2>Источники</h2>
+<p>Дата проверки ссылок — 19.10.2026.</p>
+<ul>
+<li>Акции на Wildberries — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/wb-promo-events" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/wb-promo-events</a> (справочный центр WB, правка 29.09.2026)</li>
+<li>Как установить минимальную цену и блокировку в автоакциях — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-set-minimal-price-and-block-auto-promotions" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-set-minimal-price-and-block-auto-promotions</a> (правка 16.06.2026)</li>
+<li>Глубина скидки в автоакциях — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/discount-depth-in-autopromotions" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/discount-depth-in-autopromotions</a> (правка 18.05.2026)</li>
+<li>Как добавить в автоакцию все подходящие товары одной кнопкой — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-add-all-suitable-products-to-an-autopromotion-with-one-button" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-add-all-suitable-products-to-an-autopromotion-with-one-button</a></li>
+<li>Оферта, раздел 12 «Правила расчёта вознаграждения» (п. 12.2, 12.8) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/calculating-remuneration-rules-and-fbs-acceptance-procedure" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/calculating-remuneration-rules-and-fbs-acceptance-procedure</a> (правка 01.10.2026)</li>
+<li>Оферта, раздел 5 «Цена Товара, отчётность и расчёты» (п. 5.1, 5.3, 5.4) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/price-reporting-and-calculations" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/price-reporting-and-calculations</a> (правка 01.10.2026)</li>
+<li>Карантин цен — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine</a></li>
+<li>Штрафы, удержания и другие санкции для продавцов (невыполненный заказ) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers</a></li>
+<li>Как создать, обновить или удалить токен WB API (сервисный токен, «только чтение») — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-update-or-delete-a-wb-api-token" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-create-update-or-delete-a-wb-api-token</a></li>
+<li>Категории данных WB API — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/wb-api-data-categories" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/wb-api-data-categories</a> (правка 26.08.2026)</li>
+<li>База знаний Ozon Seller Edu — <a href="https://seller-edu.ozon.ru/" target="_blank" rel="noopener">https://seller-edu.ozon.ru/</a></li>
+<li>Ozon обновил названия цен и скидок — <a href="https://sellers.by/news/ozon-obnovil-nazvaniya-cen-i-skidok/" target="_blank" rel="noopener">https://sellers.by/news/ozon-obnovil-nazvaniya-cen-i-skidok/</a> (отраслевое СМИ, не первоисточник)</li>
+</ul></article></main>
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-links">
+      <a href="/stati/">Статьи</a>
+      <a href="/avtor/">Об авторе</a>
+      <a href="/kurs/">Курс «ИИ для селлеров»</a>
+      <a href="/siistema/">Сообщество «СИИстема»</a>
+      <a href="https://t.me/FirstonOzon" target="_blank" rel="noopener">Канал «Системный гуманИИст»</a>
+      <a href="https://t.me/sellersmafia" target="_blank" rel="noopener">Мафклуб предпринимателей</a>
+    </div>
+    <small>Роман Воробьёв · ИИ для селлеров маркетплейсов</small>
+  </div>
+</footer>
+</div>
+</body>
+</html>

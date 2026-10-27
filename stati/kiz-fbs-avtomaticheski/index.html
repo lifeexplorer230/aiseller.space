@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Честный знак на Озон FBS: как привязывать КИЗ без ручной работы</title>
+<meta name="description" content="Честный знак на Озон FBS и WB: как привязать КИЗ к заказу через API, почему сканер даёт «неверный формат» и как выводить коды из оборота файлом.">
+<link rel="canonical" href="https://www.aiseller.space/stati/kiz-fbs-avtomaticheski/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.aiseller.space/stati/kiz-fbs-avtomaticheski/">
+<meta property="og:title" content="Честный знак на Озон FBS: как привязывать КИЗ без ручной работы">
+<meta property="og:description" content="Честный знак на Озон FBS и WB: как привязать КИЗ к заказу через API, почему сканер даёт «неверный формат» и как выводить коды из оборота файлом.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ИИ для селлеров маркетплейсов">
+<meta property="og:image" content="https://www.aiseller.space/stati/kiz-fbs-avtomaticheski/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/stati/stati.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.aiseller.space/stati/kiz-fbs-avtomaticheski/#article",
+   "headline": "Честный знак на Озон FBS: как привязывать КИЗ без ручной работы",
+   "description": "Честный знак на Озон FBS и WB: как привязать КИЗ к заказу через API, почему сканер даёт «неверный формат» и как выводить коды из оборота файлом.",
+   "inLanguage": "ru",
+   "url": "https://www.aiseller.space/stati/kiz-fbs-avtomaticheski/",
+   "mainEntityOfPage": "https://www.aiseller.space/stati/kiz-fbs-avtomaticheski/",
+   "image": "https://www.aiseller.space/stati/kiz-fbs-avtomaticheski/og.png",
+   "datePublished": "2026-10-28",
+   "dateModified": "2026-10-19",
+   "author": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "publisher": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "keywords": "честный знак озон fbs",
+   "citation": [
+    "https://docs.ozon.ru/api/seller/",
+    "https://t.me/s/OzonSellerAPI",
+    "https://seller-edu.ozon.ru/libra/work-with-goods/additional-materials/poluchenie-markirovki",
+    "https://dev.wildberries.ru/en/openapi/orders-fbs",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/verify-product-identifiers",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/items-labeling-in-fbs",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/interactive-assembly-task",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/stickers-for-marking-orders-fbs-model",
+    "https://markirovka.ru/knowledge/tovarnye-gruppy/motornye-masla/distantsionnaya-torgovlya-na-marketpleysakh-skhemy-fbo-fbs-kosmetika-i-bytovaya-khimiya-motornye-masla-detskie-igrushki",
+    "https://markirovka.ru/knowledge/tovarnye-gruppy/molochnaya-produkciya/kak-podat-svedeniya-o-vyvode-iz-oborota-v-sistemu-markirovki-obuv-moloko-voda-legprom-duhi-shini-photo-velosipedy-ba-pivo"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Главная",
+     "item": "https://www.aiseller.space/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Статьи",
+     "item": "https://www.aiseller.space/stati/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Честный знак на Озон FBS: как привязывать КИЗ без ручной работы",
+     "item": "https://www.aiseller.space/stati/kiz-fbs-avtomaticheski/"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.aiseller.space/#roman",
+   "name": "Роман Воробьёв",
+   "url": "https://www.aiseller.space/avtor/",
+   "jobTitle": "Селлер Ozon и Wildberries, внедряет ИИ для селлеров",
+   "knowsAbout": [
+    "Wildberries",
+    "Ozon",
+    "Яндекс Маркет",
+    "нейросети для селлеров",
+    "Seller API",
+    "ИИ-агенты",
+    "Telegram-боты"
+   ],
+   "sameAs": [
+    "https://t.me/FirstonOzon",
+    "https://t.me/sellersmafia"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Кто выводит КИЗ из оборота при FBS на Озоне?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Продавец, как собственник товара, в «Честном знаке» с причиной «Дистанционная продажа». На FBO это делает маркетплейс, на FBS — вы."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Можно ли загрузить КИЗы в FBS-заказы не вручную?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Да. На WB — XLSX-шаблоном в поставке или через API `meta/sgtin`. На Ozon — через API `/v6/fbs/posting/product/exemplar/set`."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Почему при сканировании КИЗа пишет «неверный формат»?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Чаще всего сканер не передаёт невидимые разделители GS. У WB эта ошибка называется «Неподходящий формат». Включите в настройках F8 Mode, Alt+0029 Mode или GS1 Enable и не копируйте коды из Excel."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Передаём коды через `exemplar/set`, а в ответ пустые скобки `{}`. Что не так?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "В чатах советуют проверить статус кода методом `/v5/fbs/posting/product/exemplar/status`, а после привязки вызвать сборку отправления. Отдельно проверьте, что в коде есть разделители GS."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Что будет, если на WB отправить FBS-заказ без указанного КИЗ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "По инструкции WB, товар уедет покупателю без проверки кода. При отказе или возврате он вернётся в ваш ПВЗ, а не на склад WB, и возврат будет платным."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Отказ покупателя на FBS — что делать с кодом?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Если код уже выведен — вернуть его в оборот в «Честном знаке». По инструкции WB, после повторной проверки такой товар можно снова продавать."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113669934', 'ym');
+
+ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113669934" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="layer">
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="/" class="logo"><span class="dot"></span><span><span class="hl">ai</span>seller</span></a>
+    <nav class="nav">
+      <div class="only-wide"><div class="nav-links">
+        <a href="/stati/">Статьи</a><a href="/kurs/">Курс</a><a href="/siistema/">Сообщество</a>
+      </div></div>
+      <a href="/#napisat" class="btn btn-sm">Написать</a>
+    </nav>
+  </div>
+</header>
+<main class="st"><article class="st-in"><nav class="kroshki"><a href="/">Главная</a> / <a href="/stati/">Статьи</a></nav><p class="st-meta"><a href="/avtor/">Роман Воробьёв</a> · проверено 19.10.2026</p><h1>Честный знак на Озон FBS: как привязывать КИЗ к заказам на объёме</h1>
+<p>Честный знак на Озон FBS — это две отдельные работы. Первая: привязать КИЗ (контрольный идентификационный знак, код DataMatrix из «Честного знака») к каждому отправлению. Вторая: самому вывести проданные коды из оборота, потому что на FBS товар до покупателя принадлежит вам. Пока заказов десятки, это делают руками в кабинете. Когда их сотни и тысячи, привязку переносят в API: у Ozon и Wildberries есть методы, которые принимают коды по номеру отправления. Скрипт делает это прямо в момент сканирования на упаковке.</p>
+<h2>Коротко</h2>
+<ul>
+<li>На FBS коды из оборота выводит продавец как собственник товара, а не маркетплейс. Причина в документе — «Дистанционная продажа» (<a href="https://markirovka.ru/knowledge/tovarnye-gruppy/motornye-masla/distantsionnaya-torgovlya-na-marketpleysakh-skhemy-fbo-fbs-kosmetika-i-bytovaya-khimiya-motornye-masla-detskie-igrushki" target="_blank" rel="noopener">«Честный знак»</a>).</li>
+<li>У Ozon коды к отправлению передаёт метод <code>/v6/fbs/posting/product/exemplar/set</code>. Старые версии v4 и v5 Ozon удалил из документации 13 января 2026 года (<a href="https://t.me/s/OzonSellerAPI" target="_blank" rel="noopener">канал Ozon Seller API</a>).</li>
+<li>У WB код привязывают методом <code>PUT /api/v3/orders/{orderId}/meta/sgtin</code>. Без программиста — массово через XLSX-шаблон в кабинете (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/verify-product-identifiers" target="_blank" rel="noopener">WB</a>).</li>
+<li>Ошибка «неверный формат» (у WB — «Неподходящий формат») чаще всего значит, что сканер потерял невидимые разделители GS внутри кода.</li>
+<li>Вывести коды из оборота можно файлом CSV или XML через раздел «Документы» в личном кабинете «Честного знака».</li>
+</ul>
+<h2>Кто что делает на FBS: Ozon, WB и вы</h2>
+<p>На FBS товар лежит у вас, и маркетплейс не участвует в обороте кодов. Так прямо пишет «Честный знак»: вывод из оборота делает собственник товара, а не логистическая компания. Делать это нужно при отгрузке со склада для доставки покупателю, до дня фактической доставки.</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Ozon FBS</th>
+<th>Wildberries FBS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Привязать КИЗ к заказу</td>
+<td>в кабинете при сборке или через API (<code>exemplar/set</code>)</td>
+<td>в поставке «На сборке»: вручную, XLSX-шаблоном, сканером в листе подбора или через API (<code>meta/sgtin</code>)</td>
+</tr>
+<tr>
+<td>Проверить код</td>
+<td>метод статуса проверки в API</td>
+<td>автоматически, обычно меньше минуты</td>
+</tr>
+<tr>
+<td>Вывести код из оборота</td>
+<td>вы, в «Честном знаке»</td>
+<td>вы, в «Честном знаке»</td>
+</tr>
+<tr>
+<td>Вернуть код в оборот после возврата</td>
+<td>вы</td>
+<td>вы</td>
+</tr>
+</tbody>
+</table>
+<p>WB в инструкции по FBS пишет то же самое: вывод из оборота идёт вместе с фактической отгрузкой, выводить КИЗ нужно самостоятельно, а при возврате товара код надо вернуть в оборот (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/items-labeling-in-fbs" target="_blank" rel="noopener">инструкция WB</a>, правка 02.10.2026).</p>
+<p>Подробнее о том, какие товары вообще маркировать, — в статье <a href="/stati/chestnyj-znak-marketplejs/">«Честный знак на маркетплейсе»</a>. Про саму схему FBS у Ozon — <a href="/stati/fbs-ozon/">«FBS Озон: схема, комиссия и сроки»</a>.</p>
+<h2>Привязка КИЗ к заказу Озон автоматически: что умеет API</h2>
+<p>API — это способ, которым программа сама работает с кабинетом без человека в браузере. Для селлера это значит: код уходит в заказ в ту же секунду, когда кладовщик его отсканировал. Никакого Excel «номер задания — КИЗ» и никакой ручной сверки в конце смены.</p>
+<p>Актуальные методы Ozon для кодов маркировки FBS по официальному каналу обновлений Ozon Seller API (на октябрь 2026):</p>
+<ol>
+<li><code>/v3/posting/fbs/unfulfilled/list</code> — список необработанных отправлений. С марта 2025 года в ответе есть блок <code>products_with_possible_mandatory_mark</code>: в нём товары, которым может понадобиться маркировка.</li>
+<li><code>/v6/fbs/posting/product/exemplar/create-or-get</code> — получить идентификаторы экземпляров (<code>exemplar_id</code>) в отправлении.</li>
+<li><code>/v5/fbs/posting/product/exemplar/validate</code> — проверить коды до передачи.</li>
+<li><code>/v6/fbs/posting/product/exemplar/set</code> — передать коды. С 5 февраля 2026 года обязательны номер отправления, <code>product_id</code> и <code>exemplar_id</code>.</li>
+<li><code>/v5/fbs/posting/product/exemplar/status</code> — узнать статус проверки каждого кода.</li>
+<li><code>/v3/posting/fbs/get</code> с параметром <code>with.product_exemplars: true</code> — посмотреть, какие коды уже стоят в отправлении.</li>
+</ol>
+<p>Если ваш интегратор писал скрипт до 2026 года на <code>/v4/.../exemplar/set</code> или <code>/v5/.../exemplar/set</code>, проверьте его. Эти методы Ozon пометил устаревшими и убрал из документации 13 января 2026 года.</p>
+<p>Два подводных камня из чатов разработчиков:</p>
+<ul>
+<li><strong>Одного <code>set</code> мало.</strong> В чатах советуют после привязки кодов отдельно вызвать сборку отправления (<code>/v4/posting/fbs/ship</code>). Иначе заказ не уходит в статус «ожидает отгрузки».</li>
+<li><strong>Стикер появляется позже, чем код.</strong> Селлер, который подключал привязку на своём складе, пишет: через API этикетка доступна только в статусе <code>awaiting_deliver</code>, а КИЗ он привязывает ещё в <code>awaiting_packaging</code>. Поэтому сценарий «отсканировал стикер, потом код» на Ozon в лоб не работает: коды привязывают по номеру отправления, этикетки печатают потом. Официально база знаний Ozon разрешает передавать коды на FBS до передачи отправления в логистику, пока оно в статусах «Ожидает сборки» и «Готов к отгрузке». Как это работает в вашей связке методов, проверьте на тестовом заказе.</li>
+</ul>
+<p>У WB всё проще. Метод <code>PUT /api/v3/orders/{orderId}/meta/sgtin</code> закрепляет коды «Честного знака» за сборочным заданием, если задание в статусе <code>confirm</code> («На сборке»). Получить уже привязанные коды можно методом <code>POST /api/marketplace/v3/orders/meta</code>, удалить ошибочные — <code>DELETE /api/v3/orders/{orderId}/meta</code> (<a href="https://dev.wildberries.ru/en/openapi/orders-fbs" target="_blank" rel="noopener">WB API, заказы FBS</a>). Подробнее про токены — в статье <a href="/stati/api-ozon-wb/">«API Озон и WB для селлера»</a>.</p>
+<h2>Сканирование честного знака на ФБС Озон: откуда «неверный формат»</h2>
+<p>КИЗ состоит из четырёх частей: GTIN после тега 01, серийный номер после 21, ключ проверки после 91 и криптохвост после 92 или 93. Между частями стоят служебные символы GS. Глазом их не видно, но без них код может не пройти проверку. В кабинете WB такая ошибка называется «Неподходящий формат» (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/verify-product-identifiers" target="_blank" rel="noopener">инструкция WB</a>, правка 02.10.2026).</p>
+<p>Что из этого следует на практике:</p>
+<ul>
+<li><strong>Не копируйте код из Excel или документов.</strong> Разделители теряются при копировании. WB прямо советует сканировать DataMatrix с этикетки.</li>
+<li><strong>Включите в сканере передачу GS.</strong> У разных моделей пункт меню называется F8 Mode, Alt+0029 Mode или GS1 Enable. По инструкции WB, сканер может передавать GS клавишей F8 или комбинацией Alt+0029.</li>
+<li><strong>Нужен 2D-сканер.</strong> WB пишет, что подойдёт любой сканер, который читает 1D- и 2D-коды.</li>
+<li><strong>Для скрипта через API</strong> разделитель передают символом <code>\u001d</code>. В чатах селлеров его советуют ставить перед блоками 91 и 92, если код пришёл без него.</li>
+</ul>
+<p>Что именно Ozon принимает в поле кода через сканер в кабинете, в официальной справке я не нашёл. Если код не проходит — уточните в базе знаний Ozon.</p>
+<h2>Печать стикера ВБ с КИЗом: что есть в кабинете</h2>
+<p>Этот вопрос в чатах звучит так: «можно ли напечатать стикеры WB с привязанными КИЗами, чтобы на принтере выходили друг за другом стикер задания, затем честный знак?». По инструкции WB, в кабинете четыре вида стикеров для FBS: стикер заказа, стикер баркода, артикул для подбора и данные о поставке. Стикера «заказ + КИЗ» среди них нет (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/stickers-for-marking-orders-fbs-model" target="_blank" rel="noopener">WB</a>). Этикетку с КИЗ вы печатаете из «Честного знака» или своей программы маркировки. WB советует размер DataMatrix 22 × 22 мм и чёрный цвет.</p>
+<p>Что можно сделать штатно:</p>
+<ul>
+<li>Печатать стикеры с фильтрами листа подбора — например, сначала только заказы с фильтром «Нужна маркировка».</li>
+<li>Добавлять КИЗ сканером прямо в интерактивном листе подбора. Отсканировали стикер WB, отсканировали код, система сохранила и сама отправила его на проверку (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/interactive-assembly-task" target="_blank" rel="noopener">лист подбора WB</a>).</li>
+</ul>
+<p>Чтобы стикер задания и этикетка КИЗ выходили из принтера парой, нужен скрипт. Он берёт стикеры заданий по API (<code>POST /api/v3/orders/stickers</code>), коды из своего пула и склеивает их в один файл для печати.</p>
+<h2>Вывод КИЗов из оборота файлом</h2>
+<p>Когда отгрузок много, выводить коды по одному не нужно. По инструкции «Честного знака» документ «Вывод из оборота» подают файлом:</p>
+<ol>
+<li>Шаблон CSV или XML лежит в разделе «Помощь» личного кабинета системы маркировки.</li>
+<li>Заполните файл, не меняя расширение. В CSV каждый код берут в двойные кавычки, а кавычки внутри кода удваивают.</li>
+<li>Войдите в кабинет с УКЭП (квалифицированной электронной подписью), откройте «Документы» → «Загрузить» → «Вывод из оборота».</li>
+<li>Проверьте предпросмотр и нажмите «Подписать и отправить». Успех — статус «Обработан успешно», коды переходят в «Выбыл».</li>
+</ol>
+<p>Инструкция опубликована в разделе «Честного знака» про молочную продукцию. Для вашей товарной группы порядок может отличаться — проверьте раздел «Помощь» в своём кабинете. Для программной интеграции у «Честного знака» есть свой API — True API. Его описание тоже лежит в «Помощи» личного кабинета.</p>
+<p><strong>Где взять список кодов.</strong> У Ozon есть отчёт «Продажи маркированных товаров». Селлеры в чатах пишут, что в нём есть дата, КИЗ и номер чека, но нет суммы. Где он лежит в кабинете сейчас — уточните в базе знаний Ozon. У WB селлеры берут коды из выгрузок сборочных заданий на вкладках «Завершённые» и «Отменённые».</p>
+<p><strong>Когда выводить.</strong> Здесь первоисточники и чаты расходятся. «Честный знак» пишет: при отгрузке, до дня фактической доставки. WB — вместе с фактической отгрузкой. В чатах чаще советуют выводить после выкупа, в течение трёх дней, чтобы не возвращать код в оборот при отказе. Эксперт «Клерка» со ссылкой на рекомендацию Ozon тоже говорит про статус «Доставлен». Ориентируйтесь на правила своей товарной группы в «Честном знаке», а не на совет из чата.</p>
+<h2>Что спрашивают про КИЗ на FBS в чатах селлеров</h2>
+<p>Мы читаем больше 200 Telegram-чатов селлеров WB и Ozon. С 22 сентября по 18 октября 2026 года там задали около сотни разных вопросов про КИЗ и «Честный знак» на FBS. Чаще всего спрашивали:</p>
+<ul>
+<li>про вывод и возврат кодов в оборот — около четверти вопросов: когда выводить, где взять список, нужна ли цена;</li>
+<li>про сканирование при сборке;</li>
+<li>про отказы и возвраты: куда едет товар и что делать с кодом;</li>
+<li>про API и автоматизацию;</li>
+<li>про ошибки проверки и формата.</li>
+</ul>
+<p>Три боли, которые повторяются.</p>
+<ol>
+<li><strong>Масштаб.</strong> «У нас могут быть тысячи на сборке у одного сотрудника». Или: «по 5000 отправлений в день — как это сделать быстро и не руками». На таком объёме ручной ввод в кабинете не справляется.</li>
+<li><strong>Потерянная связь «код — заказ».</strong> «200 баночек одной партии, у каждой свой КИЗ, сводим номера заданий и коды в Экселе. Кто как понимает, какой код ушёл в какой заказ?» И следом: «по старым ФБС-заказам часть КИЗов вообще не найти».</li>
+<li><strong>Интерфейс Ozon меняется.</strong> За две недели в чатах успели написать, что Ozon убрал поле КИЗ при сборке, что вернул его, что маркировка «необязательна» и что её вдруг требуют по всем заказам. Что обязательно для вашего товара сейчас — смотрите в кабинете и базе знаний Ozon.</li>
+</ol>
+<p>Отдельно про WB в чатах уточняют последствия. Если не указать КИЗ в задании и покупатель откажется, товар вернётся в ваш ПВЗ, а не на склад WB. Это подтверждает и инструкция WB: такой возврат платный.</p>
+<h2>Автоматизация КИЗ на FBS: что сделает скрипт и ИИ</h2>
+<p>Я собираю ИИ-агентов на Claude и подключаю ИИ к кабинету Ozon через API. Схема для FBS с маркировкой, которую я бы собирал, выглядит так.</p>
+<ul>
+<li><strong>Место упаковки.</strong> Кладовщик сканирует номер отправления, потом DataMatrix на товаре. Скрипт сразу шлёт код в Ozon (<code>exemplar/set</code>) или WB (<code>meta/sgtin</code>) и показывает зелёный или красный экран. Ошибка видна сразу, а не через неделю.</li>
+<li><strong>Журнал «заказ — код».</strong> Каждая привязка пишется в таблицу. Через месяц вы за секунду найдёте, какой код ушёл в какой заказ.</li>
+<li><strong>Ежедневный вывод из оборота.</strong> Скрипт собирает коды проданных отправлений и готовит CSV по шаблону «Честного знака». Подписывает и отправляет человек со своей УКЭП.</li>
+<li><strong>Возвраты.</strong> Список вернувшихся отправлений с кодами — для документа о возврате в оборот.</li>
+</ul>
+<p>Где здесь ИИ. Нейросеть не сканирует и не решает, какой код в какой заказ, — это делает сканер. Зато ИИ-агент пишет такой скрипт по описанию задачи, читает ошибки API вроде пустого ответа <code>{}</code> и объясняет, что пошло не так, а ещё сверяет отчёт Ozon с журналом и находит коды, которые забыли вывести. Без программиста на WB хватит XLSX-шаблона в кабинете. На Ozon при больших объёмах без API или готового сервиса маркировки не обойтись.</p>
+<p>Чего автоматизация не сделает: не напечатает КИЗ, которого нет, не подпишет документ в «Честном знаке» вместо вас и не исправит ТН ВЭД в карточке. Про ТН ВЭД и проверку кодов на WB — в статье <a href="/stati/kizy-wildberries/">«КИЗы Вайлдберриз»</a>.</p>
+<aside class="st-kurs"><p class="st-kurs-t">Курс «ИИ для селлеров»</p><p>Если хочется не читать про ИИ, а настроить его под свой магазин, — у меня есть курс для владельцев магазинов на Wildberries и Ozon. Без программирования, по шагам: подключаем ИИ к данным вашего кабинета и разбираем задачи вроде той, что в этой статье.</p><p><a class="btn" href="/kurs/">Подробнее о курсе</a></p></aside>
+<h2>Частые вопросы</h2>
+<p><strong>Кто выводит КИЗ из оборота при FBS на Озоне?</strong>
+Продавец, как собственник товара, в «Честном знаке» с причиной «Дистанционная продажа». На FBO это делает маркетплейс, на FBS — вы.</p>
+<p><strong>Можно ли загрузить КИЗы в FBS-заказы не вручную?</strong>
+Да. На WB — XLSX-шаблоном в поставке или через API <code>meta/sgtin</code>. На Ozon — через API <code>/v6/fbs/posting/product/exemplar/set</code>.</p>
+<p><strong>Почему при сканировании КИЗа пишет «неверный формат»?</strong>
+Чаще всего сканер не передаёт невидимые разделители GS. У WB эта ошибка называется «Неподходящий формат». Включите в настройках F8 Mode, Alt+0029 Mode или GS1 Enable и не копируйте коды из Excel.</p>
+<p><strong>Передаём коды через <code>exemplar/set</code>, а в ответ пустые скобки <code>{}</code>. Что не так?</strong>
+В чатах советуют проверить статус кода методом <code>/v5/fbs/posting/product/exemplar/status</code>, а после привязки вызвать сборку отправления. Отдельно проверьте, что в коде есть разделители GS.</p>
+<p><strong>Что будет, если на WB отправить FBS-заказ без указанного КИЗ?</strong>
+По инструкции WB, товар уедет покупателю без проверки кода. При отказе или возврате он вернётся в ваш ПВЗ, а не на склад WB, и возврат будет платным.</p>
+<p><strong>Отказ покупателя на FBS — что делать с кодом?</strong>
+Если код уже выведен — вернуть его в оборот в «Честном знаке». По инструкции WB, после повторной проверки такой товар можно снова продавать.</p>
+<h2>Об авторе</h2>
+<p>Я Роман Воробьёв, 8 лет продаю на Wildberries и Ozon, собираю ИИ-агентов на Claude и подключаю ИИ к кабинету Ozon через API. Такие задачи — привязку кодов, сверку отчётов, скрипты под склад — разбираем в клубе селлеров «СИИстема» (aiseller.space/siistema). С нуля — вводный курс «ИИ для селлеров» (aiseller.space/kurs).</p>
+<h2>Читайте также</h2>
+<ul>
+<li><a href="/stati/chestnyj-znak-marketplejs/">Честный знак на маркетплейсе: что маркировать для WB и Ozon</a></li>
+<li><a href="/stati/gtin-wildberries/">Дополнительный GTIN Wildberries: размеры, цвета и одна карточка</a></li>
+<li><a href="/stati/kak-prodavat-na-ozon/">Как продавать на Озон: 10 вопросов новичка и ответы Ozon</a></li>
+<li><a href="/stati/kizy-wildberries/">КИЗы Вайлдберриз: куда вносить и что значит «КИЗ невалиден»</a></li>
+</ul>
+<h2>Источники</h2>
+<p>Дата проверки ссылок — 19.10.2026.</p>
+<ul>
+<li>Документация Ozon Seller API — <a href="https://docs.ozon.ru/api/seller/" target="_blank" rel="noopener">https://docs.ozon.ru/api/seller/</a></li>
+<li>Ozon Seller API notification, официальный канал обновлений API (посты 17.02.2025, 03.03.2025, 18.03.2025, 13.01.2026, 05.02.2026) — <a href="https://t.me/s/OzonSellerAPI" target="_blank" rel="noopener">https://t.me/s/OzonSellerAPI</a></li>
+<li>База знаний Ozon: обязательная маркировка в системе «Честный знак» (передача кодов на FBS) — <a href="https://seller-edu.ozon.ru/libra/work-with-goods/additional-materials/poluchenie-markirovki" target="_blank" rel="noopener">https://seller-edu.ozon.ru/libra/work-with-goods/additional-materials/poluchenie-markirovki</a></li>
+<li>WB API: заказы FBS — <a href="https://dev.wildberries.ru/en/openapi/orders-fbs" target="_blank" rel="noopener">https://dev.wildberries.ru/en/openapi/orders-fbs</a></li>
+<li>WB: Проверка кодов маркировки при работе по модели FBS, правка 02.10.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/verify-product-identifiers" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/verify-product-identifiers</a></li>
+<li>WB: Маркировка товаров для модели «Маркетплейс» (FBS), правка 02.10.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/items-labeling-in-fbs" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/items-labeling-in-fbs</a></li>
+<li>WB: Как работать с интерактивным листом подбора, правка 18.08.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/interactive-assembly-task" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/interactive-assembly-task</a></li>
+<li>WB: Стикеры для маркировки заказов FBS, правка 18.05.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/stickers-for-marking-orders-fbs-model" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/stickers-for-marking-orders-fbs-model</a></li>
+<li>«Честный знак»: дистанционная торговля на маркетплейсах (схемы FBO, FBS) — <a href="https://markirovka.ru/knowledge/tovarnye-gruppy/motornye-masla/distantsionnaya-torgovlya-na-marketpleysakh-skhemy-fbo-fbs-kosmetika-i-bytovaya-khimiya-motornye-masla-detskie-igrushki" target="_blank" rel="noopener">https://markirovka.ru/knowledge/tovarnye-gruppy/motornye-masla/distantsionnaya-torgovlya-na-marketpleysakh-skhemy-fbo-fbs-kosmetika-i-bytovaya-khimiya-motornye-masla-detskie-igrushki</a></li>
+<li>«Честный знак»: как подать сведения о выводе из оборота файлом XML или CSV — <a href="https://markirovka.ru/knowledge/tovarnye-gruppy/molochnaya-produkciya/kak-podat-svedeniya-o-vyvode-iz-oborota-v-sistemu-markirovki-obuv-moloko-voda-legprom-duhi-shini-photo-velosipedy-ba-pivo" target="_blank" rel="noopener">https://markirovka.ru/knowledge/tovarnye-gruppy/molochnaya-produkciya/kak-podat-svedeniya-o-vyvode-iz-oborota-v-sistemu-markirovki-obuv-moloko-voda-legprom-duhi-shini-photo-velosipedy-ba-pivo</a></li>
+<li>«Честное сообщество»: где взять описание True API — <a href="https://markirovka.ru/community/rezhim-proverok-na-kassakh/gde-vzyat-opisanie-true-api" target="_blank" rel="noopener">https://markirovka.ru/community/rezhim-proverok-na-kassakh/gde-vzyat-opisanie-true-api</a></li>
+<li>Клерк: когда выводить маркированный товар при продажах через Ozon по FBS (20.08.2026) — <a href="https://www.klerk.ru/buh/news/705290/" target="_blank" rel="noopener">https://www.klerk.ru/buh/news/705290/</a></li>
+</ul></article></main>
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-links">
+      <a href="/stati/">Статьи</a>
+      <a href="/avtor/">Об авторе</a>
+      <a href="/kurs/">Курс «ИИ для селлеров»</a>
+      <a href="/siistema/">Сообщество «СИИстема»</a>
+      <a href="https://t.me/FirstonOzon" target="_blank" rel="noopener">Канал «Системный гуманИИст»</a>
+      <a href="https://t.me/sellersmafia" target="_blank" rel="noopener">Мафклуб предпринимателей</a>
+    </div>
+    <small>Роман Воробьёв · ИИ для селлеров маркетплейсов</small>
+  </div>
+</footer>
+</div>
+</body>
+</html>
