@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Коэффициент логистики склада ВБ: из чего складывается тариф</title>
+<meta name="description" content="Коэффициент логистики склада ВБ в 2026: формулы из справки WB, почему в отчёте 2,2 вместо 1,7, сколько стоит отказ и логистика на единицу.">
+<link rel="canonical" href="https://www.aiseller.space/stati/logistika-wildberries-tarify/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.aiseller.space/stati/logistika-wildberries-tarify/">
+<meta property="og:title" content="Коэффициент логистики склада ВБ: из чего складывается тариф">
+<meta property="og:description" content="Коэффициент логистики склада ВБ в 2026: формулы из справки WB, почему в отчёте 2,2 вместо 1,7, сколько стоит отказ и логистика на единицу.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ИИ для селлеров маркетплейсов">
+<meta property="og:image" content="https://www.aiseller.space/stati/logistika-wildberries-tarify/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/stati/stati.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.aiseller.space/stati/logistika-wildberries-tarify/#article",
+   "headline": "Коэффициент логистики склада ВБ: из чего складывается тариф",
+   "description": "Коэффициент логистики склада ВБ в 2026: формулы из справки WB, почему в отчёте 2,2 вместо 1,7, сколько стоит отказ и логистика на единицу.",
+   "inLanguage": "ru",
+   "url": "https://www.aiseller.space/stati/logistika-wildberries-tarify/",
+   "mainEntityOfPage": "https://www.aiseller.space/stati/logistika-wildberries-tarify/",
+   "image": "https://www.aiseller.space/stati/logistika-wildberries-tarify/og.png",
+   "datePublished": "2026-10-30",
+   "dateModified": "2026-10-19",
+   "author": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "publisher": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "keywords": "коэффициент логистики склада вб",
+   "citation": [
+    "https://seller.wildberries.ru/instructions/ru/ru/material/logistics-types-and-cost-calculation",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/fixation-of-tariffs",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/localization-index",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/service-terms",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/remuneration-and-ohter-payments",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/fbs-sales-model",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/paid-items-delivery-in-dbs-and-edbs",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/item-dimensions-measuring",
+    "https://dev.wildberries.ru/docs/openapi/documents-and-accounting"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Главная",
+     "item": "https://www.aiseller.space/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Статьи",
+     "item": "https://www.aiseller.space/stati/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Коэффициент логистики склада ВБ: из чего складывается тариф",
+     "item": "https://www.aiseller.space/stati/logistika-wildberries-tarify/"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.aiseller.space/#roman",
+   "name": "Роман Воробьёв",
+   "url": "https://www.aiseller.space/avtor/",
+   "jobTitle": "Селлер Ozon и Wildberries, внедряет ИИ для селлеров",
+   "knowsAbout": [
+    "Wildberries",
+    "Ozon",
+    "Яндекс Маркет",
+    "нейросети для селлеров",
+    "Seller API",
+    "ИИ-агенты",
+    "Telegram-боты"
+   ],
+   "sameAs": [
+    "https://t.me/FirstonOzon",
+    "https://t.me/sellersmafia"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Логистика на ВБ зависит от категории товара?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нет. Стоимость считается от объёма упаковки в литрах и коэффициента склада. Категория влияет на комиссию."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Сейчас логистика с любого склада по FBW считается по 170%?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Для новых поставок по складам России — да, с 15 августа 2026. Для сверхгабарита — 100%. Поставки, запланированные раньше, считаются по своему зафиксированному коэффициенту до конца срока фиксации."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Обратная логистика тоже умножается на коэффициент склада?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нет. Обратная доставка от покупателя на склад считается только по базовому тарифу за объём: 23–32 ₽ для товаров до литра, 46 ₽ + 14 ₽ за каждый следующий литр."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Если покупатель отказался, а потом товар купил другой, логистику возьмут ещё раз?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Да. Отказ — это доставка туда и обратно, новый заказ — новая доставка до покупателя."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Если габариты в карточке чуть больше реальных, что будет?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Логистика посчитается от указанного объёма, то есть дороже. Штраф WB назначает за занижение габаритов, а не за завышение (справка «Габариты товаров»). Перед сменой упаковки WB советует распродать или вывезти остатки в старой."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Где в отчёте посмотреть логистику?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "В детализации еженедельного отчёта: фильтр «Обоснование для оплаты» = «Доставка», вид — в столбце «Виды доставок, штрафов и корректировок ВВ», сумма — в «Услуги по доставке товара покупателю»."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113669934', 'ym');
+
+ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113669934" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="layer">
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="/" class="logo"><span class="dot"></span><span><span class="hl">ai</span>seller</span></a>
+    <nav class="nav">
+      <div class="only-wide"><div class="nav-links">
+        <a href="/stati/">Статьи</a><a href="/kurs/">Курс</a><a href="/siistema/">Сообщество</a>
+      </div></div>
+      <a href="/#napisat" class="btn btn-sm">Написать</a>
+    </nav>
+  </div>
+</header>
+<main class="st"><article class="st-in"><nav class="kroshki"><a href="/">Главная</a> / <a href="/stati/">Статьи</a></nav><p class="st-meta"><a href="/avtor/">Роман Воробьёв</a> · проверено 19.10.2026</p><h1>Коэффициент логистики склада ВБ: почему один склад дороже другого</h1>
+<p>Логистика на Wildberries считается так: базовый тариф за объём товара умножается на коэффициент склада. С 15 августа 2026 года коэффициент логистики склада ВБ единый для всех складов в России — 170%, для сверхгабаритных товаров — 100%. Но в отчёте вы до сих пор можете видеть 2,2 или 2,25. Дело в том, что коэффициент фиксируется в момент создания поставки на 60 или 90 дней, и у старых поставок он свой. Обратная доставка после отказа считается без коэффициента, только по объёму.</p>
+<h2>Коротко</h2>
+<ul>
+<li>Прямая доставка = базовый тариф за объём × коэффициент склада. Для товара 0,55 л это 29 ₽ × 170% = 49,3 ₽ (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/logistics-types-and-cost-calculation" target="_blank" rel="noopener">справка WB</a>, правка 13.10.2026).</li>
+<li>Коэффициент фиксируется при планировании поставки: на 90 дней для одежды и обуви, на 60 дней для остальных категорий. В отчёте он лежит в столбце «Фиксированный коэффициент склада по поставке».</li>
+<li>Индекс локализации больше не применяется к поставкам, запланированным после 14 августа 2026. К старым он применяется.</li>
+<li>Отказ покупателя обходится в две доставки: туда по тарифу с коэффициентом и обратно по базовому тарифу. Следующий заказ этой же единицы — снова доставка до покупателя.</li>
+<li>Логистику на одну проданную единицу считайте по своей детализации, а не по калькулятору: в ней видно и отказы, и реальный коэффициент.</li>
+</ul>
+<h2>Из чего складывается логистика Wildberries: формулы из справки</h2>
+<p>Во всех формулах объём — это литры по габаритам упаковки из карточки. Категория товара на тариф не влияет. От неё зависят комиссия и срок фиксации тарифа.</p>
+<p><strong>Товары до 1 литра.</strong> Базовый тариф берётся по диапазону объёма:</p>
+<table>
+<thead>
+<tr>
+<th>Объём, л</th>
+<th>Базовый тариф, ₽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0,001–0,200</td>
+<td>23</td>
+</tr>
+<tr>
+<td>0,201–0,400</td>
+<td>26</td>
+</tr>
+<tr>
+<td>0,401–0,600</td>
+<td>29</td>
+</tr>
+<tr>
+<td>0,601–0,800</td>
+<td>30</td>
+</tr>
+<tr>
+<td>0,801–1,000</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+<p>Формула: тариф по таблице × коэффициент склада.</p>
+<p><strong>Товары от 1 литра (МГТ).</strong> Первый литр стоит 46 ₽, каждый следующий — 14 ₽. Формула: (46 ₽ + 14 ₽ × доп. литры) × коэффициент склада. Пример WB: товар 1,8 л → (46 + 0,8 × 14) × 1,7 = 97,24 ₽.</p>
+<p><strong>Сверхгабарит (СГТ).</strong> Формула та же, но сумма до умножения на коэффициент не меньше 1 000 ₽ и не больше 3 000 ₽. Коэффициент для СГТ — 100%.</p>
+<p><strong>FBS.</strong> По <a href="https://seller.wildberries.ru/instructions/ru/ru/material/fbs-sales-model" target="_blank" rel="noopener">справке о модели «Маркетплейс»</a> коэффициент для FBS берётся по физическому складу или СЦ, к которому привязан ваш виртуальный склад. Стоимость фиксируется в момент заказа. Если у склада нет FBW-тарифа, считают по федеральному округу. Для КГТ+ — всегда по округу.</p>
+<p>Раньше в формулу входил ещё индекс локализации (ИЛ). Он был меньше 1 — скидка, больше 1 — наценка. По <a href="https://seller.wildberries.ru/instructions/ru/ru/material/service-terms" target="_blank" rel="noopener">оферте, п. 13.1.10</a>, ИЛ не применяется к поставкам, которые перевели в статус «Запланировано» после 14.08.2026. Для поставок до этой даты он ещё считается.</p>
+<h2>Почему коэффициент склада 2,2, а не 1,7</h2>
+<p>Это самый частый вопрос про логистику в чатах осенью 2026 года. Ответ — в фиксации тарифов.</p>
+<p>Когда вы планируете поставку, WB фиксирует базовый тариф и коэффициент доставки склада. Срок — 60 дней, для одежды, обуви, головных уборов и детской одежды — 90 дней. Считается от даты отгрузки поставки (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/fixation-of-tariffs" target="_blank" rel="noopener">инструкция о фиксации</a>, правка 29.09.2026). Пока фиксация действует, единые 170% к этим товарам не применяются. Если поставку планировали до 15 августа, когда у склада был свой коэффициент (в чатах селлеры называют 2,2 и 2,25), заказы из неё считаются по нему до конца срока. Даже если товар вернулся от покупателя и попал на другой склад.</p>
+<p>Что проверить, если видите 2,2 вместо 1,7:</p>
+<ol>
+<li>Откройте детализацию еженедельного отчёта и найдите строку доставки.</li>
+<li>Посмотрите столбец «Фиксированный коэффициент склада по поставке» и даты в столбцах «Дата начала действия фиксации» и «Дата конца действия фиксации».</li>
+<li>Сравните дату заказа с концом фиксации. Если заказ попал в срок — коэффициент законный.</li>
+<li>Если срок уже вышел, а коэффициент старый, значит, что-то не так. Важная деталь из <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization" target="_blank" rel="noopener">справки по детализации</a>: в этом столбце всегда показывается зафиксированный коэффициент, даже истёкший. Фактическая стоимость после фиксации считается по коэффициенту склада на момент заказа (п. 6.6.6 оферты). Поэтому смотрите на сумму в столбце «Услуги по доставке товара покупателю», а не на сам коэффициент. Поделите её на базовый тариф вашего объёма — получите реальный множитель.</li>
+<li>Если реальный множитель выше положенного — пишите в поддержку с номерами поставок, артикулами и строками отчёта.</li>
+</ol>
+<p>Ещё две причины, по которым коэффициент меняется по правилам WB: поставку привезли на другой пункт отгрузки или раньше либо позже плановой даты больше чем на 24 часа. Тогда действуют тарифы на момент фактической отгрузки.</p>
+<h2>Почему один склад дороже другого: 96 ₽ против 65 ₽</h2>
+<p>В одном из чатов селлер описала картину: тот же товар со склада в Коледино обходится в 96 ₽ логистики, с Электростали — в 65 ₽, с Казани — в 114 ₽. И продаёт всегда сначала самый дорогой склад.</p>
+<p>После 15 августа новые поставки на все склады России получают одинаковые 170%. Значит, разница в рублях на одном и том же товаре идёт от разных поставок:</p>
+<ul>
+<li>поставки запланированы в разное время и зафиксировали разные коэффициенты склада;</li>
+<li>к старым поставкам ещё применяется индекс локализации;</li>
+<li>у части товара истёк срок фиксации, и он считается по тарифам на остаток.</li>
+</ul>
+<p>Порядок цифр. Товар 0,55 л: при 170% доставка — 49,3 ₽, при 225% — 65,25 ₽. Товар 1,8 л: 97,24 ₽ против 128,7 ₽. Это 31 ₽ на каждой продаже из-за одной старой поставки.</p>
+<p>Какой склад отгружает заказ первым, WB в справке не объясняет, а «сначала продаёт дорогой склад» — наблюдение одного продавца. Проверяемо другое: по детализации видно, с каким коэффициентом ушёл каждый заказ.</p>
+<h2>Логистика при отмене заказа и отказе на WB</h2>
+<p>В детализации у доставки есть виды (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization" target="_blank" rel="noopener">справка WB</a>):</p>
+<ul>
+<li>«к клиенту при продаже» — обычная доставка с выкупом;</li>
+<li>«к клиенту при отмене» — товар довезли, но покупатель его не выкупил;</li>
+<li>«от клиента при отмене» — обратно на склад после отказа;</li>
+<li>«от клиента при возврате» — покупатель вернул товар после выдачи;</li>
+<li>«возврат товара (к продавцу)» — брак, неопознанный товар, вывоз по вашей заявке.</li>
+</ul>
+<p><strong>Сколько стоит обратная доставка.</strong> Она считается только по базовому тарифу за объём, коэффициент склада в неё не входит. Товар 0,55 л — 29 ₽, товар 1,8 л — 57,2 ₽. Базовый тариф обратной доставки тоже фиксируется на 60 или 90 дней для поставок, отгруженных с 15 мая 2026 года.</p>
+<p><strong>Берут ли вторую логистику, если товар остался на складе после отказа?</strong> Да. По оферте (п. 13.1.7–13.1.8) продавец платит за каждый факт доставки. Услуга считается оказанной, когда покупатель получил товар или отказался от него. Отказ — это доставка туда и обратно. Когда ту же единицу закажет следующий покупатель, будет новая доставка до покупателя. Хорошая новость одна: пока идёт срок фиксации, коэффициент для этой единицы не изменится, даже если она вернулась на другой склад.</p>
+<p><strong>FBS-товар после отказа уехал на склад WB.</strong> Малогабаритный товар FBS после отказа или возврата отправится на склад Wildberries и дальше будет продаваться оттуда по FBW. Хранение для него считается по тарифам на остаток. Крупногабаритный и сверхгабаритный товар вернётся на склад продавца.</p>
+<p><strong>Отмена до того, как товар уехал к покупателю.</strong> Отдельного правила для такой отмены в справочном центре WB нет. Если видите строку доставки по заказу, который отменили через час, сверяйте вид доставки в детализации и пишите в поддержку с номером заказа (Srid).</p>
+<p><strong>Возврат продавцу.</strong> Тариф за объём × коэффициент склада + 155 ₽ до вашего ПВЗ, 255 ₽ до адреса, 1 000 ₽ для СГТ. Пример WB: товар 2,7 л в ПВЗ продавца — 273,66 ₽. Возврат FBS в ПВЗ с 7 августа — 25 ₽ за товар до литра, для товаров от литра 25 ₽ за первый литр и 4 ₽ за каждый следующий, без коэффициентов.</p>
+<h2>Платная доставка Wildberries для покупателя</h2>
+<p>В справке для продавцов платная доставка описана только для моделей «Витрина» (DBS) и «Витрина Экспресс» (EDBS), когда доставляете вы сами (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/paid-items-delivery-in-dbs-and-edbs" target="_blank" rel="noopener">инструкция WB</a>). Вы задаёте цену для зоны доставки и порог бесплатной доставки, покупатель платит при заказе. Вам приходит 99% стоимости услуги, 1% — вознаграждение WB, отдельно вычитается эквайринг.</p>
+<p>Для FBW и FBS настроек платной доставки для покупателя в справке для продавцов нет, официальных условий на 2026 год там тоже нет. На вашу логистику по тарифам выше это не влияет.</p>
+<h2>Как посчитать логистику на единицу по своему отчёту</h2>
+<p>Калькулятор в кабинете не учитывает отказы, а платите вы и за них. По <a href="https://seller.wildberries.ru/instructions/ru/ru/material/remuneration-and-ohter-payments" target="_blank" rel="noopener">оферте, п. 6.6.7</a>, калькулятор показывает приблизительную стоимость и цену не гарантирует.</p>
+<ol>
+<li>Скачайте детализацию за 4–8 недель. Одна неделя мало что скажет.</li>
+<li>Отфильтруйте «Обоснование для оплаты» по значению «Доставка».</li>
+<li>Сложите столбец «Услуги по доставке товара покупателю» по артикулу. Это вся логистика: туда, обратно, возвраты вам.</li>
+<li>Поделите сумму на число продаж этого артикула за тот же период.</li>
+</ol>
+<p>Пример на цифрах из справки WB. Товар 1,8 л, коэффициент 170%, выкуп 80%. На 100 заказов: 100 доставок по 97,24 ₽ и 20 обратных по 57,2 ₽ — итого 10 868 ₽. Продаж 80, значит, логистика на одну проданную единицу — около 136 ₽, а не 97 ₽ из калькулятора. Если выкуп падает до 60%, выходит уже около 200 ₽.</p>
+<p>Эта цифра и идёт в <a href="/stati/yunit-ekonomika-wildberries/">юнит-экономику</a>. Где ещё в отчёте прячутся расходы — в статье про <a href="/stati/otchet-o-realizacii-wb/">отчёт о реализации</a>. Хранение считается по другим формулам — о нём <a href="/stati/hranenie-wildberries/">отдельная статья</a>.</p>
+<h2>Что про логистику спрашивают в чатах селлеров</h2>
+<p>Мы читаем около 200 Telegram-чатов селлеров. С 22 сентября по 18 октября 2026 года там задали больше сотни разных вопросов про логистику Wildberries. Примерно треть — про отказы, возвраты и обратную доставку, около полутора десятков — про коэффициент склада.</p>
+<p>Что болит чаще всего:</p>
+<ol>
+<li><strong>Старый коэффициент после 15 августа.</strong> «В отчёте снова 2,25, срок фиксации вышел, должно быть 1,7», «почему логистика по 220%?» — такие сообщения шли весь период. В чатах пишут, что поддержка пересчитывает по обращению с номерами поставок, но не всем и не сразу. Это опыт селлеров, а не правило WB.</li>
+<li><strong>Вторая логистика после отказа.</strong> Вопрос «если товар остаётся в Вайлдберриз, второй раз логистику берут?» в одном чате всплывал слово в слово шесть раз за месяц. Ответ выше: да, каждая доставка оплачивается отдельно.</li>
+<li><strong>«WB забирает 70%».</strong> Селлеры складывают комиссию и логистику и не понимают, в плюсе они или в минусе. В чатах в ответ советуют сначала пересчитать с учётом выкупа и налога.</li>
+</ol>
+<h2>Где помогает ИИ и автоматизация</h2>
+<p>Логистика — это сотни строк детализации в неделю. Руками их не проверяют, поэтому старый коэффициент живёт месяцами. Что реально сделать:</p>
+<ul>
+<li><strong>Выгрузка детализации по API.</strong> У WB есть метод детализации отчётов реализации (<a href="https://dev.wildberries.ru/docs/openapi/documents-and-accounting" target="_blank" rel="noopener">документация WB API</a>). API — это способ забирать данные из кабинета программой, без ручного скачивания Excel. Лимит — 1 запрос в минуту на персональном и сервисном токене.</li>
+<li><strong>Автоматическая сверка.</strong> Для каждой строки доставки программа знает объём товара, базовый тариф и дату заказа. Значит, может посчитать, какой должна быть сумма, и показать строки, где множитель выше 1,7 после конца фиксации.</li>
+<li><strong>ИИ-агент.</strong> Я собираю ИИ-агентов на Claude и подключаю ИИ к кабинету Ozon по API. Для WB схема та же: раз в неделю агент забирает детализацию, считает логистику на единицу по артикулам и присылает в Telegram, где она выросла, вместе с черновиком обращения в поддержку.</li>
+<li><strong>Без программиста.</strong> Расчёт на единицу делается в Google Таблицах, а формулы поможет написать ChatGPT или Claude.</li>
+<li><strong>Чего ИИ не сделает:</strong> не пересчитает вам логистику за WB и не узнает коэффициент поставки, если его нет в отчёте. Он находит расхождения, решение и обращение — за вами.</li>
+</ul>
+<aside class="st-kurs"><p class="st-kurs-t">Курс «ИИ для селлеров»</p><p>Если хочется не читать про ИИ, а настроить его под свой магазин, — у меня есть курс для владельцев магазинов на Wildberries и Ozon. Без программирования, по шагам: подключаем ИИ к данным вашего кабинета и разбираем задачи вроде той, что в этой статье.</p><p><a class="btn" href="/kurs/">Подробнее о курсе</a></p></aside>
+<h2>Частые вопросы</h2>
+<p><strong>Логистика на ВБ зависит от категории товара?</strong>
+Нет. Стоимость считается от объёма упаковки в литрах и коэффициента склада. Категория влияет на комиссию.</p>
+<p><strong>Сейчас логистика с любого склада по FBW считается по 170%?</strong>
+Для новых поставок по складам России — да, с 15 августа 2026. Для сверхгабарита — 100%. Поставки, запланированные раньше, считаются по своему зафиксированному коэффициенту до конца срока фиксации.</p>
+<p><strong>Обратная логистика тоже умножается на коэффициент склада?</strong>
+Нет. Обратная доставка от покупателя на склад считается только по базовому тарифу за объём: 23–32 ₽ для товаров до литра, 46 ₽ + 14 ₽ за каждый следующий литр.</p>
+<p><strong>Если покупатель отказался, а потом товар купил другой, логистику возьмут ещё раз?</strong>
+Да. Отказ — это доставка туда и обратно, новый заказ — новая доставка до покупателя.</p>
+<p><strong>Если габариты в карточке чуть больше реальных, что будет?</strong>
+Логистика посчитается от указанного объёма, то есть дороже. Штраф WB назначает за занижение габаритов, а не за завышение (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/item-dimensions-measuring" target="_blank" rel="noopener">справка «Габариты товаров»</a>). Перед сменой упаковки WB советует распродать или вывезти остатки в старой.</p>
+<p><strong>Где в отчёте посмотреть логистику?</strong>
+В детализации еженедельного отчёта: фильтр «Обоснование для оплаты» = «Доставка», вид — в столбце «Виды доставок, штрафов и корректировок ВВ», сумма — в «Услуги по доставке товара покупателю».</p>
+<h2>Об авторе</h2>
+<p>Я Роман Воробьёв, 8 лет продаю на Wildberries и Ozon собираю ИИ-агентов на Claude и подключаю ИИ к кабинету Ozon по API. Разбор детализации и сверку логистики разбираем в клубе селлеров «СИИстема» (aiseller.space/siistema). С нуля — вводный курс «ИИ для селлеров» (aiseller.space/kurs).</p>
+<h2>Читайте также</h2>
+<ul>
+<li><a href="/stati/hranenie-wildberries/">Как считается хранение на Wildberries: формула, отчёт, вывоз</a></li>
+<li><a href="/stati/fbs-ili-fbo-wildberries/">FBO Вайлдберриз или FBS: что выгоднее селлеру в 2026</a></li>
+<li><a href="/stati/sklady-i-indeks-lokalizacii/">На какие склады отгружать товар WB: регионы и индекс локализации</a></li>
+<li><a href="/stati/sloty-postavki-wb/">Коэффициент приемки Вайлдберриз: как поймать слот поставки</a></li>
+</ul>
+<h2>Источники</h2>
+<p>Дата проверки всех ссылок — 19.10.2026.</p>
+<ul>
+<li>Доставка: виды и расчёт стоимости, справочный центр WB, правка 13.10.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/logistics-types-and-cost-calculation" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/logistics-types-and-cost-calculation</a></li>
+<li>Фиксация тарифов: тарифы на поставку и на остаток, правка 29.09.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/fixation-of-tariffs" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/fixation-of-tariffs</a></li>
+<li>Индекс локализации, правка 29.09.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/localization-index" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/localization-index</a></li>
+<li>Детализация еженедельного отчёта реализации, правка 07.10.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-read-fimancial-reports-detalization</a></li>
+<li>Оферта, раздел 13 «Правила оказания услуг», п. 13.1.7–13.1.13 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/service-terms" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/service-terms</a></li>
+<li>Оферта, раздел 6 «Вознаграждение и иные выплаты», п. 6.6.3–6.6.7, правка 01.10.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/remuneration-and-ohter-payments" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/remuneration-and-ohter-payments</a></li>
+<li>Модель продаж «Маркетплейс» (FBS) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/fbs-sales-model" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/fbs-sales-model</a></li>
+<li>Платная доставка товаров по модели «Витрина» (DBS) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/paid-items-delivery-in-dbs-and-edbs" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/paid-items-delivery-in-dbs-and-edbs</a></li>
+<li>Габариты товаров, справочный центр WB — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/item-dimensions-measuring" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/item-dimensions-measuring</a></li>
+<li>WB API: документы и бухгалтерия — <a href="https://dev.wildberries.ru/docs/openapi/documents-and-accounting" target="_blank" rel="noopener">https://dev.wildberries.ru/docs/openapi/documents-and-accounting</a></li>
+</ul></article></main>
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-links">
+      <a href="/stati/">Статьи</a>
+      <a href="/avtor/">Об авторе</a>
+      <a href="/kurs/">Курс «ИИ для селлеров»</a>
+      <a href="/siistema/">Сообщество «СИИстема»</a>
+      <a href="https://t.me/FirstonOzon" target="_blank" rel="noopener">Канал «Системный гуманИИст»</a>
+      <a href="https://t.me/sellersmafia" target="_blank" rel="noopener">Мафклуб предпринимателей</a>
+    </div>
+    <small>Роман Воробьёв · ИИ для селлеров маркетплейсов</small>
+  </div>
+</footer>
+</div>
+</body>
+</html>
