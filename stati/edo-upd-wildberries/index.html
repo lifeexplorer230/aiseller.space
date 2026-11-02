@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EDI Вайлдберриз: что это, УПД и ЭТрН простыми словами</title>
+<meta name="description" content="EDI Вайлдберриз на деле — это ЭДО: какие УПД и ЭТрН подписывать, почему WB не принимает УПД, нужен ли УПД по FBS с КИЗ. По справке WB на октябрь 2026.">
+<link rel="canonical" href="https://www.aiseller.space/stati/edo-upd-wildberries/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.aiseller.space/stati/edo-upd-wildberries/">
+<meta property="og:title" content="EDI Вайлдберриз: что это, УПД и ЭТрН простыми словами">
+<meta property="og:description" content="EDI Вайлдберриз на деле — это ЭДО: какие УПД и ЭТрН подписывать, почему WB не принимает УПД, нужен ли УПД по FBS с КИЗ. По справке WB на октябрь 2026.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ИИ для селлеров маркетплейсов">
+<meta property="og:image" content="https://www.aiseller.space/stati/edo-upd-wildberries/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/stati/stati.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.aiseller.space/stati/edo-upd-wildberries/#article",
+   "headline": "EDI Вайлдберриз: что это, УПД и ЭТрН простыми словами",
+   "description": "EDI Вайлдберриз на деле — это ЭДО: какие УПД и ЭТрН подписывать, почему WB не принимает УПД, нужен ли УПД по FBS с КИЗ. По справке WB на октябрь 2026.",
+   "inLanguage": "ru",
+   "url": "https://www.aiseller.space/stati/edo-upd-wildberries/",
+   "mainEntityOfPage": "https://www.aiseller.space/stati/edo-upd-wildberries/",
+   "image": "https://www.aiseller.space/stati/edo-upd-wildberries/og.png",
+   "datePublished": "2026-11-03",
+   "dateModified": "2026-10-19",
+   "author": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "publisher": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "keywords": "edi вайлдберриз что это",
+   "citation": [
+    "https://seller.wildberries.ru/instructions/ru/ru/material/electronic-document-management-with-wb",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/documents-for-processing-the-delivery",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/labeled-items-utd-dop-forming",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/items-labeling-in-fbs",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/item-redemtion-terms",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-sale-items-to-legal-entities-and-sole-proprietors",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/step-three-fbs-shipment-delivery-to-warehose-or-sorting-centre",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/accepted-shipment-documents"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Главная",
+     "item": "https://www.aiseller.space/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Статьи",
+     "item": "https://www.aiseller.space/stati/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "EDI Вайлдберриз: что это, УПД и ЭТрН простыми словами",
+     "item": "https://www.aiseller.space/stati/edo-upd-wildberries/"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.aiseller.space/#roman",
+   "name": "Роман Воробьёв",
+   "url": "https://www.aiseller.space/avtor/",
+   "jobTitle": "Селлер Ozon и Wildberries, внедряет ИИ для селлеров",
+   "knowsAbout": [
+    "Wildberries",
+    "Ozon",
+    "Яндекс Маркет",
+    "нейросети для селлеров",
+    "Seller API",
+    "ИИ-агенты",
+    "Telegram-боты"
+   ],
+   "sameAs": [
+    "https://t.me/FirstonOzon",
+    "https://t.me/sellersmafia"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Если везу поставку на склад «Деловыми линиями», обязательно оформлять ЭТрН?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Для FBW с перевозчиком — да, по правилам WB. Но до 1 марта 2027 года действует переходный период: можно выбрать «Самостоятельно», и поставку примут с бумажной ТРН."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "По FBS покупатель отказался от товара с КИЗ. Нужно формировать УПД?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нет. По FBS УПД «ДОП» не передаётся. Если товар вернулся к вам, введите КИЗ обратно в оборот в «Честном знаке»."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Почему не получается отправить УПД, хотя товар уже продаётся?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Скорее всего, ещё нет акта приёмки. УПД «ДОП» оформляется на основании номера и даты акта, а черновик появляется в «Документах» в течение суток после акта."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Каким оператором ЭДО пользоваться для WB?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "WB работает с четырьмя: Диадок, СБИС, Калуга Астрал и Сбер.Корус. Если у вас другой оператор, подключение к WB настраивают через Диадок, Калугу Астрал или Сбер.Корус."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Можно ли исправить уже отправленный УПД корректировкой?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нет. WB не принимает УКД. Аннулируйте его и отправьте новый правильный УПД."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "При продаже юрлицу УПД покупателю отправляет сам WB?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Да. WB формирует УПД от вашего имени и отправляет покупателю, а копию кладёт в «Документы». Ставку НДС он берёт из карточки товара."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113669934', 'ym');
+
+ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113669934" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="layer">
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="/" class="logo"><span class="dot"></span><span><span class="hl">ai</span>seller</span></a>
+    <nav class="nav">
+      <div class="only-wide"><div class="nav-links">
+        <a href="/stati/">Статьи</a><a href="/kurs/">Курс</a><a href="/siistema/">Сообщество</a>
+      </div></div>
+      <a href="/#napisat" class="btn btn-sm">Написать</a>
+    </nav>
+  </div>
+</header>
+<main class="st"><article class="st-in"><nav class="kroshki"><a href="/">Главная</a> / <a href="/stati/">Статьи</a></nav><p class="st-meta"><a href="/avtor/">Роман Воробьёв</a> · проверено 19.10.2026</p><h1>EDI на Вайлдберриз — что это: ЭДО, УПД и ЭТрН для селлера</h1>
+<p>«EDI Вайлдберриз» — так селлеры чаще всего называют электронный документооборот (ЭДО) с WB. В справке Wildberries слова EDI нет: там ЭДО, и через него WB обменивается всего двумя видами документов — УПД (универсальный передаточный документ) и ЭТрН (электронная транспортная накладная). Подключать ЭДО обязательно, если вы на НДС, если продаёте маркированный товар или если поставку на склад везёт транспортная компания. Остальным, то есть продавцам без НДС и без маркировки, которые возят товар сами, ЭДО по правилам WB не обязателен.</p>
+<h2>Коротко</h2>
+<ul>
+<li>EDI в общем смысле — машинный обмен данными между компаниями. На WB он сводится к ЭДО с четырьмя операторами: Диадок, СБИС, Калуга Астрал и Сбер.Корус (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/electronic-document-management-with-wb" target="_blank" rel="noopener">инструкция WB по ЭДО</a>, правка 01.09.2026).</li>
+<li>Маркированный товар по FBW: после каждой приёмки вы отправляете УПД «ДОП» с кодами маркировки из акта приёмки. Если КИЗ не передали, штраф — 1 ₽ за единицу.</li>
+<li>FBS с КИЗ: УПД «ДОП» отправлять не нужно. КИЗ вносится в сборочное задание, а из оборота вы выводите его сами в «Честном знаке».</li>
+<li>ЭТрН нужна, если поставку везёт транспортная компания. Без электронной накладной поставку примут с бумажной ТРН: это переходный период, он действует до 1 марта 2027 года.</li>
+<li>Чаще всего УПД не принимают из-за неверного основания (строка «ОснПер» в XML), не того юрлица или КПП, корректировочного документа вместо нового УПД или неформализованного файла.</li>
+</ul>
+<h2>EDI и ЭДО: что на самом деле требует Wildberries</h2>
+<p>Если на WB вас просят «подключиться по EDI», почти всегда имеют в виду ЭДО: документы ходят файлами и подписываются электронной подписью. Подключение — четыре шага: выбрать оператора, заключить с ним договор, получить электронную подпись и настроить систему.</p>
+<p>Кому что нужно, по <a href="https://seller.wildberries.ru/instructions/ru/ru/material/electronic-document-management-with-wb" target="_blank" rel="noopener">инструкции WB</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Кто вы</th>
+<th>Что нужно</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Продаёте с НДС</td>
+<td>Полноценная система ЭДО</td>
+</tr>
+<tr>
+<td>Без НДС, но с маркированным товаром (КИЗ)</td>
+<td>Достаточно облегчённой версии, например ЭДО Лайт</td>
+</tr>
+<tr>
+<td>FBW или FBS, поставку везёт перевозчик или экспедитор</td>
+<td>Полноценная система ЭДО — для ЭТрН, при любом налоговом режиме</td>
+</tr>
+<tr>
+<td>Без НДС, без маркировки, возите сами</td>
+<td>ЭДО не обязателен</td>
+</tr>
+</tbody>
+</table>
+<p>Два подвоха:</p>
+<ol>
+<li><strong>ЭДО Лайт не годится как основная система.</strong> Документы, отправленные напрямую из ЭДО Лайт, WB не принимает. Нужно настроить роуминг в Диадок (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/labeled-items-utd-dop-forming" target="_blank" rel="noopener">инструкция по УПД «ДОП»</a>).</li>
+<li><strong>Отправлять документы можно только на идентификаторы WB из справки.</strong> Приглашение уходит по идентификатору или по ИНН 9714053621 (ООО «РВБ»). WB советует пригласить его во всех четырёх системах сразу: при сбое у одного оператора документы не застрянут.</li>
+</ol>
+<h2>Какие УПД подписывать и отправлять</h2>
+<p>Входящие УПД от WB — на услуги и удержания — приходят раз в неделю или по факту услуги. Продавцам с НДС они приходят и в ЭДО, и в раздел «Документы». Продавцам без НДС по ЭДО приходит только УПД на возврат товаров с КИЗ, остальное лежит в «Документах».</p>
+<p>Исходящих УПД, которые формируете вы, всего два.</p>
+<p><strong>1. УПД «ДОП» на товары с КИЗ (его ещё называют «УПД по маркировке»).</strong> Нужен, если маркированный товар едет на склад WB по FBW. Порядок такой:</p>
+<ol>
+<li>Дождитесь акта приёмки: «Поставки» → принятая поставка → «Скачать документы» → «Акт приёмки». Коды маркировки — в 6-м столбце акта.</li>
+<li>В течение суток после акта в разделе «Документы» появится черновик «УПД по маркировке» в XML. Номер у него тот же, что у акта.</li>
+<li>Заполните УПД в своей системе ЭДО. Основание — «Акт приёмки товара», номер акта (только цифры) и его дата. Стоимость — «0», ставка — «без НДС», код обоснования передачи — «0005» (передача агенту), статус — «Товары переданы».</li>
+<li>Отправьте УПД на идентификатор WB.</li>
+</ol>
+<p>Со сроком в справке WB есть разночтение. Инструкция по ЭДО ссылается на пункт 4.6 оферты и даёт 3 рабочих дня с даты акта. Инструкция по УПД «ДОП» называет 3 рабочих дня оптимальным сроком и обещает ждать документ до 3 месяцев. А в <a href="https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers" target="_blank" rel="noopener">перечне штрафов</a> сказано: «не позже 2 календарных дней после получения акта приёмки». Ориентируйтесь на самый короткий срок, то есть 2 дня. Штраф — 1 ₽ за единицу. Его берут, если УПД «ДОП» нет, если в нём неполный перечень кодов, если коды в статусе «эмитирован» или «выбыл» и если документ пришёл с опозданием. Остальные штрафы — в статье <a href="/stati/shtrafy-wildberries/">Штрафы Вайлдберриз</a>.</p>
+<p><strong>2. УПД на уведомление о выкупе.</strong> Он нужен, когда WB выкупает товар у вас в собственность (раздел 14 оферты). УПД отправляется по ЭДО в течение 7 календарных дней, но не позднее последнего дня месяца. Без него WB может приостановить оплату за выкупленный товар и выставить штраф 20% от цены из уведомления (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/item-redemtion-terms" target="_blank" rel="noopener">правила выкупа, п. 14.5–14.9</a>). Продавцам без НДС этот УПД отправлять не нужно.</p>
+<h2>Почему WB не принимает УПД поставки</h2>
+<p>Входящие документы WB проверяет автоматически и обычно подписывает за несколько часов. Если УПД висит или вернулся с отказом, причина почти всегда в одной из ошибок из <a href="https://seller.wildberries.ru/instructions/ru/ru/material/electronic-document-management-with-wb" target="_blank" rel="noopener">справки по ЭДО</a>:</p>
+<ul>
+<li><strong>Основание.</strong> В XML строка <code>ОснПер</code> должна выглядеть точь-в-точь как в образце WB: «Акт приемки товара» или «Уведомление о выкупе», номер только цифрами, дата в формате дд.мм.гггг. Лишний пробел — и документ отклонят. В печатной форме этого не видно, поэтому WB советует открыть XML в текстовом редакторе и найти «оснпер» через Ctrl+F.</li>
+<li><strong>Не то юрлицо или КПП.</strong> С 04.09.2024 реквизиты такие: ООО «РВБ», ИНН 9714053621, КПП 507401001, адрес в Коледино. Документы на старое ООО «Вайлдберриз» не принимают.</li>
+<li><strong>Корректировочный документ (УКД).</strong> WB их не принимает вообще. Ошибку исправляют так: аннулируете УКД и отправляете новый правильный УПД.</li>
+<li><strong>Неформализованный файл.</strong> С 1 апреля 2025 года действует формат ФНС по приказу № ЕД-7-26/970@. Если в вашей системе в документе не видно сумм и полей, значит он неформализованный: WB его не отклонит, но и не подпишет.</li>
+<li><strong>Заполнен «Код товара».</strong> Тогда WB выдаёт ошибку «Не найдено в ЕРП сопоставление по товару». Поле нужно оставить пустым.</li>
+<li><strong>ДОП вместо СЧФДОП.</strong> На уведомление о выкупе продавец с НДС должен прислать УПД со статусом 1 (СЧФДОП), а не 2 (ДОП).</li>
+<li><strong>Дубль.</strong> Полную копию уже отправленного документа система отклоняет сама.</li>
+<li><strong>Суммы не сходятся из-за округления.</strong> Итог по столбцу должен совпадать с итогом уведомления.</li>
+</ul>
+<p>Если акта приёмки ещё нет, УПД «ДОП» не к чему привязать: основание заполнить нечем.</p>
+<h2>ЭТрН на ВБ не подписан: что проверить</h2>
+<p>ЭТрН состоит из четырёх титулов. Первый подписываете вы как грузоотправитель. Второй — перевозчик при погрузке, причём от перевозчика нужны две подписи: диспетчера или логиста и водителя. Третий подписывает WB при выгрузке. Четвёртый — перевозчик, он закрывает рейс в ГИС ЭПД (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/documents-for-processing-the-delivery" target="_blank" rel="noopener">документы для оформления поставки</a>, правка 21.09.2026).</p>
+<p>Чтобы WB увидел вашу накладную, укажите УИД ТРН (36 символов) в поставке: вкладка «Пропуск» → «Способ доставки на склад» → «Транспортной компанией». Перед подписью WB проверяет три вещи:</p>
+<ol>
+<li>Получатель в ЭТрН — ООО «РВБ».</li>
+<li>Число грузомест в ЭТрН совпадает с числом коробов или паллет в пропуске.</li>
+<li>Грузоотправитель и перевозчик уже подписали свои титулы.</li>
+</ol>
+<p>Если статус «Не подписана»:</p>
+<ul>
+<li><strong>Ошибка в УИД ТРН.</strong> «Редактировать ТРН» → исправить → «Отправить ТРН на подпись».</li>
+<li><strong>Ошибка в самой накладной.</strong> На портале WB её не покажут, смотрите у своего оператора ЭДО. Исправьте ЭТрН там, вернитесь в «Пропуск» и снова нажмите «Редактировать ТРН» → «Отправить ТРН на подпись». УИД при этом менять не нужно.</li>
+<li><strong>Несколько поставок в одной машине</strong> — на каждую поставку нужна своя ЭТрН. <strong>Одна поставка в нескольких машинах</strong> — своя ЭТрН на каждую машину. Иначе грузоместа не сойдутся.</li>
+<li><strong>Грузомест привезли не столько, сколько в пропуске.</strong> Поставку не примут, пока не исправите пропуск. Сделать это можно прямо на месте. Если WB подписал третий титул с корректировкой, переделать накладную уже не получится.</li>
+</ul>
+<p>Если ЭДО ещё не подключено, выберите в пропуске «Самостоятельно» — поставку примут с бумажной ТРН. По инструкции WB это переходный период без штрафов до 1 марта 2027 года. Если везёте товар сами, ЭТрН не нужна вовсе: транспортную накладную можно скачать после отгрузки на вкладке «Пропуск» (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/accepted-shipment-documents" target="_blank" rel="noopener">документы по принятым поставкам</a>).</p>
+<p>Про FBS справка WB противоречит сама себе. И в инструкции по ЭДО, и в <a href="https://seller.wildberries.ru/instructions/ru/ru/material/step-three-fbs-shipment-delivery-to-warehose-or-sorting-centre" target="_blank" rel="noopener">инструкции по отгрузке FBS в СЦ</a> (правка 07.10.2026) сказано, что оформление ЭТрН для FBS «станет доступно в ближайшее время». Но в той же инструкции по FBS поле «УИД ТРН» в пропуске уже описано. Проверьте, есть ли оно в вашем кабинете.</p>
+<h2>Товар с КИЗ по FBS: нужны ли УПД</h2>
+<p>Нет. По <a href="https://seller.wildberries.ru/instructions/ru/ru/material/items-labeling-in-fbs" target="_blank" rel="noopener">инструкции WB о маркировке для FBS</a> (правка 02.10.2026) схема такая:</p>
+<ul>
+<li>КИЗ добавляется в каждое сборочное задание. У кода должен быть статус «В обороте». Если КИЗ не добавить, заказы, от которых отказался покупатель, вернутся вам в ПВЗ платным возвратом.</li>
+<li>Из оборота код выводите вы сами в «Честном знаке», вместе с фактической отгрузкой.</li>
+<li>Если товар вернули, КИЗ нужно ввести обратно в оборот.</li>
+<li>Повреждённый КИЗ считается отсутствующим, такую маркировку переделывают.</li>
+</ul>
+<p>УПД «ДОП» нужен только там, где товар лежит на складе WB и WB сам выводит коды из оборота, то есть по FBW. Подробнее о том, куда вносить коды и что значит «КИЗ невалиден», — в статье <a href="/stati/kizy-wildberries/">КИЗы Вайлдберриз</a>. Если вы ещё выбираете модель, пригодится разбор <a href="/stati/fbs-ili-fbo-wildberries/">FBO или FBS на Вайлдберриз</a>.</p>
+<h2>Что указывать в карточке товара для формирования УПД</h2>
+<p>Это вопрос про продажи юрлицам и ИП. Такие УПД WB формирует от вашего имени сам и отправляет покупателю (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-sale-items-to-legal-entities-and-sole-proprietors" target="_blank" rel="noopener">продажа юрлицам и ИП</a>). Из карточки WB берёт:</p>
+<ul>
+<li><strong>Ставку НДС.</strong> Если она указана неверно, исправлять документы с покупателем придётся вам самим.</li>
+<li><strong>Номер декларации на товары (ДТ, она же ГТД)</strong> — для товаров, произведённых не в ЕАЭС. Номер попадёт в УПД: он нужен покупателю-юрлицу для возврата НДС, и спрашивать его у вас уже не придётся.</li>
+</ul>
+<p>Вид документа зависит от того, платите ли вы НДС и включена ли опция «Возврат НДС покупателем». Если она включена, покупатель получает УПД-1 и может принять НДС к вычету. Если выключена — получает УПД-2 (ДОП). Копия лежит в «Документах» под названием «УПД (продажа юрлицу)». Подписывать её не нужно: документ носит уведомительный характер.</p>
+<p>Для маркированных товаров в поле «Баркоды» нужен действующий GTIN, иначе карточку заблокируют.</p>
+<h2>Что спрашивают про ЭДО и УПД в чатах селлеров</h2>
+<p>Мы читаем около 200 Telegram-чатов селлеров. С 22 сентября по 18 октября 2026 года там задали 36 разных вопросов про ЭДО, УПД и ЭТрН на Wildberries. Повторы одного и того же текста считали один раз. Около 15 из них — про транспортную накладную, 10 — про УПД и КИЗ. Что болит чаще всего:</p>
+<ol>
+<li><strong>Везу через СДЭК или «Деловые линии», что вписать в УИД ТРН?</strong> Многие не знают, что накладную создаёт грузоотправитель, то есть селлер, в своей системе ЭДО, а не WB. В чатах делятся, что поставку через СДЭК с вариантом «Самостоятельно» принимали. По инструкции WB так и есть, но только пока действует переходный период до 1 марта 2027 года.</li>
+<li><strong>«Ни одну ЭТрН за сентябрь не подписали, поддержка пишет — неправильно оформлено».</strong> В чатах советуют переоформить одну накладную на пробу и требовать у поддержки конкретную причину.</li>
+<li><strong>Приёмка идёт неделями, а товар уже продаётся.</strong> Акта нет, поэтому УПД «ДОП» не отправить. Один из вопросов — «приёмка идёт уже 12 дней». Способа ускорить приёмку справка WB не даёт. Остаётся не пропустить свои 2–3 дня после акта.</li>
+<li><strong>Неверные советы.</strong> Например, что по FBO «маркетплейс формирует УПД, продавец только подписывает». По справке WB черновик даёт WB, а заполняете и отправляете вы.</li>
+</ol>
+<h2>Где здесь помогает ИИ и автоматизация</h2>
+<p>Документооборот — рутина с жёсткими правилами, её удобно автоматизировать. Подписывает и отправляет всё равно человек.</p>
+<ul>
+<li><strong>Проверка XML до отправки.</strong> УПД — это текстовый XML-файл. Нейросеть можно попросить сверить его с образцом из справки WB: строку <code>ОснПер</code>, ИНН и КПП покупателя, суммы по строкам и итогу, пустой «Код товара». Дайте ей текст инструкции WB: по памяти она ошибётся.</li>
+<li><strong>Сверка КИЗ.</strong> Акт приёмки приходит в Excel. Скрипт или ИИ-агент сравнит коды из 6-го столбца акта с кодами в вашем УПД и покажет, каких не хватает. «Неполный перечень кодов» — как раз один из поводов для штрафа.</li>
+<li><strong>Напоминания о сроках.</strong> Самая дорогая ошибка — забыть. Telegram-бот, который раз в день проверяет новые акты приёмки и уведомления о выкупе и пишет «по акту № … осталось 2 дня», решает её без бухгалтера. Такие боты я делаю, а ИИ-агентов на Claude подключаю к кабинету Ozon по API, чтобы данные приходили без ручной выгрузки.</li>
+<li><strong>Чего ИИ не сделает:</strong> не подпишет документ вместо вас, не ускорит приёмку на складе и не узнает причину отказа ЭТрН, если вы не покажете ему ответ оператора ЭДО.</li>
+</ul>
+<aside class="st-kurs"><p class="st-kurs-t">Курс «ИИ для селлеров»</p><p>Если хочется не читать про ИИ, а настроить его под свой магазин, — у меня есть курс для владельцев магазинов на Wildberries и Ozon. Без программирования, по шагам: подключаем ИИ к данным вашего кабинета и разбираем задачи вроде той, что в этой статье.</p><p><a class="btn" href="/kurs/">Подробнее о курсе</a></p></aside>
+<h2>Частые вопросы</h2>
+<p><strong>Если везу поставку на склад «Деловыми линиями», обязательно оформлять ЭТрН?</strong>
+Для FBW с перевозчиком — да, по правилам WB. Но до 1 марта 2027 года действует переходный период: можно выбрать «Самостоятельно», и поставку примут с бумажной ТРН.</p>
+<p><strong>По FBS покупатель отказался от товара с КИЗ. Нужно формировать УПД?</strong>
+Нет. По FBS УПД «ДОП» не передаётся. Если товар вернулся к вам, введите КИЗ обратно в оборот в «Честном знаке».</p>
+<p><strong>Почему не получается отправить УПД, хотя товар уже продаётся?</strong>
+Скорее всего, ещё нет акта приёмки. УПД «ДОП» оформляется на основании номера и даты акта, а черновик появляется в «Документах» в течение суток после акта.</p>
+<p><strong>Каким оператором ЭДО пользоваться для WB?</strong>
+WB работает с четырьмя: Диадок, СБИС, Калуга Астрал и Сбер.Корус. Если у вас другой оператор, подключение к WB настраивают через Диадок, Калугу Астрал или Сбер.Корус.</p>
+<p><strong>Можно ли исправить уже отправленный УПД корректировкой?</strong>
+Нет. WB не принимает УКД. Аннулируйте его и отправьте новый правильный УПД.</p>
+<p><strong>При продаже юрлицу УПД покупателю отправляет сам WB?</strong>
+Да. WB формирует УПД от вашего имени и отправляет покупателю, а копию кладёт в «Документы». Ставку НДС он берёт из карточки товара.</p>
+<h2>Об авторе</h2>
+<p>Я Роман Воробьёв, 8 лет продаю на Wildberries и Ozon, собираю ИИ-агентов на Claude и делаю Telegram-ботов для селлеров. Такие задачи — проверку документов и напоминания о сроках — разбираем в клубе селлеров «СИИстема» (aiseller.space/siistema). Если начинаете с нуля, есть вводный курс «ИИ для селлеров» (aiseller.space/kurs).</p>
+<h2>Читайте также</h2>
+<ul>
+<li><a href="/stati/sertifikaty-dlya-marketplejsov/">Сертификат для маркетплейса: какой документ нужен на WB и Ozon</a></li>
+<li><a href="/stati/sloty-postavki-wb/">Коэффициент приемки Вайлдберриз: как поймать слот поставки</a></li>
+<li><a href="/stati/chestnyj-znak-marketplejs/">Честный знак на маркетплейсе: что маркировать для WB и Ozon</a></li>
+<li><a href="/stati/kartochka-bez-pokazov/">Новая карточка ВБ: нет показов — что проверить до рекламы</a></li>
+</ul>
+<h2>Источники</h2>
+<p>Дата проверки всех ссылок — 19.10.2026.</p>
+<ul>
+<li>Электронный документооборот с Wildberries (справочный центр WB, правка 01.09.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/electronic-document-management-with-wb" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/electronic-document-management-with-wb</a></li>
+<li>Документы для оформления поставки: ЭТрН и УИД ТРН (правка 21.09.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/documents-for-processing-the-delivery" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/documents-for-processing-the-delivery</a></li>
+<li>Формирование УПД «ДОП» на товары с обязательной маркировкой (правка 18.05.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/labeled-items-utd-dop-forming" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/labeled-items-utd-dop-forming</a></li>
+<li>Маркировка товаров для модели FBS (правка 02.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/items-labeling-in-fbs" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/items-labeling-in-fbs</a></li>
+<li>Оферта, раздел 14 «Правила выкупа товара» (правка 01.09.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/item-redemtion-terms" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/item-redemtion-terms</a></li>
+<li>Штрафы, удержания и другие взыскания для продавцов (правка 13.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/fines-retentions-and-other-penalties-for-sellers</a></li>
+<li>Продажа товаров юридическим лицам и ИП (правка 05.06.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-sale-items-to-legal-entities-and-sole-proprietors" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-sale-items-to-legal-entities-and-sole-proprietors</a></li>
+<li>Этап 3а. Отгрузка поставок FBS в СЦ (правка 07.10.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/step-three-fbs-shipment-delivery-to-warehose-or-sorting-centre" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/step-three-fbs-shipment-delivery-to-warehose-or-sorting-centre</a></li>
+<li>Документы по принятым поставкам (правка 18.05.2026) — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/accepted-shipment-documents" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/accepted-shipment-documents</a></li>
+</ul></article></main>
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-links">
+      <a href="/stati/">Статьи</a>
+      <a href="/avtor/">Об авторе</a>
+      <a href="/kurs/">Курс «ИИ для селлеров»</a>
+      <a href="/siistema/">Сообщество «СИИстема»</a>
+      <a href="https://t.me/FirstonOzon" target="_blank" rel="noopener">Канал «Системный гуманИИст»</a>
+      <a href="https://t.me/sellersmafia" target="_blank" rel="noopener">Мафклуб предпринимателей</a>
+    </div>
+    <small>Роман Воробьёв · ИИ для селлеров маркетплейсов</small>
+  </div>
+</footer>
+</div>
+</body>
+</html>

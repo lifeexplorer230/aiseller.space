@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Автоматическая передача чеков в «Мой налог»: Озон и WB</title>
+<meta name="description" content="Самозанятый на Озон и WB: кто сам формирует чеки в «Мой налог», какую сумму брать из отчёта, как не задвоить налог и что можно сделать через API.">
+<link rel="canonical" href="https://www.aiseller.space/stati/cheki-samozanyatogo/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.aiseller.space/stati/cheki-samozanyatogo/">
+<meta property="og:title" content="Автоматическая передача чеков в «Мой налог»: Озон и WB">
+<meta property="og:description" content="Самозанятый на Озон и WB: кто сам формирует чеки в «Мой налог», какую сумму брать из отчёта, как не задвоить налог и что можно сделать через API.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ИИ для селлеров маркетплейсов">
+<meta property="og:image" content="https://www.aiseller.space/stati/cheki-samozanyatogo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/stati/stati.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.aiseller.space/stati/cheki-samozanyatogo/#article",
+   "headline": "Автоматическая передача чеков в «Мой налог»: Озон и WB",
+   "description": "Самозанятый на Озон и WB: кто сам формирует чеки в «Мой налог», какую сумму брать из отчёта, как не задвоить налог и что можно сделать через API.",
+   "inLanguage": "ru",
+   "url": "https://www.aiseller.space/stati/cheki-samozanyatogo/",
+   "mainEntityOfPage": "https://www.aiseller.space/stati/cheki-samozanyatogo/",
+   "image": "https://www.aiseller.space/stati/cheki-samozanyatogo/og.png",
+   "datePublished": "2026-11-03",
+   "dateModified": "2026-10-19",
+   "author": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "publisher": {
+    "@id": "https://www.aiseller.space/#roman"
+   },
+   "keywords": "автоматическая передача чеков в мой налог озон",
+   "citation": [
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-generate-receipts-instruction-for-self-employed",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/how-to-change-the-sellers-information-ru",
+    "https://seller.wildberries.ru/instructions/ru/ru/material/wildberries-legsl-entity-change",
+    "https://seller-edu.ozon.ru/libra/how-to-start/self-employed",
+    "https://npd.nalog.ru/",
+    "https://npd.nalog.ru/aggregators/",
+    "https://ausn.nalog.gov.ru/",
+    "https://dev.wildberries.ru/docs/openapi/documents-and-accounting",
+    "https://docs.ozon.ru/api/seller/"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Главная",
+     "item": "https://www.aiseller.space/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Статьи",
+     "item": "https://www.aiseller.space/stati/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Автоматическая передача чеков в «Мой налог»: Озон и WB",
+     "item": "https://www.aiseller.space/stati/cheki-samozanyatogo/"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.aiseller.space/#roman",
+   "name": "Роман Воробьёв",
+   "url": "https://www.aiseller.space/avtor/",
+   "jobTitle": "Селлер Ozon и Wildberries, внедряет ИИ для селлеров",
+   "knowsAbout": [
+    "Wildberries",
+    "Ozon",
+    "Яндекс Маркет",
+    "нейросети для селлеров",
+    "Seller API",
+    "ИИ-агенты",
+    "Telegram-боты"
+   ],
+   "sameAs": [
+    "https://t.me/FirstonOzon",
+    "https://t.me/sellersmafia"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Можно ли пробивать один чек за весь месяц, а не каждую неделю?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Да. И WB, и Ozon пишут, что чек можно сформировать сразу на несколько продаж. Срок — до 9-го числа следующего месяца."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "С какой суммы самозанятый платит налог на WB — с продаж или с того, что пришло на карту?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "С продаж. По инструкции WB это строка «Всего стоимость реализованного товара» в отчёте реализации. Комиссию WB и логистику вычитать нельзя."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Продажа пришла в уведомлении о выкупе. Какой чек?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "На юрлицо: ООО «РВБ», ИНН 9714053621, ставка 6%. Сумма — строка «Итого» в уведомлении."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Озон умеет сам передавать чеки в «Мой налог»?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "По базе знаний Ozon — нет, чек НПД продавец формирует сам. В перечне операторов площадок ФНС Ozon на 19.10.2026 нет. Если что-то изменится, это будет в базе знаний Ozon."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Нужно ли закрывать кабинет самозанятого при переходе на ИП?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "На WB — нет, меняете данные продавца в настройках. На Ozon ИП на НПД меняет режим через поддержку, а физлицо на НПД заключает новый договор. В «Мой налог» с учёта снимаетесь в любом случае."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Перешёл на ИП с АУСН, а налог в «Мой налог» не приходит. Почему?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "«Мой налог» — только для самозанятых. Налог на АУСН ФНС присылает в личный кабинет АУСН до 15-го числа."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113669934', 'ym');
+
+ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113669934" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="layer">
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="/" class="logo"><span class="dot"></span><span><span class="hl">ai</span>seller</span></a>
+    <nav class="nav">
+      <div class="only-wide"><div class="nav-links">
+        <a href="/stati/">Статьи</a><a href="/kurs/">Курс</a><a href="/siistema/">Сообщество</a>
+      </div></div>
+      <a href="/#napisat" class="btn btn-sm">Написать</a>
+    </nav>
+  </div>
+</header>
+<main class="st"><article class="st-in"><nav class="kroshki"><a href="/">Главная</a> / <a href="/stati/">Статьи</a></nav><p class="st-meta"><a href="/avtor/">Роман Воробьёв</a> · проверено 19.10.2026</p><h1>Автоматическая передача чеков в «Мой налог» для самозанятого на Озон и WB</h1>
+<p>Автоматическая передача чеков в «Мой налог» от самого Озона на октябрь 2026 года не предусмотрена: по базе знаний Ozon чек НПД самозанятый формирует сам, а Ozon в перечне площадок-партнёров ФНС не значится. С Wildberries иначе. Если передать WB права на фискализацию, площадка сама сформирует чеки и отправит их в ФНС, вам останется заплатить налог. Без этого чек можно пробить один раз в месяц на сумму из отчёта о реализации.</p>
+<h2>Коротко</h2>
+<ul>
+<li><strong>Ozon.</strong> Чек НПД — на сумму из столбца «Реализовано на сумму» отчёта о реализации за месяц, баллы за скидки не учитываются. Срок — до 9-го числа следующего месяца.</li>
+<li><strong>Wildberries.</strong> Можно передать WB права на фискализацию, и чеки он сформирует сам. ООО «РВБ» и ООО «Вайлдберриз» есть в перечне операторов площадок на сайте ФНС.</li>
+<li><strong>Не задваивайте.</strong> Если чеки отправляет WB, самому их пробивать нельзя: налог посчитают дважды.</li>
+<li><strong>Переход на ИП.</strong> На WB новый магазин не нужен, меняются данные продавца. На Ozon для физлица на НПД — новый договор. На АУСН налог в «Мой налог» больше не приходит.</li>
+<li><strong>API.</strong> Отчёты WB и Ozon можно забирать автоматически и считать сумму чека скриптом или ИИ-агентом. Официально отправить доход в ФНС от вашего имени могут только партнёры из перечней ФНС.</li>
+</ul>
+<h2>Что делает площадка сама, а что вы</h2>
+<p>Сначала — какие бывают чеки.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Ozon</th>
+<th>Wildberries</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Чек покупателю (кассовый)</td>
+<td>формирует и отправляет Ozon</td>
+<td>в инструкции WB для самозанятых не описан</td>
+</tr>
+<tr>
+<td>Чек НПД в «Мой налог»</td>
+<td>вы сами</td>
+<td>вы сами или WB, если вы передали ему права на фискализацию</td>
+</tr>
+<tr>
+<td>Площадка в перечне операторов ФНС</td>
+<td>не нашёл на 19.10.2026</td>
+<td>ООО «Вайлдберриз» (ИНН 7721546864) и ООО «РВБ» (ИНН 9714053621)</td>
+</tr>
+<tr>
+<td>Сумма чека</td>
+<td>«Реализовано на сумму» в отчёте о реализации</td>
+<td>«Всего стоимость реализованного товара» в еженедельном отчёте реализации</td>
+</tr>
+<tr>
+<td>Срок</td>
+<td>до 9-го числа следующего месяца</td>
+<td>до 9-го числа следующего месяца</td>
+</tr>
+</tbody>
+</table>
+<p>Ставки налога по <a href="https://npd.nalog.ru/" target="_blank" rel="noopener">сайту ФНС о НПД</a>: 4% с доходов от физлиц, 6% с доходов от организаций и ИП. Лимит — 2,4 млн ₽ дохода за календарный год.</p>
+<h2>Чеки самозанятого на Ozon: откуда брать сумму</h2>
+<p>По <a href="https://seller-edu.ozon.ru/libra/how-to-start/self-employed" target="_blank" rel="noopener">базе знаний Ozon</a> порядок такой:</p>
+<ol>
+<li>Дождитесь документов за месяц. Ozon загружает отчётные документы в течение 5 рабочих дней следующего месяца.</li>
+<li>Откройте «Финансы → Документы → Отчёты о реализации» и возьмите сумму из столбца «Реализовано на сумму».</li>
+<li>Если были предоплаты, их смотрите в отчёте по предоплатам: «Финансы → Документы → Аналитические отчёты».</li>
+<li>В «Мой налог» пробейте чек на физлицо, ставка 4%. Можно одним чеком на все продажи месяца.</li>
+<li>Успейте до 9-го числа. Декларацию самозанятым сдавать не нужно.</li>
+</ol>
+<p>Две детали, на которых спотыкаются чаще всего.</p>
+<ul>
+<li><strong>Баллы за скидки</strong> в сумму чека не входят. На вопрос, учитывать ли их, Ozon отвечает прямо: «Нет». Подробнее про баллы — в статье <a href="/stati/bally-za-skidki-ozon/">«Баллы за скидки Озон»</a>.</li>
+<li><strong>Премия за неиспользованные баллы</strong> и другие доплаты от Ozon — это доход. На них нужен отдельный чек НПД как реализация юрлицу, с ИНН Ozon.</li>
+</ul>
+<p>Продавать юрлицам самозанятым на Ozon нельзя: это прямо написано в той же статье базы знаний.</p>
+<h2>Чеки самозанятого на WB: инструкция Wildberries</h2>
+<p>Инструкция WB для самозанятых даёт два пути. Первый — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-generate-receipts-instruction-for-self-employed" target="_blank" rel="noopener">передать Wildberries права на фискализацию</a>. Тогда, по словам WB, площадка «самостоятельно сформирует и отправит чеки в ФНС», а вам «нужно будет только оплатить налог». Это и есть автоматическая передача, о которой спрашивают в чатах.</p>
+<p>Как именно выдаются эти права, в справке WB пошагово не расписано. Партнёров самозанятый подключает в приложении «Мой налог», в разделе «Партнёры». WB в перечне есть, искать его по названию или ИНН. Точный путь в меню уточните в самом приложении.</p>
+<p>Главное предупреждение WB: «если чеки будет передавать и Wildberries, и самозанятый — налог задвоится». Подключили WB — перестаньте пробивать чеки по WB руками.</p>
+<p>Второй путь — пробивать чеки самому:</p>
+<ol>
+<li>Еженедельные отчёты WB присылает в раздел «Документы» в течение 7 дней после отчётной недели. Там два вида печатных форм: еженедельный отчёт реализации и уведомление о выкупе.</li>
+<li><strong>Отчёт реализации</strong> — продажи физлицам, 4%. Сумма — строка «Всего стоимость реализованного товара», возвраты в ней уже учтены. Тип покупателя в чеке — «Физическое лицо».</li>
+<li><strong>Уведомление о выкупе</strong> — продажи юрлицу, 6%. Сумма — строка «Итого». Тип покупателя — «Юридическое лицо или ИП», реквизиты: ООО «РВБ», ИНН 9714053621. С 5 августа 2024 года WB просит указывать именно их (<a href="https://seller.wildberries.ru/instructions/ru/ru/material/wildberries-legsl-entity-change" target="_blank" rel="noopener">справка WB</a>).</li>
+<li>Вознаграждение WB и другие расходы из суммы вычитать нельзя.</li>
+</ol>
+<p>Если хотите отчитываться по каждой продаже, считайте по детализации: столбец «Вайлдберриз реализовал товар (Пр)» с типом «Продажа» минус тот же столбец с типом «Возврат». Как читать сам отчёт, разбирали в статье <a href="/stati/otchet-o-realizacii-wb/">«Отчёт о реализации Вайлдберриз»</a>.</p>
+<p>Ошиблись в чеке — аннулируйте его в «Мой налог» и пробейте новый.</p>
+<h2>Переход с самозанятости на ИП: что с кабинетом и налогом</h2>
+<p>Это второй большой блок вопросов. Причина обычно одна: доход подходит к 2,4 млн ₽ за год.</p>
+<p><strong>Нужно ли закрывать кабинет на маркетплейсе.</strong> На WB — нет. По <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-change-the-sellers-information-ru" target="_blank" rel="noopener">инструкции WB</a> при переходе с самозанятости на ИП новый профиль не регистрируют. Укажите в «Настройки → Данные продавца» новую форму, юрданные и реквизиты счёта. Магазин остаётся тот же. Но есть ловушка. Если вы уже снялись с учёта как самозанятый, а ИП ещё не открыли, кабинет не заблокируют. Однако вывести деньги с баланса в этот промежуток не получится.</p>
+<p>На Ozon зависит от того, кто вы (<a href="https://seller-edu.ozon.ru/libra/how-to-start/self-employed" target="_blank" rel="noopener">база знаний Ozon</a>):</p>
+<ul>
+<li><strong>ИП на НПД.</strong> Снимаетесь с учёта в «Мой налог» (Настройки → Профиль → Снять с учёта, причина «Утратил право…»). В течение 20 календарных дней подаёте уведомление о переходе, например на УСН. Режим в кабинете Ozon меняете через поддержку: «Финансы и Ozon Invest → Финансы → Изменить реквизиты».</li>
+<li><strong>Физлицо на НПД.</strong> Снимаетесь с учёта, в течение 20 дней регистрируете ИП, расторгаете договор с Ozon и заключаете новый.</li>
+</ul>
+<p>Ozon советует не тянуть до лимита. «Мой налог» не даст пробить чек сверх 2,4 млн ₽, поэтому ИП стоит открыть заранее, например при продажах около 2,2 млн ₽ в год.</p>
+<p><strong>Налог не приходит в «Мой налог» после перехода на ИП с АУСН.</strong> Так и должно быть. «Мой налог» — приложение только для самозанятых. На АУСН налог считает ФНС по данным банка, а начисление приходит в личный кабинет АУСН до 15-го числа, заплатить нужно до 25-го (<a href="https://ausn.nalog.gov.ru/" target="_blank" rel="noopener">ausn.nalog.gov.ru</a>). Важная оговорка для селлера: банк видит только то, что маркетплейс перечислил на счёт. Удержанную площадкой часть вы вносите в кабинет АУСН сами. Подробно — в статье <a href="/stati/usn-dlya-sellera/">«УСН на маркетплейсе»</a>.</p>
+<h2>Что спрашивают самозанятые в чатах селлеров</h2>
+<p>Мы читаем около 200 Telegram-чатов селлеров. С 22 сентября по 19 октября 2026 года там задали 29 разных вопросов от самозанятых продавцов и про «Мой налог». Вопросы курьеров и таксопарков с теми же словами я отсеял. Разбивка:</p>
+<ul>
+<li><strong>Что можно продавать, документы и ТН ВЭД</strong> — 9 вопросов: «шапки ручной работы — можно?», «отказное письмо есть, куда грузить?»;</li>
+<li><strong>Налог и чеки</strong> — 9: «раз в месяц или каждую неделю?», «4% или 6%, если деньги пришли от WB, а не от покупателя?», «три месяца торгую — что делать с налогами?»;</li>
+<li><strong>Переход на ИП и лимит 2,4 млн</strong> — 4;</li>
+<li><strong>Заказы от юрлиц</strong>, которые самозанятому нельзя отгружать, — 2.</li>
+</ul>
+<p>Три типичные ловушки:</p>
+<ol>
+<li><strong>«Деньги пришли от WB — значит, 6%».</strong> Нет. По инструкции WB продажи из еженедельного отчёта реализации — это продажи физлицам, 4%. Шесть процентов — только с уведомления о выкупе.</li>
+<li><strong>Чеки «каждую неделю».</strong> Отчёты WB еженедельные, но закон разрешает один чек на несколько продаж. Главное — до 9-го числа следующего месяца. Один чек в месяц на итог по отчётам — самый короткий путь без всяких сервисов.</li>
+<li><strong>«Налог на АУСН не приходит в „Мой налог“».</strong> Его там и не будет. Ищите начисление в кабинете АУСН.</li>
+</ol>
+<p>Один вопрос дословно совпадает с темой статьи: самозанятая продаёт на Ozon свои товары и спрашивает, как автоматизировать передачу чеков, потому что вбивать их — «отдельный вид пытки». В чатах ей предложили три варианта: сторонний сервис интеграции, агрегатор платежей с доступом к «Мой налог» и скрипт, который берёт отчёт из кабинета и готовит чеки пачкой. Первые два стоит проверить по перечню ФНС, об этом ниже.</p>
+<h2>Где помогает автоматизация и ИИ, а где не надо</h2>
+<p>Для самозанятого на одной площадке лучшая автоматизация — не пробивать чек на каждую продажу. Один чек в месяц на сумму из отчёта — одна операция в приложении. Автоматизировать имеет смысл, если площадок две-три, есть возвраты и доплаты, и вы хотите сверку без ручного счёта.</p>
+<p>Что реально работает:</p>
+<ul>
+<li><strong>WB — встроенная передача.</strong> Права на фискализацию у WB — единственный официальный вариант, при котором чеки уходят в ФНС совсем без вас.</li>
+<li><strong>Выгрузка отчётов по API.</strong> API — это способ, которым программа забирает данные из кабинета без ваших кликов. У WB есть метод детализации отчёта реализации за период. Лимит — 1 запрос в минуту на персональном и сервисном токене, на базовом — 2 запроса в сутки (<a href="https://dev.wildberries.ru/docs/openapi/documents-and-accounting" target="_blank" rel="noopener">документация WB API</a>). У Ozon в Seller API есть метод отчёта о реализации за месяц, точное название и поля уточните в <a href="https://docs.ozon.ru/api/seller/" target="_blank" rel="noopener">документации Ozon</a>. Как получить ключи, я разбирал в статье <a href="/stati/api-ozon-wb/">«API Озон и WB для селлера»</a>.</li>
+<li><strong>ИИ-агент для сверки.</strong> Я собираю ИИ-агентов на Claude и подключаю ИИ к кабинету Ozon через API. Такому агенту можно поручить простую работу. В начале месяца он забирает отчёты, считает сумму чека отдельно по 4% и 6%, учитывает возвраты и доплаты Ozon и присылает в Telegram готовые цифры. Чек пробиваете сами. Агент заодно следит, не подбирается ли доход к 2,4 млн ₽.</li>
+<li><strong>Сторонние сервисы.</strong> В магазинах приложений есть сервисы, которые обещают сами отправлять чеки с продаж на Ozon и WB. Я их не проверял. Прежде чем подключать, посмотрите, есть ли компания в <a href="https://npd.nalog.ru/aggregators/" target="_blank" rel="noopener">перечне операторов площадок на сайте ФНС</a> или в перечне уполномоченных банков. Если сервис просит логин и пароль от «Мой налог», вы отдаёте ему полный доступ к налоговому кабинету.</li>
+</ul>
+<p>Чего ИИ и скрипты не сделают: не возьмут на себя ответственность за неверную сумму. И не отменят задвоение, если чеки по WB отправляют и площадка, и вы.</p>
+<aside class="st-kurs"><p class="st-kurs-t">Курс «ИИ для селлеров»</p><p>Если хочется не читать про ИИ, а настроить его под свой магазин, — у меня есть курс для владельцев магазинов на Wildberries и Ozon. Без программирования, по шагам: подключаем ИИ к данным вашего кабинета и разбираем задачи вроде той, что в этой статье.</p><p><a class="btn" href="/kurs/">Подробнее о курсе</a></p></aside>
+<h2>Частые вопросы</h2>
+<p><strong>Можно ли пробивать один чек за весь месяц, а не каждую неделю?</strong>
+Да. И WB, и Ozon пишут, что чек можно сформировать сразу на несколько продаж. Срок — до 9-го числа следующего месяца.</p>
+<p><strong>С какой суммы самозанятый платит налог на WB — с продаж или с того, что пришло на карту?</strong>
+С продаж. По инструкции WB это строка «Всего стоимость реализованного товара» в отчёте реализации. Комиссию WB и логистику вычитать нельзя.</p>
+<p><strong>Продажа пришла в уведомлении о выкупе. Какой чек?</strong>
+На юрлицо: ООО «РВБ», ИНН 9714053621, ставка 6%. Сумма — строка «Итого» в уведомлении.</p>
+<p><strong>Озон умеет сам передавать чеки в «Мой налог»?</strong>
+По базе знаний Ozon — нет, чек НПД продавец формирует сам. В перечне операторов площадок ФНС Ozon на 19.10.2026 нет. Если что-то изменится, это будет в базе знаний Ozon.</p>
+<p><strong>Нужно ли закрывать кабинет самозанятого при переходе на ИП?</strong>
+На WB — нет, меняете данные продавца в настройках. На Ozon ИП на НПД меняет режим через поддержку, а физлицо на НПД заключает новый договор. В «Мой налог» с учёта снимаетесь в любом случае.</p>
+<p><strong>Перешёл на ИП с АУСН, а налог в «Мой налог» не приходит. Почему?</strong>
+«Мой налог» — только для самозанятых. Налог на АУСН ФНС присылает в личный кабинет АУСН до 15-го числа.</p>
+<h2>Об авторе</h2>
+<p>Я Роман Воробьёв, 8 лет продаю на Wildberries и Ozon и собираю ИИ-агентов на Claude, которые работают с кабинетом через API. Сверку отчётов и такие рутинные задачи разбираем в клубе селлеров «СИИстема» (aiseller.space/siistema). С нуля — вводный курс «ИИ для селлеров» (aiseller.space/kurs).</p>
+<h2>Читайте также</h2>
+<ul>
+<li><a href="/stati/usn-dlya-sellera/">УСН на маркетплейсе: с какой суммы селлер платит налог</a></li>
+<li><a href="/stati/api-ozon-wb/">API Озон и WB для селлера: что автоматизировать без программиста</a></li>
+<li><a href="/stati/chatgpt-dlya-sellera/">ChatGPT для маркетплейса: промпты селлеру и где он врёт</a></li>
+<li><a href="/stati/ii-dlya-marketplejsov/">ИИ для маркетплейсов: где нейросеть помогает селлеру WB и Ozon</a></li>
+</ul>
+<h2>Источники</h2>
+<p>Дата проверки всех ссылок — 19.10.2026.</p>
+<ul>
+<li>Как сформировать чеки: инструкция для самозанятых — справочный центр WB, правка 18.05.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-generate-receipts-instruction-for-self-employed" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-generate-receipts-instruction-for-self-employed</a></li>
+<li>Как изменить данные продавца (переход с самозанятости на ИП) — справочный центр WB, правка 21.09.2026 — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/how-to-change-the-sellers-information-ru" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/how-to-change-the-sellers-information-ru</a></li>
+<li>Изменение юридического лица Wildberries (реквизиты для «Мой налог») — справочный центр WB — <a href="https://seller.wildberries.ru/instructions/ru/ru/material/wildberries-legsl-entity-change" target="_blank" rel="noopener">https://seller.wildberries.ru/instructions/ru/ru/material/wildberries-legsl-entity-change</a></li>
+<li>Самозанятые продавцы: ИП и физлица на НПД — база знаний Ozon Seller Edu — <a href="https://seller-edu.ozon.ru/libra/how-to-start/self-employed" target="_blank" rel="noopener">https://seller-edu.ozon.ru/libra/how-to-start/self-employed</a></li>
+<li>Налог на профессиональный доход — официальный сайт ФНС — <a href="https://npd.nalog.ru/" target="_blank" rel="noopener">https://npd.nalog.ru/</a></li>
+<li>Перечень операторов электронных площадок — сайт ФНС о НПД — <a href="https://npd.nalog.ru/aggregators/" target="_blank" rel="noopener">https://npd.nalog.ru/aggregators/</a></li>
+<li>АУСН — официальный сайт ФНС — <a href="https://ausn.nalog.gov.ru/" target="_blank" rel="noopener">https://ausn.nalog.gov.ru/</a></li>
+<li>WB API: документы и бухгалтерия — портал разработчиков WB — <a href="https://dev.wildberries.ru/docs/openapi/documents-and-accounting" target="_blank" rel="noopener">https://dev.wildberries.ru/docs/openapi/documents-and-accounting</a></li>
+<li>Документация Ozon Seller API — <a href="https://docs.ozon.ru/api/seller/" target="_blank" rel="noopener">https://docs.ozon.ru/api/seller/</a></li>
+</ul></article></main>
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-links">
+      <a href="/stati/">Статьи</a>
+      <a href="/avtor/">Об авторе</a>
+      <a href="/kurs/">Курс «ИИ для селлеров»</a>
+      <a href="/siistema/">Сообщество «СИИстема»</a>
+      <a href="https://t.me/FirstonOzon" target="_blank" rel="noopener">Канал «Системный гуманИИст»</a>
+      <a href="https://t.me/sellersmafia" target="_blank" rel="noopener">Мафклуб предпринимателей</a>
+    </div>
+    <small>Роман Воробьёв · ИИ для селлеров маркетплейсов</small>
+  </div>
+</footer>
+</div>
+</body>
+</html>
