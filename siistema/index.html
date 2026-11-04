@@ -680,7 +680,15 @@ document.addEventListener('DOMContentLoaded',function(){
       document.getElementById('formIdle').setAttribute('hidden','');
       document.getElementById('formSent').removeAttribute('hidden');
     }
-    function fallback(){ window.open('https://t.me/lifeexplorer23?text='+encodeURIComponent(msg),'_blank'); done(); }
+    function fallback(){
+      var old=document.getElementById('formError'); if(old) old.remove();
+      var p=document.createElement('p'); p.id='formError'; p.setAttribute('role','alert');
+      p.style.cssText='margin:0;font-size:15px;line-height:1.6;color:#F4F5F6;';
+      p.append('Заявка не отправилась. Напишите мне в Telegram, текст уже готов: ');
+      var a=document.createElement('a'); a.href='https://t.me/lifeexplorer23?text='+encodeURIComponent(msg);
+      a.target='_blank'; a.rel='noopener'; a.textContent='открыть Telegram'; a.style.textDecoration='underline';
+      p.append(a); f.append(p);
+    }
     if(btn){ btn.disabled=true; btn.textContent='Отправляем…'; }
     fetch('https://functions.yandexcloud.net/d4eto14ls1nol0q6p1ve',{
       method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
