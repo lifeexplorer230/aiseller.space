@@ -188,7 +188,7 @@ ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
         <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #9DA1A6;">Не обещания дохода. Решения, которые работают в их компаниях прямо сейчас.</p>
       </div>
       <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6F7378; margin-right: 6px;"><span id="slideLabel">01 / 03</span></span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6F7378; margin-right: 6px;"><span id="slideLabel">01 / 05</span></span>
         <button type="button" onclick="slide(-1)" aria-label="Предыдущий кейс" style="width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.18); background: transparent; color: #F4F5F6; cursor: pointer; border-radius: 2px; font-size: 16px;" class="h4">←</button>
         <button type="button" onclick="slide(1)" aria-label="Следующий кейс" style="width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.18); background: transparent; color: #F4F5F6; cursor: pointer; border-radius: 2px; font-size: 16px;" class="h4">→</button>
       </div>
@@ -239,6 +239,32 @@ ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
           </div>
         </div>
 
+        <div style="flex: 0 0 100%; padding: clamp(24px,3.4vw,44px); display: grid; gap: clamp(24px,3vw,44px); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start;">
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ac, #C9F14A); margin-bottom: 14px;">Uzum · показано 6 ноября</div>
+            <h3 style="margin: 0 0 6px; font-size: clamp(24px,3vw,34px); line-height: 1.1; letter-spacing: -.02em; font-weight: 700;">Илья К.</h3>
+            <p style="margin: 0 0 26px; font-size: 14px; color: #6F7378;">ИИ-управляющий магазином «Атлас»</p>
+            <div style="display: grid; gap: 16px;">
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;">Атлас сам ставит задачи фотостудии и дизайнеру, проверяет, что инфографику в карточке реально заменили, и пишет сотруднику в личку, если нет.</p>
+              <p style="margin: 0; font-size: 20px; line-height: 1.4; color: var(--ac, #C9F14A); font-weight: 600; text-wrap: pretty;">Когда продажи упали, сам нашёл причину: закончились ходовые размеры, показы просели с 800 до 300.</p>
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #9DA1A6; text-wrap: pretty;">Запись встречи — ниже, в блоке «Моменты с наших встреч».</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex: 0 0 100%; padding: clamp(24px,3.4vw,44px); display: grid; gap: clamp(24px,3vw,44px); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start;">
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ac, #C9F14A); margin-bottom: 14px;">Ozon · показано 13 ноября</div>
+            <h3 style="margin: 0 0 6px; font-size: clamp(24px,3vw,34px); line-height: 1.1; letter-spacing: -.02em; font-weight: 700;">Александр</h3>
+            <p style="margin: 0 0 26px; font-size: 14px; color: #6F7378;">Seller Power — своя система для кабинетов Ozon</p>
+            <div style="display: grid; gap: 16px;">
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD1; text-wrap: pretty;">Начал в апреле, когда поставил Claude на сервер. Сводка по кабинетам каждое утро в Телеграме, правила рекламы, сертификаты, чёрный список покупателей.</p>
+              <p style="margin: 0; font-size: 20px; line-height: 1.4; color: var(--ac, #C9F14A); font-weight: 600; text-wrap: pretty;">Корректировка рекламы по всем кабинетам: было 3 часа, стало 20 минут.</p>
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #9DA1A6; text-wrap: pretty;">Реклама включается только там, где товар есть на складах главных кластеров. Данные собирают обычные скрипты — пропадёт подписка на ИИ, система продолжит работать.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -246,6 +272,8 @@ ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
       <button type="button" class="dot" onclick="goSlide(0)" aria-label="Кейс 1" style="height: 4px; border: 0; padding: 0; cursor: pointer; border-radius: 2px; transition: all .3s ease; width: 22px; background: #C9F14A;"></button>
       <button type="button" class="dot" onclick="goSlide(1)" aria-label="Кейс 2" style="height: 4px; border: 0; padding: 0; cursor: pointer; border-radius: 2px; transition: all .3s ease; width: 10px; background: rgba(255,255,255,.25);"></button>
       <button type="button" class="dot" onclick="goSlide(2)" aria-label="Кейс 3" style="height: 4px; border: 0; padding: 0; cursor: pointer; border-radius: 2px; transition: all .3s ease; width: 10px; background: rgba(255,255,255,.25);"></button>
+      <button type="button" class="dot" onclick="goSlide(3)" aria-label="Кейс 4" style="height: 4px; border: 0; padding: 0; cursor: pointer; border-radius: 2px; transition: all .3s ease; width: 10px; background: rgba(255,255,255,.25);"></button>
+      <button type="button" class="dot" onclick="goSlide(4)" aria-label="Кейс 5" style="height: 4px; border: 0; padding: 0; cursor: pointer; border-radius: 2px; transition: all .3s ease; width: 10px; background: rgba(255,255,255,.25);"></button>
     </div>
 
     <div style="margin-top: 40px; border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.022); padding: clamp(22px,2.6vw,32px);">
@@ -279,12 +307,30 @@ ym(113669934, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
 <div style="max-width: 1100px; margin: 0 auto;">
 <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: #6F7378; margin-bottom: 18px;">Запись</div>
 <h2 style="margin: 0 0 14px; font-size: clamp(26px,3.4vw,44px); line-height: 1.12; letter-spacing: -.026em; font-weight: 700; text-wrap: pretty;">Моменты <span style="color: var(--ac, #C9F14A);">с наших встреч</span></h2>
-<p style="margin: 0 0 28px; font-size: 16px; line-height: 1.6; color: #9DA1A6; max-width: 46em; text-wrap: pretty;">Фрагменты записей за февраль–июль. Ничего не переснимали: демонстрации с экрана, реакции, разбор провалов.</p>
+<p style="margin: 0 0 28px; font-size: 16px; line-height: 1.6; color: #9DA1A6; max-width: 46em; text-wrap: pretty;">Фрагменты записей за февраль–июль и свежие встречи ноября. Ничего не переснимали: демонстрации с экрана, реакции, разбор провалов.</p>
 <video controls playsinline preload="none" poster="media/vstrecha-poster.jpg" width="1280" height="720" style="display: block; width: 100%; border: 1px solid rgba(255,255,255,.09); background: #000;">
 <source src="media/vstrecha.mp4" type="video/mp4">
 Ваш браузер не поддерживает видео. <a href="media/vstrecha.mp4">Скачать нарезку встречи</a>.
 </video>
-<p style="margin: 14px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6F7378;">7 минут · загрузится по нажатию</p>
+<p style="margin: 14px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6F7378;">Февраль–июль · 7 минут · загрузится по нажатию</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; margin-top: 40px;">
+<div>
+<video controls playsinline preload="none" poster="media/vstrecha-2026-11-06.jpg" width="1280" height="720" style="display: block; width: 100%; height: auto; border: 1px solid rgba(255,255,255,.09); background: #000;">
+<source src="media/vstrecha-2026-11-06.mp4" type="video/mp4">
+<a href="media/vstrecha-2026-11-06.mp4">Скачать запись встречи 6 ноября</a>.
+</video>
+<p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #C9CDD1;">6 ноября · Илья показывает «Атлас» — ИИ-управляющего магазином</p>
+<p style="margin: 4px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6F7378;">7 минут · загрузится по нажатию</p>
+</div>
+<div>
+<video controls playsinline preload="none" poster="media/vstrecha-2026-11-13.jpg" width="1280" height="720" style="display: block; width: 100%; height: auto; border: 1px solid rgba(255,255,255,.09); background: #000;">
+<source src="media/vstrecha-2026-11-13.mp4" type="video/mp4">
+<a href="media/vstrecha-2026-11-13.mp4">Скачать запись встречи 13 ноября</a>.
+</video>
+<p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #C9CDD1;">13 ноября · Александр показывает Seller Power для Ozon</p>
+<p style="margin: 4px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6F7378;">9 минут · загрузится по нажатию</p>
+</div>
+</div>
 </div>
 </section>
 <section data-reveal="" style="padding: clamp(56px,8vw,120px) clamp(18px,5vw,40px); border-top: 1px solid rgba(255,255,255,.07);">
@@ -644,7 +690,7 @@ function faq(i){
   if(open){a.removeAttribute('hidden');s.textContent='\u2212';btn.setAttribute('aria-expanded','true');}
   else{a.setAttribute('hidden','');s.textContent='+';btn.setAttribute('aria-expanded','false');}
 }
-var cur=0, N=3;
+var cur=0, N=5;
 function render(){
   var t=document.getElementById('track');
   if(t) t.style.transform='translateX(-'+(cur*100)+'%)';
