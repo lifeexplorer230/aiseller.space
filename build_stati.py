@@ -60,7 +60,7 @@ HEAD = '''<!DOCTYPE html>
     <a href="/" class="logo"><span class="dot"></span><span><span class="hl">ai</span>seller</span></a>
     <nav class="nav">
       <div class="only-wide"><div class="nav-links">
-        <a href="/stati/">Статьи</a><a href="/kurs/">Курс</a><a href="/siistema/">Сообщество</a>
+        <a href="/stati/">Статьи</a><a href="/kurs/">Курс</a><a href="/">Сообщество</a>
       </div></div>
       <a href="/#napisat" class="btn btn-sm">Написать</a>
     </nav>
@@ -76,7 +76,7 @@ FOOT = '''<footer class="ftr">
       <a href="/stati/">Статьи</a>
       <a href="/avtor/">Об авторе</a>
       <a href="/kurs/">Курс «ИИ для селлеров»</a>
-      <a href="/siistema/">Сообщество «СИИстема»</a>
+      <a href="/">Сообщество «СИИстема»</a>
       <a href="https://t.me/FirstonOzon" target="_blank" rel="noopener">Канал «Системный гуманИИст»</a>
       <a href="https://t.me/sellersmafia" target="_blank" rel="noopener">Мафклуб предпринимателей</a>
     </div>
@@ -215,7 +215,7 @@ def avtor(statyi):
 <h2>Чем занимаюсь</h2>
 <ul>
 <li>Настраиваю ИИ, который работает с цифрами конкретного магазина: отчёты, цены, ответы на отзывы, споры с площадкой.</li>
-<li>С февраля 2026 веду клуб селлеров <a href="/siistema/">«СИИстема»</a>: участники разбирают, как внедряют ИИ у себя, встречи каждую пятницу.</li>
+<li>С февраля 2026 веду клуб селлеров <a href="/">«СИИстема»</a>: участники разбирают, как внедряют ИИ у себя, встречи каждую пятницу.</li>
 <li>Веду вводный курс <a href="/kurs/">«ИИ для селлеров»</a>. Первый поток в сентябре 2026 прошли 9 человек.</li>
 <li>Пишу в Telegram-канал <a href="https://t.me/FirstonOzon">«Системный гуманИИст»</a> про ИИ в работе селлера.</li>
 </ul>
@@ -293,7 +293,7 @@ def main():
     os.makedirs(os.path.join(ROOT, 'avtor'), exist_ok=True)
     open(os.path.join(ROOT, 'avtor', 'index.html'), 'w', encoding='utf-8').write(avtor(statyi))
     open(os.path.join(ROOT, 'llms.txt'), 'w', encoding='utf-8').write(llms(statyi))
-    for p in ('index.html', 'kurs/index.html'): blok_na_stranice(os.path.join(ROOT, p), statyi)
+    for p in ('roman/index.html', 'kurs/index.html'): blok_na_stranice(os.path.join(ROOT, p), statyi)
     print('собрано статей:', len(statyi))
 
 if __name__ == '__main__':
